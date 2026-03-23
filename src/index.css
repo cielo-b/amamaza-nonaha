@@ -46,10 +46,46 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
 
     /* Custom tokens */
-    --hero-bg: 200 25% 96%;
-    --section-alt: 200 20% 97%;
-    --badge-bg: 193 82% 94%;
+    --hero-bg: 0 0% 100%;
+    --section-alt: 0 0% 100%;
+    --badge-bg: 0 0% 100%;
     --badge-text: 193 82% 31%;
+  }
+
+  .dark {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 6%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 6%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 193 82% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 10% 10%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 10% 12%;
+    --muted-foreground: 240 5% 70%;
+
+    --accent: 193 82% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 10% 15%;
+    --input: 240 10% 15%;
+    --ring: 193 82% 55%;
+
+    /* Custom tokens */
+    --hero-bg: 240 10% 3%;
+    --section-alt: 240 10% 5%;
+    --badge-bg: 240 10% 10%;
+    --badge-text: 193 82% 70%;
   }
 }
 
@@ -57,13 +93,19 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
-  h1, h2, h3, h4 {
+
+  h1,
+  h2,
+  h3,
+  h4 {
     @apply font-display;
     text-wrap: balance;
   }
+
   p {
     text-wrap: pretty;
   }
@@ -71,9 +113,12 @@
 
 @layer utilities {
   .section-badge {
-    @apply inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider;
-    background: hsl(var(--badge-bg));
-    color: hsl(var(--badge-text));
+    @apply inline-flex items-center text-xs font-semibold uppercase tracking-wider text-primary;
+  }
+
+  .section-badge::before {
+    content: '';
+    @apply inline-block w-1 h-4 bg-primary mr-2 rounded-full;
   }
 }
 
@@ -84,6 +129,7 @@
     transform: translateY(20px);
     filter: blur(4px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

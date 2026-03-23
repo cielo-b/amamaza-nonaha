@@ -1,54 +1,89 @@
 import { Building2, ShoppingBag, TrendingUp } from "lucide-react";
-import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { motion, Variants } from "framer-motion";
 
 const services = [
   {
     icon: Building2,
     title: "Property Discovery",
-    desc: "Find houses, apartments, and land across Rwanda with verified listings and virtual tours.",
+    desc: "Find verified properties for rent or sale with ease, all in one trusted digital space.",
   },
   {
     icon: ShoppingBag,
     title: "Services & Products Marketplace",
-    desc: "Browse and order from hundreds of local businesses — from crafts to tech, delivered to your door.",
+    desc: "Discover local services and products from individuals and businesses across Rwanda.",
   },
   {
     icon: TrendingUp,
     title: "Digital Growth & Empowerment",
-    desc: "We help local businesses grow with digital marketing, branding, and visibility tools.",
+    desc: "We help businesses and entrepreneurs grow through modern digital tools and visibility.",
   },
 ];
 
-const ServicesSection = () => {
-  const ref = useScrollReveal();
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
 
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
+const ServicesSection = () => {
   return (
-    <section id="services" className="py-20 md:py-28 bg-section-alt">
-      <div className="container text-center space-y-12" ref={ref}>
-        <div className="space-y-3">
-          <span className="section-badge">What We Offer</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground">Our Services</h2>
-          <p className="text-muted-foreground max-w-lg mx-auto">
-            A platform built to connect businesses, creators, and customers across Rwanda.
-          </p>
+    <section id="services" className="py-16 md:py-24 bg-white relative overflow-hidden">
+      {/* Background Stripes Pattern */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `repeating-linear-gradient(45deg, #F9FBFC 0px, #F9FBFC 2px, transparent 2px, transparent 15px)`,
+          opacity: 0.8
+        }}
+      />
+
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        className="container text-center space-y-12 relative z-10"
+      >
+        <div className="space-y-4">
+          <div className="flex items-center justify-center gap-2">
+            <div className="w-1 h-4 bg-[#00AEEF]" />
+            <motion.span variants={itemVariants} className="text-[12px] font-bold text-[#00AEEF] tracking-widest uppercase">
+              WHAT WE OFFER
+            </motion.span>
+          </div>
+          <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-display font-medium text-[#1A1A1A]">Our Services</motion.h2>
+          <motion.p variants={itemVariants} className="text-[#6B7280] max-w-xl mx-auto text-lg leading-relaxed">
+            A comprehensive platform connecting you with everything you need - all verified, secure, and easy to access.
+          </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mt-16 px-4">
           {services.map((s, i) => (
-            <div
+            <motion.div
               key={s.title}
-              className="bg-background rounded-xl p-8 shadow-sm hover:shadow-lg transition-shadow duration-300 text-left group"
-              style={{ animationDelay: `${i * 80}ms` }}
+              variants={itemVariants}
+              whileHover={{ y: -10 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="bg-[#111111] rounded-[2rem] p-10 py-16 px-12 border border-white/5 hover:border-[#00AEEF]/30 shadow-2xl transition-all duration-300 text-center flex flex-col items-center justify-center"
             >
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
-                <s.icon className="w-6 h-6 text-primary" />
+              <div className="w-16 h-16 rounded-2xl bg-[#00AEEF]/20 flex items-center justify-center mb-10">
+                <s.icon className="w-8 h-8 text-[#00AEEF]" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">{s.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-            </div>
+              <h3 className="text-2xl font-display font-bold text-white mb-6 leading-tight">{s.title}</h3>
+              <p className="text-white/60 text-[16px] leading-relaxed max-w-[280px] font-medium">{s.desc}</p>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

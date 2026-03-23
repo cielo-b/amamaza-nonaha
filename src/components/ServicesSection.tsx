@@ -36,15 +36,20 @@ const itemVariants: Variants = {
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-16 md:py-24 bg-white relative overflow-hidden">
+    <section id="services" className="py-16 md:py-24 bg-white dark:bg-hero-bg transition-colors duration-500 relative overflow-hidden">
       {/* Background Stripes Pattern */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage: `repeating-linear-gradient(45deg, #F9FBFC 0px, #F9FBFC 2px, transparent 2px, transparent 15px)`,
+          backgroundImage: `repeating-linear-gradient(45deg, var(--stripe-color) 0px, var(--stripe-color) 2px, transparent 2px, transparent 15px)`,
           opacity: 0.8
         }}
       />
+      <style dangerouslySetInnerHTML={{
+        __html: `
+        :root { --stripe-color: #F2F4F7; }
+        .dark { --stripe-color: #111111; }
+      `}} />
 
       <motion.div
         variants={containerVariants}
@@ -54,14 +59,11 @@ const ServicesSection = () => {
         className="container text-center space-y-12 relative z-10"
       >
         <div className="space-y-4">
-          <div className="flex items-center justify-center gap-2">
-            <div className="w-1 h-4 bg-[#00AEEF]" />
-            <motion.span variants={itemVariants} className="text-[12px] font-bold text-[#00AEEF] tracking-widest uppercase">
-              WHAT WE OFFER
-            </motion.span>
-          </div>
-          <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-display font-medium text-[#1A1A1A]">Our Services</motion.h2>
-          <motion.p variants={itemVariants} className="text-[#6B7280] max-w-xl mx-auto text-lg leading-relaxed">
+          <motion.span variants={itemVariants} className="section-badge tracking-widest text-[11px] mb-2">
+            WHAT WE OFFER
+          </motion.span>
+          <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-display font-medium text-[#1A1A1A] dark:text-white transition-colors">Our Services</motion.h2>
+          <motion.p variants={itemVariants} className="text-[#6B7280] dark:text-white/60 max-w-xl mx-auto text-lg leading-relaxed transition-colors">
             A comprehensive platform connecting you with everything you need - all verified, secure, and easy to access.
           </motion.p>
         </div>
@@ -73,13 +75,13 @@ const ServicesSection = () => {
               variants={itemVariants}
               whileHover={{ y: -10 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
-              className="bg-[#111111] rounded-[2rem] p-10 py-16 px-12 border border-white/5 hover:border-[#00AEEF]/30 shadow-2xl transition-all duration-300 text-center flex flex-col items-center justify-center"
+              className="bg-white dark:bg-[#111111] rounded-[2rem] p-10 py-16 px-12 border border-[#E5E7EB] dark:border-white/5 hover:border-[#00AEEF]/50 shadow-xl dark:shadow-2xl transition-all duration-300 text-center flex flex-col items-center justify-center group"
             >
-              <div className="w-16 h-16 rounded-2xl bg-[#00AEEF]/20 flex items-center justify-center mb-10">
+              <div className="w-16 h-16 rounded-2xl bg-[#00AEEF]/10 dark:bg-[#00AEEF]/20 flex items-center justify-center mb-10 group-hover:bg-[#00AEEF]/20 dark:group-hover:bg-[#00AEEF]/30 transition-colors">
                 <s.icon className="w-8 h-8 text-[#00AEEF]" />
               </div>
-              <h3 className="text-2xl font-display font-bold text-white mb-6 leading-tight">{s.title}</h3>
-              <p className="text-white/60 text-[16px] leading-relaxed max-w-[280px] font-medium">{s.desc}</p>
+              <h3 className="text-2xl font-display font-bold text-foreground dark:text-white mb-6 leading-tight">{s.title}</h3>
+              <p className="text-muted-foreground dark:text-white/60 text-[16px] leading-relaxed max-w-[280px] font-medium">{s.desc}</p>
             </motion.div>
           ))}
         </div>

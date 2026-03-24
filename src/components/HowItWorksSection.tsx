@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import howItWorksImg from "@/assets/howit-works.jpg";
+import VideoModal from "./VideoModal";
 
 const steps = [
   {
@@ -68,6 +69,7 @@ const itemVariants: Variants = {
 
 const HowItWorksSection = () => {
   const [active, setActive] = useState(0);
+  const [videoOpen, setVideoOpen] = useState(false);
 
   return (
     <section id="how-it-works" className="py-12 md:py-16 bg-background relative overflow-hidden">
@@ -150,7 +152,10 @@ const HowItWorksSection = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="relative lg:ml-10"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-xl bg-muted aspect-[4/3] md:aspect-video flex items-center justify-center group cursor-pointer">
+            <div
+              onClick={() => setVideoOpen(true)}
+              className="relative rounded-2xl overflow-hidden shadow-xl bg-muted aspect-[4/3] md:aspect-video flex items-center justify-center group cursor-pointer"
+            >
               {/* Decorative blue dashes */}
               <div className="absolute top-0 right-[40%] md:right-32 w-2 h-12 bg-primary z-20 rounded-b-md transform -translate-y-2 group-hover:translate-y-0 transition-transform" />
               <div className="absolute bottom-0 left-[40%] md:left-12 w-2 h-12 bg-primary z-20 rounded-t-md transform translate-y-2 group-hover:translate-y-0 transition-transform" />
@@ -162,13 +167,18 @@ const HowItWorksSection = () => {
               />
               <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors" />
 
-              <button className="relative z-20 w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+              <button className="relative z-20 w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform active:scale-95">
                 <div className="w-0 h-0 border-y-[10px] border-y-transparent border-l-[16px] border-l-primary ml-1" />
               </button>
             </div>
           </motion.div>
         </div>
       </div>
+      <VideoModal
+        isOpen={videoOpen}
+        onClose={() => setVideoOpen(false)}
+        videoUrl="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      />
     </section>
   );
 };

@@ -52,14 +52,27 @@ const PhoneInputWithCountry = ({ label, ...props }: any) => {
 
 const ContactSection = () => {
   const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: ""
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      toast.success("Message sent successfully!");
-    }, 1000);
+
+    // Simulate real network request
+    await new Promise(resolve => setTimeout(resolve, 1500));
+
+    setLoading(false);
+    toast.success("Thank you! Your message has been sent.", {
+      description: "We'll get back to you within 24 hours.",
+    });
+
+    // Reset form
+    setFormData({ name: "", email: "", phone: "", message: "" });
   };
 
   const containerVariants: Variants = {
@@ -103,49 +116,61 @@ const ContactSection = () => {
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="space-y-2">
-                <label className="text-[15px] font-semibold text-muted-foreground">Your names</label>
+              <div className="space-y-2 group">
+                <label className="text-[14px] font-bold text-muted-foreground uppercase tracking-wider group-focus-within:text-primary transition-colors">Your names</label>
                 <input
                   type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="Enter your names"
-                  className="w-full bg-background border border-border rounded-xl px-5 py-4 outline-none focus:border-primary transition-colors text-sm"
+                  className="w-full bg-background border border-border rounded-xl px-5 py-4 outline-none focus:border-primary transition-all text-[15px] shadow-sm active:ring-2 active:ring-primary/10"
                   required
                 />
               </div>
 
-              <div className="space-y-2">
-                <label className="text-[15px] font-semibold text-muted-foreground">Email</label>
+              <div className="space-y-2 group">
+                <label className="text-[14px] font-bold text-muted-foreground uppercase tracking-wider group-focus-within:text-primary transition-colors">Email Address</label>
                 <input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder="you@company.com"
-                  className="w-full bg-background border border-border rounded-xl px-5 py-4 outline-none focus:border-primary transition-colors text-sm"
+                  className="w-full bg-background border border-border rounded-xl px-5 py-4 outline-none focus:border-primary transition-all text-[15px] shadow-sm active:ring-2 active:ring-primary/10"
                   required
                 />
               </div>
 
-              <div className="space-y-2">
-                <label className="text-[15px] font-semibold text-muted-foreground">Phone number</label>
-                <div className="flex bg-background border border-border rounded-xl overflow-hidden focus-within:border-primary transition-colors">
-                  <div className="flex items-center gap-2 px-4 border-r border-border bg-muted/5 cursor-pointer hover:bg-muted/10">
-                    <span className="text-sm font-semibold">US</span>
+              <div className="space-y-2 group">
+                <label className="text-[14px] font-bold text-muted-foreground uppercase tracking-wider group-focus-within:text-primary transition-colors">Phone number</label>
+                <div className="flex bg-background border border-border rounded-xl overflow-hidden focus-within:border-primary transition-all shadow-sm active:ring-2 active:ring-primary/10">
+                  <div className="flex items-center gap-2 px-5 border-r border-border bg-muted/5 cursor-pointer hover:bg-muted/10 transition-colors">
+                    <span className="text-sm font-bold">RW</span>
                     <ChevronDown className="w-4 h-4 text-muted-foreground" />
                   </div>
-                  <div className="flex items-center px-4 text-sm text-muted-foreground border-r border-border">
-                    +1
+                  <div className="flex items-center px-4 text-sm font-medium text-foreground border-r border-border">
+                    +250
                   </div>
                   <input
                     type="tel"
-                    placeholder="(555) 000-0000"
-                    className="flex-1 bg-transparent px-5 py-4 outline-none text-sm"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    placeholder="7XX XXX XXX"
+                    className="flex-1 bg-transparent px-5 py-4 outline-none text-[15px]"
                   />
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <label className="text-[15px] font-semibold text-muted-foreground">Message</label>
+              <div className="space-y-2 group">
+                <label className="text-[14px] font-bold text-muted-foreground uppercase tracking-wider group-focus-within:text-primary transition-colors">Message</label>
                 <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Tell us how we can help..."
-                  className="w-full bg-background border border-border rounded-xl px-5 py-4 outline-none focus:border-primary transition-colors min-h-[140px] text-sm resize-none"
+                  className="w-full bg-background border border-border rounded-xl px-5 py-4 outline-none focus:border-primary transition-all min-h-[140px] text-[15px] resize-none shadow-sm active:ring-2 active:ring-primary/10"
                   required
                 />
               </div>

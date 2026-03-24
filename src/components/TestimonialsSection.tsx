@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
-import testimonialImg from "@/assets/testimonial.jpg";
 import { Play } from "lucide-react";
-import { motion, Variants, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import VideoModal from "./VideoModal";
 
 const testimonials = [
   {
@@ -10,34 +10,38 @@ const testimonials = [
     quote: "This platform has transformed my business. I'm reaching customers I never knew existed. My sales grew by 3x in just 6 months.",
     name: "Claudine Uwimana",
     role: "Founder, Kigali Crafts Co.",
+    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" // Rickroll placeholder
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    quote: "Amamazanonaha gave our brand the digital presence we needed. Professional, reliable, and truly community-driven.",
-    name: "Patrick Habimana",
-    role: "CEO, GreenField Farms",
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    quote: "Marketing and visibility were our biggest hurdles. Amamazanonaha provided the bridge we needed to connect with a wider audience.",
+    name: "Leonce Karemera",
+    role: "Director, Innovate Rwanda",
+    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    quote: "The easiest way to find trusted services in Rwanda. It saves me hours of searching and vetting.",
-    name: "Aline M.",
-    role: "Happy Customer",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    quote: "Finding high-quality services used to take days. Now I find trusted pros in minutes. The trust and professionalism are unmatched.",
+    name: "Jeanne Gasana",
+    role: "Entrepreneur",
+    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
   },
-  {
-    id: 4,
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    quote: "Working with this team has been a game-changer for our marketing strategy. Highly recommended!",
-    name: "John R.",
-    role: "Marketing Director",
-  }
 ];
 
 const TestimonialsSection = () => {
   const [activeIndex, setActiveIndex] = useState(1);
   const [isPaused, setIsPaused] = useState(false);
+  const [videoOpen, setVideoOpen] = useState(false);
+  const [selectedVideo, setSelectedVideo] = useState("");
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const openVideo = (url: string) => {
+    setSelectedVideo(url || "");
+    setVideoOpen(true);
+    setIsPaused(true);
+  };
 
   const nextSlide = useCallback(() => {
     setActiveIndex((prev) => (prev + 1) % testimonials.length);
@@ -92,7 +96,7 @@ const TestimonialsSection = () => {
           >
             <img src={testimonials[visibleIndices[0]].image} className="w-full h-full object-cover" alt="" />
             <div className="absolute inset-0 bg-black/40" />
-            <div className="absolute top-6 left-6 w-10 h-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
+            <div className="absolute top-6 left-6 w-10 h-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm group-hover/card:bg-white/30">
               <Play className="w-4 h-4 text-white fill-white ml-0.5" />
             </div>
           </motion.div>
@@ -109,12 +113,15 @@ const TestimonialsSection = () => {
             }}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="relative w-full md:w-[60%] lg:w-1/2 h-[450px] md:h-[550px] rounded-[2rem] overflow-hidden shadow-2xl z-20 shrink-0 select-none"
+            className="relative w-full md:w-[60%] lg:w-1/2 h-[450px] md:h-[550px] rounded-[2rem] overflow-hidden shadow-2xl z-20 shrink-0 select-none group/card"
           >
             <img src={testimonials[visibleIndices[1]].image} className="w-full h-full object-cover" alt="" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10" />
 
-            <div className="absolute top-8 left-8 w-14 h-14 rounded-full bg-primary flex items-center justify-center shadow-lg cursor-pointer hover:scale-105 transition-transform">
+            <div
+              onClick={() => openVideo(testimonials[visibleIndices[1]].videoUrl)}
+              className="absolute top-8 left-8 w-14 h-14 rounded-full bg-primary flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 active:scale-95 transition-all z-30 group-hover/card:bg-primary/90"
+            >
               <Play className="w-6 h-6 text-white fill-white ml-1" />
             </div>
 
@@ -135,12 +142,12 @@ const TestimonialsSection = () => {
             initial={{ opacity: 0, x: -100, scale: 0.6 }}
             animate={{ opacity: 0.4, x: 0, scale: 0.75, filter: "blur(2px)" }}
             exit={{ opacity: 0, x: 100, scale: 0.6 }}
-            className="hidden md:block relative w-1/4 h-[300px] rounded-3xl overflow-hidden shrink-0"
-            onClick={nextSlide}
+            className="hidden md:block relative w-1/4 h-[300px] rounded-3xl overflow-hidden shrink-0 cursor-pointer group/card"
+            onClick={() => openVideo(testimonials[visibleIndices[2]].videoUrl)}
           >
             <img src={testimonials[visibleIndices[2]].image} className="w-full h-full object-cover" alt="" />
             <div className="absolute inset-0 bg-black/40" />
-            <div className="absolute top-6 left-6 w-10 h-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
+            <div className="absolute top-6 left-6 w-10 h-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm group-hover/card:bg-white/30">
               <Play className="w-4 h-4 text-white fill-white ml-0.5" />
             </div>
           </motion.div>
@@ -159,6 +166,12 @@ const TestimonialsSection = () => {
           ))}
         </div>
       </motion.div>
+
+      <VideoModal
+        isOpen={videoOpen}
+        onClose={() => setVideoOpen(false)}
+        videoUrl={selectedVideo}
+      />
     </section>
   );
 };

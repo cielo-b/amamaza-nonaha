@@ -5,6 +5,7 @@ import { toast } from "sonner";
 import contactImg from "@/assets/about.jpg";
 
 import { ChevronDown, Send } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 const SharpInput = ({ label, required, isTextArea, ...props }: any) => {
   return (
@@ -63,16 +64,42 @@ const ContactSection = () => {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate real network request
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      // Synchronized with your EmailJS Template screenshot
+      const templateParams = {
+        name: formData.name,       // matches {{name}}
+        email: formData.email,     // matches {{email}}
+        message: formData.message, // matches {{message}}
+        title: "New Website Inquiry" // matches {{title}} in subject
+      };
 
-    setLoading(false);
-    toast.success("Thank you! Your message has been sent.", {
-      description: "We'll get back to you within 24 hours.",
-    });
+      // Use your values:
+      const SERVICE_ID = "service_4y077ac"; // Correct
+      const TEMPLATE_ID = "template_kfdl6js"; // Paste your Template ID here
+      const PUBLIC_KEY = "W9c2q-jatX_zogst8";  // Paste your Public Key here
 
-    // Reset form
-    setFormData({ name: "", email: "", phone: "", message: "" });
+      const result = await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        templateParams,
+        PUBLIC_KEY
+      );
+
+      if (result.status === 200) {
+        toast.success("Thank you! Your message has been sent.", {
+          description: "We'll get back to you within 24 hours.",
+        });
+        // Reset form
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      }
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      toast.error("Failed to send message", {
+        description: "Please check your EmailJS configuration and authentication scopes.",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   const containerVariants: Variants = {

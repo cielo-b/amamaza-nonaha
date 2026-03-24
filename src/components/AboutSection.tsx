@@ -75,16 +75,31 @@ const AboutSection = () => {
           </motion.span>
           <motion.h2
             variants={itemVariants}
-            className="text-3xl md:text-4xl font-bold text-foreground leading-tight"
+            className="text-3xl md:text-5xl font-bold text-foreground leading-tight"
           >
-            About us
+            Digital Commerce & <br />Marketing Platform
           </motion.h2>
           <motion.p variants={itemVariants} className="text-muted-foreground leading-relaxed text-lg">
-            Amamazanonaha is transforming how people access services and products in Rwanda. From finding the right property to discovering unique services and businesses — faster and smarter.
+            Amamazanonaha Ltd is a forward-looking digital commerce and marketing platform created to connect people, businesses, products, services, and opportunities in one accessible ecosystem.
             <br />
             <br />
-            Built with a vision for sustainable digital transformation, we empower individuals and businesses.
+            Through innovation and professionalism, we help businesses become more discoverable, more competitive, and more connected to growth opportunities.
           </motion.p>
+
+          <div className="grid sm:grid-cols-2 gap-8 pt-4">
+            <motion.div variants={itemVariants} className="space-y-3 p-6 bg-card rounded-2xl border border-border">
+              <h4 className="font-bold text-primary flex items-center gap-2">VISION</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                To become a leading digital commerce and business growth platform connecting Rwanda and Africa to the world.
+              </p>
+            </motion.div>
+            <motion.div variants={itemVariants} className="space-y-3 p-6 bg-card rounded-2xl border border-border">
+              <h4 className="font-bold text-primary flex items-center gap-2">MISSION</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                To empower businesses, entrepreneurs, and communities by providing accessible digital marketplace solutions.
+              </p>
+            </motion.div>
+          </div>
           <motion.div variants={itemVariants} className="flex flex-wrap sm:flex-nowrap gap-4 pt-6">
             {stats.map((s, idx) => (
               <motion.div

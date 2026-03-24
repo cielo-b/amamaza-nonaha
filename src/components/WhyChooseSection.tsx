@@ -4,10 +4,10 @@ import { motion, Variants } from "framer-motion";
 import whyImg from "@/assets/why-choose.jpg";
 
 const reasons = [
-  { title: "Your Own Marketplace", desc: "List your products and services to reach more customers across Rwanda." },
-  { title: "Community-Driven Growth", desc: "Join a network of businesses that support and promote each other." },
-  { title: "Online Advertising, Global Standards", desc: "Professional digital marketing with local expertise." },
-  { title: "Cultural Opportunity", desc: "Celebrate and promote Rwandan culture through commerce." },
+  { title: "Multi-category access", desc: "Serving different needs through one connected ecosystem." },
+  { title: "Digital-first approach", desc: "Built for the modern market where visibility and accessibility matter." },
+  { title: "Local relevance, Global mindset", desc: "Focusing on Rwanda while positioning for broader global opportunity." },
+  { title: "Business growth support", desc: "Moving brands from being unseen to being discoverable and competitive." },
 ];
 
 const containerVariants: Variants = {

@@ -77,9 +77,13 @@ const HowItWorksSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
+          className="max-w-3xl"
         >
-          <span className="section-badge tracking-widest text-[11px]">THE PROCESS</span>
-          <h2 className="text-3xl md:text-5xl font-display font-medium text-foreground mt-4 mb-2">How it works</h2>
+          <span className="section-badge tracking-widest text-[11px]">THE PROBLEM & SOLUTION</span>
+          <h2 className="text-3xl md:text-5xl font-display font-medium text-foreground mt-4 mb-6">Solving fragmentations through digital connection</h2>
+          <p className="text-muted-foreground text-lg leading-relaxed italic border-l-4 border-primary pl-6">
+            Many customers struggle to find reliable opportunities in one place, while many businesses face limited visibility. Amamazanonaha Ltd solves this by creating a central digital platform for discoverability and commercial opportunity.
+          </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-start">

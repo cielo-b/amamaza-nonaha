@@ -32,7 +32,7 @@ const Footer = () => (
           <img src={logo} alt="Amamazanonaha" className="h-10 w-auto invert brightness-0 invert-[1] opacity-90" />
         </div>
         <p className="text-sm leading-relaxed text-white/60 max-w-xs">
-          Connecting communities and businesses across Rwanda through one powerful digital platform.
+          Empowering digital trade, visibility, and growth through one modern platform connecting Rwanda and Africa to the world.
         </p>
       </motion.div>
 

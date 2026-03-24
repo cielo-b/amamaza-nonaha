@@ -104,13 +104,16 @@ const HeroSection = () => {
           >
             <div className="bg-transparent p-4 md:p-8">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground font-display flex flex-wrap items-center gap-x-4">
-                Everything You Need, All In One Place
+                Digital Commerce & Marketing Platform
                 <span className="w-16 h-1.5 bg-primary mt-2" aria-hidden="true" />
               </h1>
+              <div className="flex flex-col gap-2 mt-4">
+                <span className="text-xl md:text-2xl font-bold text-primary tracking-tight uppercase">Rwanda & Africa to the World</span>
+                <span className="text-lg font-medium text-muted-foreground/80 italic">Connect • Trade • Prosper</span>
+              </div>
 
               <p className="text-muted-foreground text-lg max-w-md leading-relaxed mt-6">
-                Discover and book services, products, properties, and more across Rwanda. From land to
-                homes, from products to unique experiences - we connect you with it all.
+                Empowering digital trade, visibility, and growth through one modern platform.
               </p>
 
               <div className="flex flex-wrap gap-5 items-center mt-10">

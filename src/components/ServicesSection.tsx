@@ -3,19 +3,34 @@ import { motion, Variants } from "framer-motion";
 
 const services = [
   {
-    icon: Building2,
-    title: "Property Discovery",
-    desc: "Find verified properties for rent or sale with ease, all in one trusted digital space.",
-  },
-  {
     icon: ShoppingBag,
-    title: "Services & Products Marketplace",
-    desc: "Discover local services and products from individuals and businesses across Rwanda.",
+    title: "Digital Marketplace Access",
+    desc: "A professional space where customers discover products and services conveniently.",
   },
   {
     icon: TrendingUp,
-    title: "Digital Growth & Empowerment",
-    desc: "We help businesses and entrepreneurs grow through modern digital tools and visibility.",
+    title: "E-commerce Solutions",
+    desc: "Helping businesses with digital tools to sell, promote, and scale online.",
+  },
+  {
+    icon: ShoppingBag,
+    title: "Marketing & Brand Visibility",
+    desc: "Awareness strategies that help brands attract the right audience and build presence.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Business Promotion",
+    desc: "Giving entrepreneurs a platform to showcase their offers to more potential customers.",
+  },
+  {
+    icon: Building2,
+    title: "Opportunity Discovery",
+    desc: "Connecting users to valuable listings, services, and growth opportunities across Rwanda.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Trade & Market Connection",
+    desc: "Supporting the movement of ideas and products from local markets to broader access.",
   },
 ];
 

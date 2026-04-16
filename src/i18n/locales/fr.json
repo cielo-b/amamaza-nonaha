@@ -1,0 +1,66 @@
+{
+    "nav": {
+        "home": "Accueil",
+        "about": "À Propos",
+        "services": "Services",
+        "howItWorks": "Comment ça marche",
+        "contact": "Contactez-nous"
+    },
+    "hero": {
+        "title": "Plateforme de Commerce Numérique et de Marketing",
+        "subtitle": "Le Rwanda et l'Afrique vers le Monde",
+        "tagline": "Connecter • Commercer • Prospérer",
+        "description": "Autonomiser le commerce numérique, la visibilité et la croissance grâce à une plateforme moderne unique.",
+        "cta": "Explorer les services"
+    },
+    "about": {
+        "badge": "UN PEU SUR NOUS",
+        "title": "Plateforme de Commerce Numérique et de Marketing",
+        "description": "Amamazanonaha Ltd est une plateforme de commerce numérique et de marketing prospective créée pour connecter les personnes, les entreprises, les produits, les services et les opportunités dans un écosystème unique et accessible.",
+        "subDescription": "Grâce à l'innovation et au professionnalisme, nous aidons les entreprises à devenir plus découvrables, plus compétitives et mieux connectées aux opportunités de croissance.",
+        "vision": {
+            "title": "VISION",
+            "text": "Devenir une plateforme leader du commerce numérique et de la croissance des entreprises, reliant le Rwanda et l'Afrique au monde."
+        },
+        "mission": {
+            "title": "MISSION",
+            "text": "Autonomiser les entreprises, les entrepreneurs et les communautés en fournissant des solutions de marché numérique accessibles."
+        },
+        "stats": {
+            "listings": "Annonces",
+            "providers": "Fournisseurs",
+            "support": "Support"
+        }
+    },
+    "services": {
+        "badge": "CE QUE NOUS OFFRONS",
+        "title": "Nos Services",
+        "description": "Une plateforme complète vous connectant à tout ce dont vous avez besoin – le tout vérifié, sécurisé et facile d'accès.",
+        "items": {
+            "marketplace": {
+                "title": "Accès au Marché Numérique",
+                "desc": "Un espace professionnel où les clients découvrent les produits et services de manière pratique."
+            },
+            "ecommerce": {
+                "title": "Solutions de Commerce Électronique",
+                "desc": "Aider les entreprises avec des outils numériques pour vendre, promouvoir et se développer en ligne."
+            },
+            "marketing": {
+                "title": "Marketing et Visibilité de la Marque",
+                "desc": "Stratégies de sensibilisation qui aident les marques à attirer le bon public et à renforcer leur présence."
+            },
+            "promotion": {
+                "title": "Promotion des Entreprises",
+                "desc": "Publicité ciblée et campagnes de visibilité pour élargir votre base de clients."
+            },
+            "discovery": {
+                "title": "Découverte d'Opportunités",
+                "desc": "Une passerelle pour trouver de nouveaux emplois, des projets et des partenariats commerciaux."
+            },
+            "trade": {
+                "title": "Connexion au Commerce et au Marché",
+                "desc": "Combler le fossé entre les producteurs locaux et les marchés internationaux."
+            }
+        }
+    }
+}

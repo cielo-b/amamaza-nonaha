@@ -1,0 +1,66 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "howItWorks": "How It Works",
+    "contact": "Contact Us"
+  },
+  "hero": {
+    "title": "Digital Commerce & Marketing Platform",
+    "subtitle": "Rwanda & Africa to the World",
+    "tagline": "Connect • Trade • Prosper",
+    "description": "Empowering digital trade, visibility, and growth through one modern platform.",
+    "cta": "Explore services"
+  },
+  "about": {
+    "badge": "A BIT",
+    "title": "Digital Commerce & Marketing Platform",
+    "description": "Amamazanonaha Ltd is a forward-looking digital commerce and marketing platform created to connect people, businesses, products, services, and opportunities in one accessible ecosystem.",
+    "subDescription": "Through innovation and professionalism, we help businesses become more discoverable, more competitive, and more connected to growth opportunities.",
+    "vision": {
+      "title": "VISION",
+      "text": "To become a leading digital commerce and business growth platform connecting Rwanda and Africa to the world."
+    },
+    "mission": {
+      "title": "MISSION",
+      "text": "To empower businesses, entrepreneurs, and communities by providing accessible digital marketplace solutions."
+    },
+    "stats": {
+      "listings": "Listings",
+      "providers": "Providers",
+      "support": "Support"
+    }
+  },
+  "services": {
+    "badge": "WHAT WE OFFER",
+    "title": "Our Services",
+    "description": "A comprehensive platform connecting you with everything you need – all verified, secure, and easy to access.",
+    "items": {
+      "marketplace": {
+        "title": "Digital Marketplace Access",
+        "desc": "A professional space where customers discover products and services conveniently."
+      },
+      "ecommerce": {
+        "title": "E-commerce Solutions",
+        "desc": "Helping businesses with digital tools to sell, promote, and scale online."
+      },
+      "marketing": {
+        "title": "Marketing & Brand Visibility",
+        "desc": "Awareness strategies that help brands attract the right audience and build presence."
+      },
+      "promotion": {
+        "title": "Business Promotion",
+        "desc": "Targeted advertising and visibility campaigns to grow your customer base."
+      },
+      "discovery": {
+        "title": "Opportunity Discovery",
+        "desc": "A gateway to find new jobs, projects, and business partnerships."
+      },
+      "trade": {
+        "title": "Trade & Market Connection",
+        "desc": "Bridging the gap between local producers and international markets."
+      }
+    }
+  }
+}

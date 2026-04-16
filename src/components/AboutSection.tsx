@@ -1,30 +1,32 @@
 import aboutImg from "@/assets/about.jpg";
 import { motion, Variants } from "framer-motion";
-
 import { Building2, Users, LifeBuoy } from "lucide-react";
-
-const stats = [
-  { value: "1000+", label: "Listings", icon: Building2 },
-  { value: "500+", label: "Providers", icon: Users },
-  { value: "24/7", label: "Support", icon: LifeBuoy },
-];
-
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-};
+import { useTranslation } from "react-i18next";
 
 const AboutSection = () => {
+  const { t } = useTranslation();
+
+  const stats = [
+    { value: "1000+", label: t("about.stats.listings"), icon: Building2 },
+    { value: "500+", label: t("about.stats.providers"), icon: Users },
+    { value: "24/7", label: t("about.stats.support"), icon: LifeBuoy },
+  ];
+
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
   return (
     <section id="about" className="py-12 md:py-16 bg-background overflow-hidden">
       <div className="container grid md:grid-cols-2 gap-12 items-center">
@@ -71,39 +73,39 @@ const AboutSection = () => {
           className="space-y-6"
         >
           <motion.span variants={itemVariants} className="section-badge tracking-widest text-[11px]">
-            A BIT
+            {t("about.badge")}
           </motion.span>
           <motion.h2
             variants={itemVariants}
             className="text-3xl md:text-5xl font-bold text-foreground leading-tight"
           >
-            Digital Commerce & <br />Marketing Platform
+            {t("about.title")}
           </motion.h2>
           <motion.p variants={itemVariants} className="text-muted-foreground leading-relaxed text-lg">
-            Amamazanonaha Ltd is a forward-looking digital commerce and marketing platform created to connect people, businesses, products, services, and opportunities in one accessible ecosystem.
+            {t("about.description")}
             <br />
             <br />
-            Through innovation and professionalism, we help businesses become more discoverable, more competitive, and more connected to growth opportunities.
+            {t("about.subDescription")}
           </motion.p>
 
           <div className="grid sm:grid-cols-2 gap-8 pt-4">
             <motion.div variants={itemVariants} className="space-y-3 p-6 bg-card rounded-2xl border border-border">
-              <h4 className="font-bold text-primary flex items-center gap-2">VISION</h4>
+              <h4 className="font-bold text-primary flex items-center gap-2">{t("about.vision.title")}</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                To become a leading digital commerce and business growth platform connecting Rwanda and Africa to the world.
+                {t("about.vision.text")}
               </p>
             </motion.div>
             <motion.div variants={itemVariants} className="space-y-3 p-6 bg-card rounded-2xl border border-border">
-              <h4 className="font-bold text-primary flex items-center gap-2">MISSION</h4>
+              <h4 className="font-bold text-primary flex items-center gap-2">{t("about.mission.title")}</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                To empower businesses, entrepreneurs, and communities by providing accessible digital marketplace solutions.
+                {t("about.mission.text")}
               </p>
             </motion.div>
           </div>
           <motion.div variants={itemVariants} className="flex flex-wrap sm:flex-nowrap gap-4 pt-6">
             {stats.map((s, idx) => (
               <motion.div
-                key={s.label}
+                key={idx}
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

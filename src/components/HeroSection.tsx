@@ -5,10 +5,12 @@ import { ChevronLeft, ChevronRight, Phone } from "lucide-react";
 import { MagneticWrapper } from "@/components/MagneticWrapper";
 import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
+import { useTranslation } from "react-i18next";
 
 const slides = [hero1, hero2];
 
 const HeroSection = () => {
+  const { t } = useTranslation();
   const [current, setCurrent] = useState(0);
 
   const heroRef = useRef<HTMLDivElement>(null);
@@ -28,8 +30,6 @@ const HeroSection = () => {
     const t = setInterval(() => setCurrent((c) => (c + 1) % slides.length), 5000);
     return () => clearInterval(t);
   }, [isPaused]);
-
-
 
   return (
     <section
@@ -100,22 +100,22 @@ const HeroSection = () => {
           >
             <div className="bg-transparent p-4 md:p-8">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground font-display flex flex-wrap items-center gap-x-4">
-                Digital Commerce & Marketing Platform
+                {t("hero.title")}
                 <span className="w-16 h-1.5 bg-primary mt-2" aria-hidden="true" />
               </h1>
               <div className="flex flex-col gap-2 mt-4">
-                <span className="text-xl md:text-2xl font-bold text-primary tracking-tight uppercase">Rwanda & Africa to the World</span>
-                <span className="text-lg font-medium text-muted-foreground/80 italic">Connect • Trade • Prosper</span>
+                <span className="text-xl md:text-2xl font-bold text-primary tracking-tight uppercase">{t("hero.subtitle")}</span>
+                <span className="text-lg font-medium text-muted-foreground/80 italic">{t("hero.tagline")}</span>
               </div>
 
               <p className="text-muted-foreground text-lg max-w-md leading-relaxed mt-6">
-                Empowering digital trade, visibility, and growth through one modern platform.
+                {t("hero.description")}
               </p>
 
               <div className="flex flex-wrap gap-5 items-center mt-10">
                 <MagneticWrapper>
                   <Button size="lg" className="rounded-md px-8 py-6 text-base font-semibold bg-primary hover:bg-primary/90 text-primary-foreground">
-                    Explore services
+                    {t("hero.cta")}
                   </Button>
                 </MagneticWrapper>
                 <MagneticWrapper>
@@ -127,7 +127,7 @@ const HeroSection = () => {
                     <span className="w-10 h-10 rounded-full border border-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
                       <Phone className="w-4 h-4 text-primary group-hover:text-white" />
                     </span>
-                    <span className="text-foreground">Contact us</span>
+                    <span className="text-foreground">{t("nav.contact")}</span>
                   </Button>
                 </MagneticWrapper>
               </div>
@@ -135,8 +135,6 @@ const HeroSection = () => {
           </motion.div>
         </div>
       </div>
-
-
     </section>
   );
 };

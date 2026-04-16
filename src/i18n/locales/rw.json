@@ -1,0 +1,66 @@
+{
+    "nav": {
+        "home": "Ahabanza",
+        "about": "Ibitwerekeye",
+        "services": "Serivisi",
+        "howItWorks": "Uko bikora",
+        "contact": "Twandikire"
+    },
+    "hero": {
+        "title": "Urubuga rw'Ubucuruzi n'Indanga-cururuzwa",
+        "subtitle": "Rwanda na Afurika ku Isi",
+        "tagline": "Huza • Curuza • Tera Imbere",
+        "description": "Gushoboza ubucuruzi bukorwa hifashishijwe ikoranabuhanga, kugaragara, n'iterambere binyuze mu rubuga rugezweho.",
+        "cta": "Reba serivisi"
+    },
+    "about": {
+        "badge": "IBYEREKEYE",
+        "title": "Urubuga rw'Ubucuruzi n'Indanga-cururuzwa",
+        "description": "Amamazanonaha Ltd ni urubuga rw'ubucuruzi n'indanga-cururuzwa rubona kure, rwashyiriweho guhuza abantu, ubucuruzi, ibicuruzwa, serivisi, n'amahirwe mu rusobe rumwe rugerwaho na bose.",
+        "subDescription": "Binyuze mu guhanga udushya n'ubunyamwuga, dufasha ubucuruzi kumenyekana cyane, guhanganira ku isoko neza, no guhuzwa n'amahirwe y'iterambere.",
+        "vision": {
+            "title": "ICYEREKEZO",
+            "text": "Kuba urubuga ruyoboye mu bucuruzi n'iterambere ry'ubucuruzi buhuza u Rwanda na Afurika n'isi yose."
+        },
+        "mission": {
+            "title": "INSHINGANO",
+            "text": "Gushoboza ubucuruzi, ba rwiyemezamirimo, n'abaturage binyuze mu gutanga ibisubizo by'isoko ryo kuri interineti rigerwaho na bose."
+        },
+        "stats": {
+            "listings": "Ibyanditswe",
+            "providers": "Abatanga Serivisi",
+            "support": "Ubufasha"
+        }
+    },
+    "services": {
+        "badge": "IBYO TUTANGA",
+        "title": "Serivisi Zacu",
+        "description": "Urubuga rwuzuye ruguhuza n'ibyo ukeneye byose - byose byizewe, bifite umutekano, kandi byoroshye kugerwaho.",
+        "items": {
+            "marketplace": {
+                "title": "Kwinjira mu Isoko ryo kuri Interineti",
+                "desc": "Ahantu habugenewe aho abakiriya bavumbura ibicuruzwa na serivisi mu buryo bworoshye."
+            },
+            "ecommerce": {
+                "title": "Ibisubizo by'Ubucuruzi bwakorerwa kuri Interineti",
+                "desc": "Gufasha ubucuruzi bwifashishije ibikoresho by'ikoranabuhanga kugurisha, kumenyekanisha, no kwagura ubucuruzi kuri interineti."
+            },
+            "marketing": {
+                "title": "Iyamamazabucuruzi n'Izina ry'Ikigo",
+                "desc": "Ingamba zo kumenyekanisha zifasha ibigo gukurura abakiriya bakwiriye no kubaka izina."
+            },
+            "promotion": {
+                "title": "Kumenyekanisha Ubucuruzi",
+                "desc": "Iyamamazabucuruzi ryibanze ku bakiriya n'ingamba zo kugaragara kugira ngo wagure abakiriya bawe."
+            },
+            "discovery": {
+                "title": "Guvumbura Amahirwe",
+                "desc": "Inzira yo kubona akazi gashya, imishinga, n'ubufatanye mu bucuruzi."
+            },
+            "trade": {
+                "title": "Guhuza Ubucuruzi n'Isoko",
+                "desc": "Gukuraho icyuho kiri hagati y'abashyira ibicuruzwa ku isoko bo mu gihugu n'amasoko mpuzamahanga."
+            }
+        }
+    }
+}

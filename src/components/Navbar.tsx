@@ -1,25 +1,41 @@
 import { useState, useEffect } from "react";
-import { Menu, X, ShoppingCart, Sun, Moon } from "lucide-react";
+import { Menu, X, ShoppingCart, Sun, Moon, Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
 import logo from "@/assets/logo.png";
+import { useTranslation } from "react-i18next";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
-const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "How It Works", href: "#how-it-works" },
-];
 
 const Navbar = () => {
+  const { i18n, t } = useTranslation();
   const [open, setOpen] = useState(false);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
+  const navLinks = [
+    { label: t("nav.home"), href: "#home" },
+    { label: t("nav.about"), href: "#about" },
+    { label: t("nav.services"), href: "#services" },
+    { label: t("nav.howItWorks"), href: "#how-it-works" },
+  ];
+
+  const languages = [
+    { code: "en", label: "English" },
+    { code: "rw", label: "Kinyarwanda" },
+    { code: "fr", label: "Français" },
+  ];
+
   useEffect(() => {
     setMounted(true);
   }, []);
+
 
   return (
     <>
@@ -52,19 +68,43 @@ const Navbar = () => {
 
             <div className="flex items-center gap-4 border-l border-border/50 pl-6 ml-2">
               {mounted && (
-                <button
-                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                  className="rounded-full p-2 hover:bg-muted/60 transition-colors"
-                  aria-label="Toggle theme"
-                >
-                  {theme === "dark" ? <Sun className="w-5 h-5 text-yellow-400" /> : <Moon className="w-5 h-5 text-slate-700" />}
-                </button>
+                <div className="flex items-center gap-2 mr-2">
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <button className="rounded-full p-2 hover:bg-muted/60 transition-colors flex items-center gap-1.5 text-foreground/70">
+                        <Languages className="w-4 h-4" />
+                        <span className="text-xs font-bold uppercase">{i18n.language.slice(0, 2)}</span>
+                      </button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="end" className="w-[150px] rounded-xl">
+                      {languages.map((lang) => (
+                        <DropdownMenuItem
+                          key={lang.code}
+                          onClick={() => i18n.changeLanguage(lang.code)}
+                          className={`cursor-pointer font-medium ${i18n.language === lang.code ? "text-primary bg-primary/5" : ""
+                            }`}
+                        >
+                          {lang.label}
+                        </DropdownMenuItem>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+
+                  <button
+                    onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                    className="rounded-full p-2 hover:bg-muted/60 transition-colors"
+                    aria-label="Toggle theme"
+                  >
+                    {theme === "dark" ? <Sun className="w-5 h-5 text-yellow-400" /> : <Moon className="w-5 h-5 text-slate-700" />}
+                  </button>
+                </div>
               )}
               <a href="#contact">
                 <Button size="sm" className="rounded-md px-10 py-5 shadow-sm bg-primary hover:bg-primary/90 text-white border-0">
-                  Contact Us
+                  {t("nav.contact")}
                 </Button>
               </a>
+
             </div>
           </div>
 
@@ -136,8 +176,9 @@ const Navbar = () => {
                 className="w-full max-w-[200px] mt-6"
               >
                 <Button size="lg" className="rounded-md w-full shadow-lg bg-primary hover:bg-primary/90 text-white">
-                  Contact Us
+                  {t("nav.contact")}
                 </Button>
+
               </motion.a>
             </motion.div>
           </motion.div>

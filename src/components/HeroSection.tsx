@@ -10,7 +10,7 @@ const slides = [hero1, hero2];
 
 const HeroSection = () => {
   const [current, setCurrent] = useState(0);
-  const [trustedIndex, setTrustedIndex] = useState(0);
+
   const heroRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -29,11 +29,7 @@ const HeroSection = () => {
     return () => clearInterval(t);
   }, [isPaused]);
 
-  useEffect(() => {
-    if (isPaused) return;
-    const t = setInterval(() => setTrustedIndex((i) => (i + 1) % 4), 3000);
-    return () => clearInterval(t);
-  }, [isPaused]);
+
 
   return (
     <section
@@ -140,84 +136,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Trusted by */}
-      <div className="border-t border-border bg-background relative overflow-hidden">
-        {/* Watermark */}
-        <div className="pointer-events-none absolute inset-0 z-0">
-          <div className="absolute -bottom-22 right-[-160px] text-[120px] font-display font-bold text-primary/10 whitespace-nowrap select-none">
-            amamazanonaha
-          </div>
-        </div>
 
-        <div className="container py-10 relative z-10">
-          <div className="text-center space-y-8">
-            <div className="text-lg text-foreground/80 font-semibold leading-none">
-              Trusted by 100+ Companies in Rwanda
-            </div>
-
-            {/* Desktop/tablet carousel */}
-            <div className="hidden md:block relative">
-              {/* Faded edges */}
-              <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent z-10" />
-              <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent z-10" />
-
-              <div className="overflow-hidden w-[800px] max-w-full mx-auto">
-                {/* Each logo "tile" is fixed width so translateX can be computed */}
-                <div
-                  className="flex items-center transition-transform duration-700 ease-in-out"
-                  style={{ transform: `translateX(-${trustedIndex * 200}px)` }}
-                >
-                  {[
-                    { name: "DeepTimes", sub: "SHARPEN MINDS" },
-                    { name: "Posh Wellness Plus", sub: "Your Health is Your Wealth" },
-                    { name: "NC", sub: "" },
-                    { name: "NRTech", sub: "" },
-                    // repeat to allow smooth looping
-                    { name: "DeepTimes", sub: "SHARPEN MINDS" },
-                    { name: "Posh Wellness Plus", sub: "Your Health is Your Wealth" },
-                    { name: "NC", sub: "" },
-                    { name: "NRTech", sub: "" },
-                  ].map((l, idx) => (
-                    <div key={`${l.name}-${idx}`} className="w-[200px] flex-shrink-0">
-                      <div className="flex flex-col items-center justify-center">
-                        <div className="text-sm font-semibold text-foreground/80">
-                          {l.name}
-                        </div>
-                        {l.sub ? (
-                          <div className="text-[10px] font-medium tracking-wide text-muted-foreground/70 mt-1 text-center">
-                            {l.sub}
-                          </div>
-                        ) : null}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Mobile: keep it simple, same row content but stacked nicely */}
-            <div className="md:hidden flex flex-wrap items-center justify-center gap-x-10 gap-y-10">
-              {[
-                { name: "DeepTimes", sub: "SHARPEN MINDS" },
-                { name: "Posh Wellness Plus", sub: "Your Health is Your Wealth" },
-                { name: "NC", sub: "" },
-                { name: "NRTech", sub: "" },
-              ].map((l) => (
-                <div key={l.name} className="min-w-[140px]">
-                  <div className="flex flex-col items-center justify-center">
-                    <div className="text-sm font-semibold text-foreground/80">{l.name}</div>
-                    {l.sub ? (
-                      <div className="text-[10px] font-medium tracking-wide text-muted-foreground/70 mt-1 text-center">
-                        {l.sub}
-                      </div>
-                    ) : null}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
   );
 };

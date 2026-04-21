@@ -62,5 +62,174 @@
                 "desc": "Combler le fossé entre les producteurs locaux et les marchés internationaux."
             }
         }
+    },
+    "brandVideo": {
+        "badge": "LE MESSAGE CENTRAL",
+        "title1": "Pas de Visibilité ",
+        "title2": "Signifie",
+        "title3": " Pas de Croissance.",
+        "description": "Chez Amamaza Nonaho, nous croyons que chaque entreprise mérite d'être vue. Notre plateforme est conçue pour amplifier votre voix et vous connecter aux opportunités que vous attendiez.",
+        "growthTitle": "Croissance Accélérée",
+        "growthDesc": "Développez-vous plus rapidement en atteignant la bonne audience au bon moment.",
+        "discoveryTitle": "Découverte Maximale",
+        "discoveryDesc": "Soyez trouvé par des clients qui recherchent exactement ce que vous offrez.",
+        "cta": "Voir le message complet",
+        "founderTitle": "Le mot de notre Fondatrice",
+        "founderSub": "Une vision pour la croissance numérique au Rwanda"
+    },
+    "partners": {
+        "title": "Ils nous font confiance",
+        "description": "Nous sommes fiers de nos collaborations avec des entreprises qui visent l'excellence et l'innovation."
+    },
+    "coreValues": {
+        "badge": "NOTRE CULTURE",
+        "title": "Valeurs Fondamentales",
+        "items": {
+            "innovation": {
+                "title": "Innovation",
+                "desc": "Adopter des idées modernes et des solutions numériques pour améliorer le commerce et la croissance."
+            },
+            "trust": {
+                "title": "Confiance",
+                "desc": "Bâtir une plateforme fiable où les entreprises et les utilisateurs se sentent en sécurité."
+            },
+            "professionalism": {
+                "title": "Professionnalisme",
+                "desc": "Offrir l'excellence, l'intégrité et la qualité dans tout ce que nous faisons."
+            },
+            "accessibility": {
+                "title": "Accessibilité",
+                "desc": "Rendre les opportunités plus faciles à trouver, à accéder et à utiliser pour tous."
+            },
+            "growth": {
+                "title": "Croissance",
+                "desc": "Dédié à aider les entreprises à élargir leur portée et leur potentiel."
+            },
+            "partnership": {
+                "title": "Partenariat",
+                "desc": "Valoriser des relations solides pour construire un succès durable ensemble."
+            }
+        }
+    },
+    "howItWorks": {
+        "badge": "LE PROBLÈME ET LA SOLUTION",
+        "title": "Résoudre les fragmentations grâce à la connexion numérique",
+        "description": "De nombreux clients ont du mal à trouver des opportunités fiables au même endroit, tandis que de nombreuses entreprises font face à une visibilité limitée. Amamazanonaha Ltd résout ce problème en créant une plateforme numérique centrale pour la découvrabilité et l'opportunité commerciale.",
+        "steps": {
+            "step1": {
+                "title": "Les entreprises et les marques rejoignent",
+                "desc": "Les entreprises et les marques locales créent des annonces pour les produits et services qu'elles proposent. Les profils vérifiés aident les clients à comprendre ce que vous vendez, où vous opérez et ce qui rend votre offre fiable."
+            },
+            "step2": {
+                "title": "Marketing numérique et promotion",
+                "desc": "Nous promouvons vos annonces par des campagnes ciblées et une sensibilisation axée sur la communauté. Cela garantit que les bons clients découvrent votre offre lorsqu'ils recherchent des solutions."
+            },
+            "step3": {
+                "title": "Les clients découvrent et commandent",
+                "desc": "Les clients parcourent, comparent et commandent en toute confiance. Des besoins locaux aux expériences uniques, tout est disponible au même endroit — réduisant les frictions et améliorant la confiance."
+            },
+            "step4": {
+                "title": "Les créateurs et partenaires gagnent",
+                "desc": "Les créateurs, les partenaires de livraison et les affiliés gagnent grâce aux partenariats. Nous aidons à faire correspondre les opportunités avec les personnes qui peuvent apporter de la valeur — tout en gardant le processus simple et gratifiant."
+            },
+            "step5": {
+                "title": "Technologie → Impact local",
+                "desc": "Notre technologie connecte les communautés au commerce. Le résultat est un impact local mesurable — plus d'opportunités, des entreprises plus fortes et une économie en croissance portée par les gens ordinaires."
+            }
+        }
+    },
+    "whyChoose": {
+        "badge": "POURQUOI NOUS CHOISIR",
+        "title": "Pourquoi choisir Amamazanonaha ?",
+        "description": "Nous réunissons une technologie de pointe, une connaissance locale approfondie et une passion pour la croissance communautaire.",
+        "items": {
+            "multiCategory": {
+                "title": "Accès multi-catégories",
+                "desc": "Répondre à différents besoins via un écosystème connecté unique."
+            },
+            "digitalFirst": {
+                "title": "Approche numérique d'abord",
+                "desc": "Conçu pour le marché moderne où la visibilité et l'accessibilité compte."
+            },
+            "localRelevance": {
+                "title": "Pertinence locale, Vision mondiale",
+                "desc": "Se concentrer sur le Rwanda tout en se positionnant pour des opportunités mondiales plus larges."
+            },
+            "growthSupport": {
+                "title": "Soutien à la croissance des entreprises",
+                "desc": "Passer de marques invisibles à des marques découvrables et compétitives."
+            }
+        },
+        "cta": "Contactez-nous"
+    },
+    "campaigns": {
+        "title": "Nos dernières campagnes publicitaires",
+        "description": "Nous aidons les entreprises à se développer grâce à une narration vidéo percutante sur TikTok et les réseaux sociaux. Notre contenu génère un engagement et une visibilité réels.",
+        "cta": "Suivez-nous sur TikTok"
+    },
+    "testimonials": {
+        "badge": "TÉMOIGNAGES",
+        "title": "Ce qu'ils disent ?",
+        "items": {
+            "claudine": {
+                "quote": "Cette plateforme a transformé mon entreprise. Je touche des clients dont j'ignorais l'existence. Mes ventes ont triplé en seulement 6 mois.",
+                "role": "Fondatrice, Kigali Crafts Co."
+            },
+            "leonce": {
+                "quote": "Le marketing et la visibilité étaient nos plus grands obstacles. Amamazanonaha a fourni le pont dont nous avions besoin pour nous connecter à une audience plus large.",
+                "role": "Directeur, Innovate Rwanda"
+            },
+            "jeanne": {
+                "quote": "Trouver des services de haute qualité prenait des jours. Maintenant, je trouve des pros de confiance en quelques minutes. La confiance et le professionnalisme sont inégalés.",
+                "role": "Entrepreneure"
+            }
+        }
+    },
+    "contact": {
+        "badge": "Contactez-nous",
+        "title": "Envoyez-nous un message",
+        "labels": {
+            "name": "Vos noms",
+            "email": "Adresse e-mail",
+            "phone": "Numéro de téléphone",
+            "message": "Message"
+        },
+        "placeholders": {
+            "name": "Entrez vos noms",
+            "email": "vous@entreprise.com",
+            "phone": "7XX XXX XXX",
+            "message": "Dites-nous comment nous pouvons vous aider..."
+        },
+        "submit": "Envoyer le message",
+        "sending": "Envoi en cours...",
+        "success": "Merci ! Votre message a été envoyé.",
+        "successDesc": "Nous vous répondrons dans les 24 heures.",
+        "error": "Échec de l'envoi du message",
+        "errorDesc": "Veuillez vérifier votre configuration EmailJS."
+    },
+    "footer": {
+        "description": "Autonomiser le commerce numérique, la visibilité et la croissance grâce à une plateforme moderne reliant le Rwanda et l'Afrique au monde.",
+        "company": "Entreprise",
+        "support": "Support",
+        "about": "À Propos",
+        "services": "Services",
+        "careers": "Carrières",
+        "blog": "Blog",
+        "helpCenter": "Centre d'aide",
+        "privacy": "Confidentialité",
+        "terms": "Conditions",
+        "faq": "FAQ",
+        "newsletterTitle": "Restez à jour",
+        "newsletterDesc": "Inscrivez-vous à notre newsletter pour les dernières mises à jour.",
+        "newsletterPlaceholder": "Votre adresse e-mail",
+        "copyright": "© 2026 Amamazanonaha. Tous droits réservés.",
+        "privacyPolicy": "Politique de confidentialité",
+        "termsOfService": "Conditions d'utilisation",
+        "cookiesSettings": "Paramètres des cookies"
+    },
+    "socialFeed": {
+        "badge": "NOS DERNIÈRES MISES À JOUR",
+        "title": "Suivez Notre Parcours",
+        "description": "Restez connecté avec Amamaza Ltd sur TikTok et Instagram pour les tendances quotidiennes et les points forts de nos campagnes."
     }
 }

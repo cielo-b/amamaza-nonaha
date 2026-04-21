@@ -3,73 +3,51 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import howItWorksImg from "@/assets/howit-works.jpg";
 import VideoModal from "./VideoModal";
-
-const steps = [
-  {
-    title: "Businesses & Brands Join",
-    desc: "Local businesses and brands create listings for the products and services they offer. Verified profiles help customers understand what you sell, where you operate, and what makes your offer trustworthy.",
-    bullets: [
-      "Verified listings that build customer confidence",
-      "Clear details: services, pricing, and locations",
-      "Greater visibility across Rwanda’s market"
-    ],
-  },
-  {
-    title: "Digital Marketing & Promotion",
-    desc: "We promote your listings through targeted campaigns and community-focused outreach. This ensures the right customers discover your offer when they’re searching for solutions.",
-    bullets: [
-      "Targeted promotion and discoverability",
-      "Community-driven growth and brand awareness",
-      "Consistent engagement across digital channels"
-    ],
-  },
-  {
-    title: "Customers Discover & Order",
-    desc: "Customers browse, compare, and order with confidence. From local needs to unique experiences, everything is available in one place—reducing friction and improving trust.",
-    bullets: [
-      "Easy browsing and comparison",
-      "Fast ordering from one platform",
-      "Better trust with clear information"
-    ],
-  },
-  {
-    title: "Creators & Partners Earn",
-    desc: "Creators, delivery partners, and affiliates earn through partnerships. We help match opportunities with people who can deliver value—while keeping the process simple and rewarding.",
-    bullets: [
-      "Creators and partners earn through referrals",
-      "Delivery support that helps fulfill orders",
-      "Opportunities tied to real impact"
-    ],
-  },
-  {
-    title: "Technology → Local Impact",
-    desc: "Our technology connects communities to commerce. The result is measurable local impact—more opportunities, stronger businesses, and a growing economy driven by everyday people.",
-    bullets: [
-      "Jobs and income through active participation",
-      "Stronger businesses across communities",
-      "Local economic growth through digital access"
-    ],
-  },
-];
-
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 15 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-};
+import { useTranslation } from "react-i18next";
+import video4 from "@/assets/videos/4.mp4";
 
 const HowItWorksSection = () => {
   const [active, setActive] = useState(0);
   const [videoOpen, setVideoOpen] = useState(false);
+  const { t } = useTranslation();
+
+  const steps = [
+    {
+      title: t("howItWorks.steps.step1.title"),
+      desc: t("howItWorks.steps.step1.desc"),
+    },
+    {
+      title: t("howItWorks.steps.step2.title"),
+      desc: t("howItWorks.steps.step2.desc"),
+    },
+    {
+      title: t("howItWorks.steps.step3.title"),
+      desc: t("howItWorks.steps.step3.desc"),
+    },
+    {
+      title: t("howItWorks.steps.step4.title"),
+      desc: t("howItWorks.steps.step4.desc"),
+    },
+    {
+      title: t("howItWorks.steps.step5.title"),
+      desc: t("howItWorks.steps.step5.desc"),
+    },
+  ];
+
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 15 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  };
 
   return (
     <section id="how-it-works" className="py-12 md:py-16 bg-background relative overflow-hidden">
@@ -81,10 +59,10 @@ const HowItWorksSection = () => {
           transition={{ duration: 0.6 }}
           className="max-w-3xl"
         >
-          <span className="section-badge tracking-widest text-[11px]">THE PROBLEM & SOLUTION</span>
-          <h2 className="text-3xl md:text-5xl font-display font-medium text-foreground mt-4 mb-6">Solving fragmentations through digital connection</h2>
+          <span className="section-badge tracking-widest text-[11px]">{t("howItWorks.badge")}</span>
+          <h2 className="text-3xl md:text-5xl font-display font-medium text-foreground mt-4 mb-6">{t("howItWorks.title")}</h2>
           <p className="text-muted-foreground text-lg leading-relaxed italic border-l-4 border-primary pl-6">
-            Many customers struggle to find reliable opportunities in one place, while many businesses face limited visibility. Amamazanonaha Ltd solves this by creating a central digital platform for discoverability and commercial opportunity.
+            {t("howItWorks.description")}
           </p>
         </motion.div>
 
@@ -135,7 +113,6 @@ const HowItWorksSection = () => {
                         <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-4">
                           {step.desc}
                         </p>
-                        {/* Optionally show bullets or hide them to keep it clean like mockup */}
                       </div>
                     </motion.div>
                   )}
@@ -177,7 +154,7 @@ const HowItWorksSection = () => {
       <VideoModal
         isOpen={videoOpen}
         onClose={() => setVideoOpen(false)}
-        videoUrl="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        videoUrl={video4}
       />
     </section>
   );

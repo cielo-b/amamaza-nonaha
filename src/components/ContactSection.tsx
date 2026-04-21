@@ -3,53 +3,10 @@ import { Button } from "@/components/ui/button";
 import { motion, Variants } from "framer-motion";
 import { toast } from "sonner";
 import contactImg from "@/assets/about.jpg";
+import { useTranslation } from "react-i18next";
 
 import { ChevronDown, Send } from "lucide-react";
 import emailjs from "@emailjs/browser";
-
-const SharpInput = ({ label, required, isTextArea, ...props }: any) => {
-  return (
-    <div className="space-y-2">
-      <label className="text-sm font-semibold text-foreground flex items-center gap-1">
-        {label} {required && <span className="text-primary">*</span>}
-      </label>
-      {isTextArea ? (
-        <textarea
-          {...props}
-          className="w-full bg-white border border-border px-4 py-3 outline-none focus:border-primary transition-colors min-h-[120px] rounded-sm text-sm"
-        />
-      ) : (
-        <input
-          {...props}
-          className="w-full bg-white border border-border px-4 py-3 outline-none focus:border-primary transition-colors rounded-sm text-sm"
-        />
-      )}
-    </div>
-  );
-};
-
-const PhoneInputWithCountry = ({ label, ...props }: any) => {
-  return (
-    <div className="space-y-2">
-      <label className="text-sm font-semibold text-foreground">{label}</label>
-      <div className="flex bg-white border border-border rounded-sm overflow-hidden focus-within:border-primary transition-colors">
-        <div className="flex items-center gap-2 px-3 border-r border-border bg-muted/20 cursor-pointer hover:bg-muted/30 transition-colors">
-          <span className="text-sm font-medium">US</span>
-          <ChevronDown className="w-4 h-4 text-muted-foreground" />
-        </div>
-        <div className="flex-none px-3 flex items-center text-sm text-muted-foreground border-r border-border">
-          +1
-        </div>
-        <input
-          {...props}
-          type="tel"
-          className="flex-1 bg-transparent px-4 py-3 outline-none text-sm placeholder:text-muted-foreground/50"
-          placeholder="000 - 000 - 0000"
-        />
-      </div>
-    </div>
-  );
-};
 
 const ContactSection = () => {
   const [loading, setLoading] = useState(false);
@@ -59,6 +16,7 @@ const ContactSection = () => {
     phone: "",
     message: ""
   });
+  const { t } = useTranslation();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -86,16 +44,16 @@ const ContactSection = () => {
       );
 
       if (result.status === 200) {
-        toast.success("Thank you! Your message has been sent.", {
-          description: "We'll get back to you within 24 hours.",
+        toast.success(t("contact.success"), {
+          description: t("contact.successDesc"),
         });
         // Reset form
         setFormData({ name: "", email: "", phone: "", message: "" });
       }
     } catch (error) {
       console.error("EmailJS Error:", error);
-      toast.error("Failed to send message", {
-        description: "Please check your EmailJS configuration and authentication scopes.",
+      toast.error(t("contact.error"), {
+        description: t("contact.errorDesc"),
       });
     } finally {
       setLoading(false);
@@ -135,42 +93,42 @@ const ContactSection = () => {
             <div className="space-y-4">
               <div className="flex items-center gap-2">
                 <div className="w-1.5 h-6 bg-primary rounded-full" />
-                <span className="text-[14px] font-bold text-primary tracking-widest uppercase">Contact Us</span>
+                <span className="text-[14px] font-bold text-primary tracking-widest uppercase">{t("contact.badge")}</span>
               </div>
               <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-foreground font-display">
-                Send us a message
+                {t("contact.title")}
               </h2>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2 group">
-                <label className="text-[14px] font-bold text-muted-foreground uppercase tracking-wider group-focus-within:text-primary transition-colors">Your names</label>
+                <label className="text-[14px] font-bold text-muted-foreground uppercase tracking-wider group-focus-within:text-primary transition-colors">{t("contact.labels.name")}</label>
                 <input
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  placeholder="Enter your names"
+                  placeholder={t("contact.placeholders.name")}
                   className="w-full bg-background border border-border rounded-xl px-5 py-4 outline-none focus:border-primary transition-all text-[15px] shadow-sm active:ring-2 active:ring-primary/10"
                   required
                 />
               </div>
 
               <div className="space-y-2 group">
-                <label className="text-[14px] font-bold text-muted-foreground uppercase tracking-wider group-focus-within:text-primary transition-colors">Email Address</label>
+                <label className="text-[14px] font-bold text-muted-foreground uppercase tracking-wider group-focus-within:text-primary transition-colors">{t("contact.labels.email")}</label>
                 <input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  placeholder="you@company.com"
+                  placeholder={t("contact.placeholders.email")}
                   className="w-full bg-background border border-border rounded-xl px-5 py-4 outline-none focus:border-primary transition-all text-[15px] shadow-sm active:ring-2 active:ring-primary/10"
                   required
                 />
               </div>
 
               <div className="space-y-2 group">
-                <label className="text-[14px] font-bold text-muted-foreground uppercase tracking-wider group-focus-within:text-primary transition-colors">Phone number</label>
+                <label className="text-[14px] font-bold text-muted-foreground uppercase tracking-wider group-focus-within:text-primary transition-colors">{t("contact.labels.phone")}</label>
                 <div className="flex bg-background border border-border rounded-xl overflow-hidden focus-within:border-primary transition-all shadow-sm active:ring-2 active:ring-primary/10">
                   <div className="flex items-center gap-2 px-5 border-r border-border bg-muted/5 cursor-pointer hover:bg-muted/10 transition-colors">
                     <span className="text-sm font-bold">RW</span>
@@ -184,19 +142,19 @@ const ContactSection = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="7XX XXX XXX"
+                    placeholder={t("contact.placeholders.phone")}
                     className="flex-1 bg-transparent px-5 py-4 outline-none text-[15px]"
                   />
                 </div>
               </div>
 
               <div className="space-y-2 group">
-                <label className="text-[14px] font-bold text-muted-foreground uppercase tracking-wider group-focus-within:text-primary transition-colors">Message</label>
+                <label className="text-[14px] font-bold text-muted-foreground uppercase tracking-wider group-focus-within:text-primary transition-colors">{t("contact.labels.message")}</label>
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  placeholder="Tell us how we can help..."
+                  placeholder={t("contact.placeholders.message")}
                   className="w-full bg-background border border-border rounded-xl px-5 py-4 outline-none focus:border-primary transition-all min-h-[140px] text-[15px] resize-none shadow-sm active:ring-2 active:ring-primary/10"
                   required
                 />
@@ -207,7 +165,7 @@ const ContactSection = () => {
                 className="w-full bg-[#00AEEF] hover:bg-[#0096cc] text-white font-bold py-7 rounded-xl transition-all shadow-lg shadow-blue-500/20 active:scale-[0.98]"
                 disabled={loading}
               >
-                {loading ? "Sending..." : "Send Message"}
+                {loading ? t("contact.sending") : t("contact.submit")}
               </Button>
             </form>
           </div>

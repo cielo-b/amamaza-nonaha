@@ -2,40 +2,42 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { Play } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import VideoModal from "./VideoModal";
-
-const testimonials = [
-  {
-    id: 1,
-    image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    quote: "This platform has transformed my business. I'm reaching customers I never knew existed. My sales grew by 3x in just 6 months.",
-    name: "Claudine Uwimana",
-    role: "Founder, Kigali Crafts Co.",
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ" // Rickroll placeholder
-  },
-  {
-    id: 2,
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    quote: "Marketing and visibility were our biggest hurdles. Amamazanonaha provided the bridge we needed to connect with a wider audience.",
-    name: "Leonce Karemera",
-    role: "Director, Innovate Rwanda",
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-  },
-  {
-    id: 3,
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    quote: "Finding high-quality services used to take days. Now I find trusted pros in minutes. The trust and professionalism are unmatched.",
-    name: "Jeanne Gasana",
-    role: "Entrepreneur",
-    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const TestimonialsSection = () => {
+  const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(1);
   const [isPaused, setIsPaused] = useState(false);
   const [videoOpen, setVideoOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState("");
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const testimonials = [
+    {
+      id: 1,
+      image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      quote: t("testimonials.items.claudine.quote"),
+      name: "Claudine Uwimana",
+      role: t("testimonials.items.claudine.role"),
+      videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    },
+    {
+      id: 2,
+      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      quote: t("testimonials.items.leonce.quote"),
+      name: "Leonce Karemera",
+      role: t("testimonials.items.leonce.role"),
+      videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    },
+    {
+      id: 3,
+      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      quote: t("testimonials.items.jeanne.quote"),
+      name: "Jeanne Gasana",
+      role: t("testimonials.items.jeanne.role"),
+      videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    },
+  ];
 
   const openVideo = (url: string) => {
     setSelectedVideo(url || "");
@@ -74,9 +76,9 @@ const TestimonialsSection = () => {
         className="container space-y-10 text-center"
       >
         <div className="space-y-4">
-          <span className="section-badge tracking-widest text-[11px]">TESTIMONIALS</span>
+          <span className="section-badge tracking-widest text-[11px]">{t("testimonials.badge")}</span>
           <h2 className="text-3xl md:text-5xl font-display font-medium text-foreground">
-            What They Say?
+            {t("testimonials.title")}
           </h2>
         </div>
 

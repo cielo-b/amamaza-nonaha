@@ -3,12 +3,16 @@ import { motion } from "framer-motion";
 import { Play, Volume2, Shield, TrendingUp, Search } from "lucide-react";
 import VideoModal from "./VideoModal";
 import thumbnail from "@/assets/founder-thumbnail.png";
+import brandVideo from "@/assets/videos/1.mp4";
+import { useTranslation } from "react-i18next";
 
 const BrandVideoSection = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const { t } = useTranslation();
 
     return (
         <section className="py-24 bg-gradient-to-b from-background to-slate-50 dark:to-slate-900/20 overflow-hidden">
+            <VideoModal isOpen={isOpen} onClose={() => setIsOpen(false)} videoUrl={brandVideo} />
             <div className="container mx-auto px-4">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     {/* Left: Text Content */}
@@ -21,22 +25,21 @@ const BrandVideoSection = () => {
                     >
                         <div className="space-y-4">
                             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-bold tracking-wider uppercase">
-                                The Core Message
+                                {t("brandVideo.badge")}
                             </span>
                             <h2 className="text-4xl md:text-6xl font-black tracking-tight leading-[1.1]">
-                                No Visibility <span className="text-primary italic">Equals</span> <br />
-                                No Growth.
+                                {t("brandVideo.title1")}<span className="text-primary italic">{t("brandVideo.title2")}</span> <br />
+                                {t("brandVideo.title3")}
                             </h2>
                             <p className="text-muted-foreground text-xl leading-relaxed max-w-xl">
-                                At Amamaza Nonaho, we believe every business deserves to be seen.
-                                Our platform is built to amplify your voice and connect you to the opportunities you've been waiting for.
+                                {t("brandVideo.description")}
                             </p>
                         </div>
 
                         <div className="grid sm:grid-cols-2 gap-6">
                             {[
-                                { icon: TrendingUp, title: "Accelerated Growth", desc: "Scale faster by reaching the right audience at the right time." },
-                                { icon: Search, title: "Maximum Discovery", desc: "Get found by customers searching for exactly what you offer." },
+                                { icon: TrendingUp, title: t("brandVideo.growthTitle"), desc: t("brandVideo.growthDesc") },
+                                { icon: Search, title: t("brandVideo.discoveryTitle"), desc: t("brandVideo.discoveryDesc") },
                             ].map((item, i) => (
                                 <div key={i} className="flex gap-4">
                                     <div className="shrink-0 w-12 h-12 rounded-2xl bg-white dark:bg-slate-800 shadow-sm border border-slate-100 dark:border-slate-700 flex items-center justify-center text-primary font-bold transition-transform hover:scale-110">
@@ -58,7 +61,7 @@ const BrandVideoSection = () => {
                                 <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center group-hover:scale-110 transition-transform">
                                     <Play className="w-5 h-5 fill-current" />
                                 </div>
-                                Watch the Full Message
+                                {t("brandVideo.cta")}
                             </button>
                         </div>
                     </motion.div>
@@ -89,8 +92,8 @@ const BrandVideoSection = () => {
                                     <Volume2 className="w-6 h-6" />
                                 </div>
                                 <div>
-                                    <div className="text-white font-bold text-sm">Hear from our Founder</div>
-                                    <div className="text-white/60 text-xs">A vision for digital growth in Rwanda</div>
+                                    <div className="text-white font-bold text-sm">{t("brandVideo.founderTitle")}</div>
+                                    <div className="text-white/60 text-xs">{t("brandVideo.founderSub")}</div>
                                 </div>
                             </div>
                         </div>

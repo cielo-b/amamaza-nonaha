@@ -1,17 +1,20 @@
 import { useRef, useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ChevronLeft, ChevronRight, Phone } from "lucide-react";
+import { ChevronLeft, ChevronRight, Phone, Play } from "lucide-react";
 import { MagneticWrapper } from "@/components/MagneticWrapper";
 import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import { useTranslation } from "react-i18next";
+import video1 from "@/assets/videos/1.mp4";
+import VideoModal from "./VideoModal";
 
 const slides = [hero1, hero2];
 
 const HeroSection = () => {
   const { t } = useTranslation();
   const [current, setCurrent] = useState(0);
+  const [videoOpen, setVideoOpen] = useState(false);
 
   const heroRef = useRef<HTMLDivElement>(null);
 
@@ -120,14 +123,15 @@ const HeroSection = () => {
                 </MagneticWrapper>
                 <MagneticWrapper>
                   <Button
+                    onClick={() => setVideoOpen(true)}
                     size="lg"
                     variant="ghost"
                     className="rounded-full px-4 py-6 text-base font-semibold gap-3 hover:bg-primary/5 hover:-translate-y-1 transition-all duration-300 group"
                   >
                     <span className="w-10 h-10 rounded-full border border-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
-                      <Phone className="w-4 h-4 text-primary group-hover:text-white" />
+                      <Play className="w-4 h-4 text-primary group-hover:text-white fill-current" />
                     </span>
-                    <span className="text-foreground">{t("nav.contact")}</span>
+                    <span className="text-foreground">Watch Showreel</span>
                   </Button>
                 </MagneticWrapper>
               </div>
@@ -135,6 +139,7 @@ const HeroSection = () => {
           </motion.div>
         </div>
       </div>
+      <VideoModal isOpen={videoOpen} onClose={() => setVideoOpen(false)} videoUrl={video1} />
     </section>
   );
 };

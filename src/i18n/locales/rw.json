@@ -62,5 +62,174 @@
                 "desc": "Gukuraho icyuho kiri hagati y'abashyira ibicuruzwa ku isoko bo mu gihugu n'amasoko mpuzamahanga."
             }
         }
+    },
+    "brandVideo": {
+        "badge": "UBUTUMWA NYAMUKURU",
+        "title1": "Kutagaragara ",
+        "title2": "Bingana",
+        "title3": " no Kudakura.",
+        "description": "Kwa Amamaza Nonaho, twemera ko buri bucuruzi bukwiye kubonwa. Urubuga rwacu rwashyiriweho kongera ijwi ryawe no kuguhuza n'amahirwe wategereje.",
+        "growthTitle": "Iterambere Rihuse",
+        "growthDesc": "Gura bucuruzi bwawe vuba binyuze mu kugera ku bakiriya bakwiriye mu gihe gikwiriye.",
+        "discoveryTitle": "Kuvumburwa mu Buryo Bwagutse",
+        "discoveryDesc": "Bonwa n'abakiriya bashakisha neza ibyo utanga.",
+        "cta": "Reba Ubutumwa Bwose",
+        "founderTitle": "Umva ibyo Umuyobozi wacu avuga",
+        "founderSub": "Icyerekezo cy'iterambere ry'ubucuruzi bukorwa hifashishijwe ikoranabuhanga mu Rwanda"
+    },
+    "partners": {
+        "title": "Twizewe n'Ibigo By'Indashyikirwa",
+        "description": "Twishimiye ubufatanye dufite n'ubucuruzi buharanira indashyikirwa n'udushya."
+    },
+    "coreValues": {
+        "badge": "UMUCO WACU",
+        "title": "Indangagaciro Zacu",
+        "items": {
+            "innovation": {
+                "title": "Guhanga Udushya",
+                "desc": "Kwakira ibitekerezo bishya n'ibisubizo by'ikoranabuhanga kugira ngo tunoze ubucuruzi n'iterambere."
+            },
+            "trust": {
+                "title": "Kwizera",
+                "desc": "Kubaka urubuga rwizewe aho ubucuruzi n'abakoresha biyumva batekanye."
+            },
+            "professionalism": {
+                "title": "Ubunyamwuga",
+                "desc": "Gutanga serivisi nziza, ubunyangamugayo, n'ubuziranenge mu byo dukora byose."
+            },
+            "accessibility": {
+                "title": "Kugerwaho na Bose",
+                "desc": "Kugira amahirwe koroshya kubonwa, kugerwaho, no gukoreshwa na buri wese."
+            },
+            "growth": {
+                "title": "Iterambere",
+                "desc": "Kwiyemeza gufasha ubucuruzi kwagura aho bugera n'ubushobozi bwabwo."
+            },
+            "partnership": {
+                "title": "Ubufatanye",
+                "desc": "Guha agaciro umubano ukomeye mu kubaka intsinzi irambye hamwe."
+            }
+        }
+    },
+    "howItWorks": {
+        "badge": "IKIBAZO N'IGISUBIZO",
+        "title": "Gukemura ibibazo binyuze mu guhuza abantu n'ikoranabuhanga",
+        "description": "Abakiriya benshi bagorwa no kubona amahirwe yizerwa ahantu hamwe, mugihe ubucuruzi bwinshi buhura no kutamenyekana bihagije. Amamazanonaha Ltd ikemura ibi binyuze mu gushyiraho urubuga rw'ikoranabuhanga ruhuriza hamwe kumenyekana n'amahirwe y'ubucuruzi.",
+        "steps": {
+            "step1": {
+                "title": "Abacuruzi n'Ibigo Binjiramo",
+                "desc": "Ubucuruzi n'ibigo byo mu gihugu bishyira ku rubuga ibicuruzwa na serivisi bitanga. Imyirondoro yemejwe ifasha abakiriya gusobanukirwa ibyo ugurisha, aho ukorera, n'icyenza serivisi zawe zizerwa."
+            },
+            "step2": {
+                "title": "Kwamamaza n'Iyamamazabucuruzi",
+                "desc": "Tumenyekanisha ibyo washyize ku rubuga binyuze mu bikorwa byo kwamamaza byibanda ku bakiriya n'ubusabane n'abaturage. Ibi bituma abakiriya bakwiriye bavumbura ibyo utanga iyo bashaka ibisubizo."
+            },
+            "step3": {
+                "title": "Abakiriya Bavumbura kandi Batumiza",
+                "desc": "Abakiriya barashakisha, bakagereranya, kandi bagatumiza bafite icyizere. Kuva ku bikenewe mu gihugu kugeza ku bintu bidasanzwe, byose biboneka ahantu hamwe - bigabanya imbogamizi kandi bikongera icyizere."
+            },
+            "step4": {
+                "title": "Abahanzi b'Ibihangano n'Abafatanyabikorwa Barunguka",
+                "desc": "Abahanzi b'ibihangano, abageza ibicuruzwa ku bakiriya, n'abafatanyabikorwa bunguka binyuze mu bufatanye. Dufasha guhuza amahirwe n'abantu bashobora gutanga agaciro - mugihe tugira ijoro ryoroshye kandi rishimishije."
+            },
+            "step5": {
+                "title": "Ikoranabuhanga → Inyungu ku baturage",
+                "desc": "Ikoranabuhanga ryacu rihuza abaturage n'ubucuruzi. Umusaruro ni inyungu ifatika ku baturage - amahirwe menshi, ubucuruzi bukomeye, n'ubukungu bukura buyobowe n'abantu basanzwe."
+            }
+        }
+    },
+    "whyChoose": {
+        "badge": "KUKI UDUTORA",
+        "title": "Kuki wahitamo Amamazanonaha?",
+        "description": "Duhuriza hamwe ikoranabuhanga rigezweho, ubumenyi bwimbitse bw'imbere mu gihugu, n'ishyaka ryo gukura kw'abaturage.",
+        "items": {
+            "multiCategory": {
+                "title": "Kwinjira mu bice byinshi",
+                "desc": "Guhanga ibikenewe bitandukanye binyuze mu rusobe rumwe ruhujwe."
+            },
+            "digitalFirst": {
+                "title": "Ikoranabuhanga mbere na mbere",
+                "desc": "Rwashyiriweho isoko rigezweho aho kumenyekana n'ukwinjira bifite agaciro."
+            },
+            "localRelevance": {
+                "title": "Ibikorerwa iwacu, n'imyumvire mpuzamahanga",
+                "desc": "Kwibanda ku Rwanda mugihe twitegura amahirwe mpuzamahanga agutse."
+            },
+            "growthSupport": {
+                "title": "Ubufasha mu gukura kw'ubucuruzi",
+                "desc": "Kuvana ibigo mu kutamenyekana bikagera mu kuvumburwa no guhanganirana ku isoko."
+            }
+        },
+        "cta": "Twandikire"
+    },
+    "campaigns": {
+        "title": "Ibikorwa Byacu Biheruka byo Kwamamaza",
+        "description": "Dufasha ubucuruzi gukura binyuze mu kuvuga inkuru zifatika kuri video kuri TikTok n'imbuga nkoranyambaga. Ibirimo byacu bituma abantu bagira amatsiko kandi bigatuma bamenyekana.",
+        "cta": "Dukurikire kuri TikTok"
+    },
+    "testimonials": {
+        "badge": "UBUHAMYA",
+        "title": "Icyo Batuvugaho?",
+        "items": {
+            "claudine": {
+                "quote": "Uru rubuga rwahinduye ubucuruzi bwanjye. Nageze ku bakiriya ntigeze kumenya ko babaho. Icuruzwa ryanjye ryikubye inshuro 3 mu mezi 6 gusa.",
+                "role": "Utangije, Kigali Crafts Co."
+            },
+            "leonce": {
+                "quote": "Kwamamaza n'ukumenyekana nibyo byari imbogamizi zacu zikomeye. Amamazanonaha yatanze ikiraro twari dukeneye kugira ngo tuhuzwe n'abakiriya benshi kurushaho.",
+                "role": "Umuyobozi, Innovate Rwanda"
+            },
+            "jeanne": {
+                "quote": "Kubona serivisi zifite ireme byatwaraga iminsi. Noneho mbona abanyamwuga bizerwa mu minota mike. Icyizere n'ubunyamwuga ntibigereranywa.",
+                "role": "Rwiyemezamirimo"
+            }
+        }
+    },
+    "contact": {
+        "badge": "Twandikire",
+        "title": "Twoherereze ubutumwa",
+        "labels": {
+            "name": "Amazina yawe",
+            "email": "Imeri",
+            "phone": "Inomero ya telefone",
+            "message": "Ubutumwa"
+        },
+        "placeholders": {
+            "name": "Andika amazina yawe",
+            "email": "you@company.com",
+            "phone": "7XX XXX XXX",
+            "message": "Tubwire uko twagufasha..."
+        },
+        "submit": "Ohereza Ubutumwa",
+        "sending": "Irimo kohereza...",
+        "success": "Murakoze! Ubutumwa bwanyu bwoherejwe.",
+        "successDesc": "Tuzagusubiza mu masaha 24.",
+        "error": "Kwihereze ubutumwa byanze",
+        "errorDesc": "Nyamuneka reba EmailJS yawe niba itunganijwe neza."
+    },
+    "footer": {
+        "description": "Gushoboza ubucuruzi bukorwa hifashishijwe ikoranabuhanga, kugaragara, n'iterambere binyuze mu rubuga rugezweho ruhuza u Rwanda na Afurika n'isi yose.",
+        "company": "Ikigo",
+        "support": "Ubufasha",
+        "about": "Ibitwerekeye",
+        "services": "Serivisi",
+        "careers": "Imyanya y'akazi",
+        "blog": "Urubuga",
+        "helpCenter": "Ikigo cy'ubufasha",
+        "privacy": "Ubuzime",
+        "terms": "Amategeko",
+        "faq": "Ibibazo bikunze kubazwa",
+        "newsletterTitle": "Guma uzi amakuru",
+        "newsletterDesc": "Injira mu banyamuryango bacu bamenya amakuru mashya.",
+        "newsletterPlaceholder": "Imeri yawe",
+        "copyright": "© 2026 Amamazanonaha. Uburenganzira bwose burasigaswe.",
+        "privacyPolicy": "Amategeko agenga ubuzima bwite",
+        "termsOfService": "Amategeko yo gukoresha serivisi",
+        "cookiesSettings": "Igenamiterere rya Cookies"
+    },
+    "socialFeed": {
+        "badge": "IMYAKO YACU IGEZWEHO",
+        "title": "Kurikira Uruyendo Rwacu",
+        "description": "Guma ufitanye isano na Amamaza Ltd kuri TikTok na Instagram kugira ngo ubone amakuru agezweho n'ibikorwa byacu bya buri munsi."
     }
 }

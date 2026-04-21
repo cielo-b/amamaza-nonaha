@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const companies = [
     {
@@ -47,6 +48,7 @@ const companies = [
 const PartnerCarousel = () => {
     // We double the companies array multiple times to ensure enough length for the animation
     const duplicatedCompanies = [...companies, ...companies, ...companies];
+    const { t } = useTranslation();
 
     return (
         <section className="py-24 overflow-hidden bg-background relative border-y border-foreground/5">
@@ -58,11 +60,11 @@ const PartnerCarousel = () => {
                     transition={{ duration: 0.6 }}
                 >
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
-                        Trusted by Industry Leaders
+                        {t("partners.title")}
                     </h2>
                     <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-6" />
                     <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                        We take pride in our collaborations with businesses that strive for excellence and innovation.
+                        {t("partners.description")}
                     </p>
                 </motion.div>
             </div>

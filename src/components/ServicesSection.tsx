@@ -1,6 +1,7 @@
 import { Building2, ShoppingBag, TrendingUp } from "lucide-react";
 import { motion, Variants } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import video7 from "@/assets/videos/7.mp4";
 
 const services = [
   {
@@ -57,6 +58,17 @@ const ServicesSection = () => {
           opacity: 0.8
         }}
       />
+
+      {/* Decorative High-Tech Video background */}
+      <div className="absolute top-0 right-0 w-full h-full opacity-[0.03] dark:opacity-[0.07] pointer-events-none">
+        <video
+          src={video7}
+          autoPlay
+          muted
+          loop
+          className="w-full h-full object-cover"
+        />
+      </div>
       <style dangerouslySetInnerHTML={{
         __html: `
         :root { --stripe-color: #F2F4F7; }

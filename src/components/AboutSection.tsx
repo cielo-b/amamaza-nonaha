@@ -2,6 +2,7 @@ import aboutImg from "@/assets/about.jpg";
 import { motion, Variants } from "framer-motion";
 import { Building2, Users, LifeBuoy } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import video3 from "@/assets/videos/3.mp4";
 
 const AboutSection = () => {
   const { t } = useTranslation();
@@ -41,25 +42,30 @@ const AboutSection = () => {
           <div className="space-y-4 flex flex-col justify-end pb-8">
             <img
               src={aboutImg}
-              alt="Team at market"
+              alt="Amamazanonaha Team"
               className="rounded-2xl object-cover w-full h-48 shadow-md"
             />
-            <img
-              src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              alt="People working"
-              className="rounded-2xl object-cover w-full h-64 shadow-md"
-            />
+            <div className="rounded-2xl overflow-hidden w-full h-64 shadow-md bg-black relative">
+              <video
+                src={video3}
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </div>
           </div>
           {/* Collage Column 2 */}
           <div className="space-y-4 pt-12">
             <img
-              src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              alt="Team discussion"
+              src="https://images.unsplash.com/photo-15731647133988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Strategic Planning"
               className="rounded-2xl object-cover w-full h-60 shadow-md"
             />
             <img
               src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              alt="Workspace"
+              alt="Collaborative Workspace"
               className="rounded-2xl object-cover w-full h-40 shadow-md"
             />
           </div>

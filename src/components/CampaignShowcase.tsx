@@ -46,7 +46,7 @@ const CampaignShowcase = () => {
 
   // Retrieve Curator.io Widget ID from Vite env
   const curatorWidgetId = "81a5e7a6-65ac-4a9b-83a7-ebc293bd371e";
-  const isWidgetConfigured = curatorWidgetId && curatorWidgetId !== "81a5e7a6-65ac-4a9b-83a7-ebc293bd371e";
+  const isWidgetConfigured = true;
 
   // 1. Static fallback campaigns with clean details
   const fallbackCampaigns = [

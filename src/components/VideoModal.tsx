@@ -12,13 +12,21 @@ const VideoModal = ({ isOpen, onClose, videoUrl }: VideoModalProps) => {
         return url.endsWith(".mp4") || url.endsWith(".webm") || url.endsWith(".ogg") || url.startsWith("blob:");
     };
 
-    // Extract YouTube ID if it's a YouTube link
+    // Extract YouTube or TikTok ID if it's a social link
     const getEmbedUrl = (url: string) => {
         if (url.includes("youtube.com") || url.includes("youtu.be")) {
             const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
             const match = url.match(regExp);
             const videoId = (match && match[2].length === 11) ? match[2] : null;
             return `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+        }
+        if (url.includes("tiktok.com")) {
+            const regExp = /\/video\/(\d+)/;
+            const match = url.match(regExp);
+            const videoId = match ? match[1] : null;
+            if (videoId) {
+                return `https://www.tiktok.com/embed/v2/${videoId}`;
+            }
         }
         return url;
     };

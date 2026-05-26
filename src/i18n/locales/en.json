@@ -165,7 +165,47 @@
   "campaigns": {
     "title": "Our Latest Advertising Campaigns",
     "description": "We help businesses grow through impactful video storytelling on TikTok and social media. Our content drives real engagement and visibility.",
-    "cta": "Follow us on TikTok"
+    "cta": "Follow us on TikTok",
+    "tabs": {
+      "showcase": "Featured Campaigns",
+      "liveFeed": "Live Account Feed"
+    },
+    "guide": {
+      "title": "Integrate Your Live TikTok Account",
+      "desc": "To display your live TikTok posts dynamically without slowing down your site, we use Curator.io - a safe and free responsive social media feed builder.",
+      "step1Title": "Create a Free Account",
+      "step1Desc": "Go to curator.io and register for a free account.",
+      "step2Title": "Connect your TikTok Account",
+      "step2Desc": "Select TikTok source, authenticate or search for @amamazanonaha.ltd, and create a feed.",
+      "step3Title": "Add your Widget ID to Environment Variables",
+      "step3Desc": "Copy the unique hash identifier of your published feed (looks like a long string of letters and numbers)."
+    },
+    "items": {
+      "fashion": {
+        "title": "Connecting Rwandan Fashion Designers to Global Buyers",
+        "cat": "E-Commerce Growth"
+      },
+      "tech": {
+        "title": "Empowering Local Youth with Professional Digital Skills",
+        "cat": "Digital Learning"
+      },
+      "wellness": {
+        "title": "Discovering Verified Local Wellness and Health Brands",
+        "cat": "Local Marketplace"
+      },
+      "growth": {
+        "title": "Scaling Commercial Impact Across Rwanda & East Africa",
+        "cat": "Brand Acceleration"
+      },
+      "visibility": {
+        "title": "Why Brand Discoverability is the Ultimate Key to Success",
+        "cat": "Core Message"
+      },
+      "artisans": {
+        "title": "Unlocking Export and Trade Paths for Community Craftspeople",
+        "cat": "Trade Connectivity"
+      }
+    }
   },
   "testimonials": {
     "badge": "TESTIMONIALS",

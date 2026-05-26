@@ -165,7 +165,47 @@
     "campaigns": {
         "title": "Ibikorwa Byacu Biheruka byo Kwamamaza",
         "description": "Dufasha ubucuruzi gukura binyuze mu kuvuga inkuru zifatika kuri video kuri TikTok n'imbuga nkoranyambaga. Ibirimo byacu bituma abantu bagira amatsiko kandi bigatuma bamenyekana.",
-        "cta": "Dukurikire kuri TikTok"
+        "cta": "Dukurikire kuri TikTok",
+        "tabs": {
+            "showcase": "Ibikorwa Batoranyijwe",
+            "liveFeed": "Imyako ya TikTok Igezweho"
+        },
+        "guide": {
+            "title": "Huza na Konti yawe ya TikTok Igezweho",
+            "desc": "Kugira ngo ugaragaze ubutumwa bwawe bwa TikTok mu buryo buhoraho bitabangamiye umuvuduko w'urubuga rwawe, dukoresha Curator.io - urubuga rwo guhuza imbuga nkoranyambaga rutezimbere, rwizewe kandi rw'ubuntu.",
+            "step1Title": "Fungura Konti y'Ubuntu",
+            "step1Desc": "Jya kuri curator.io hanyuma wiyandikishe ku buntu.",
+            "step2Title": "Huza na Konti yawe ya TikTok",
+            "step2Desc": "Hitamo inkomoko ya TikTok, wemeze cyangwa ushakishe @amamazanonaha.ltd, hanyuma uhuze imyako.",
+            "step3Title": "Shyira ID ya Widget yawe mu bihinduka by'ibidukikije",
+            "step3Desc": "Koporora code yihariye ya widget yawe yashizweho hanyuma uyishyire muri file yawe ya .env."
+        },
+        "items": {
+            "fashion": {
+                "title": "Guhuza Abahanzi b'Imideli mu Rwanda n'Abaguzi ku Isi",
+                "cat": "Iterambere ry'Ubucuruzi"
+            },
+            "tech": {
+                "title": "Gushoboza Urubyiruko binyuze mu Bumenyi bw'Ikoranabuhanga Buhambaye",
+                "cat": "Kwigira kuri Interineti"
+            },
+            "wellness": {
+                "title": "Kuvumbura Ibirango Byemejwe by'Ubuzima n'Imyidagaduro",
+                "cat": "Isoko ry'Iwacu"
+            },
+            "growth": {
+                "title": "Kwagura Inyungu z'Ubucuruzi mu Rwanda no muri Afurika y'Iburasirazuba",
+                "cat": "Kumenyekanisha Izina"
+            },
+            "visibility": {
+                "title": "Kuki Kugaragara kw'Ikigo ari rwo Rufunguzo rwa Mbere rw'Intsinzi",
+                "cat": "Ubutumwa Nyamukuru"
+            },
+            "artisans": {
+                "title": "Gufungura Inzira z'Ibyoherezwa mu Mahanga ku Bapfura bo mu Midugudu",
+                "cat": "Guhuza Ubucuruzi"
+            }
+        }
     },
     "testimonials": {
         "badge": "UBUHAMYA",

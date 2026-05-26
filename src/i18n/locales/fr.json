@@ -165,7 +165,47 @@
     "campaigns": {
         "title": "Nos dernières campagnes publicitaires",
         "description": "Nous aidons les entreprises à se développer grâce à une narration vidéo percutante sur TikTok et les réseaux sociaux. Notre contenu génère un engagement et une visibilité réels.",
-        "cta": "Suivez-nous sur TikTok"
+        "cta": "Suivez-nous sur TikTok",
+        "tabs": {
+            "showcase": "Campagnes Phares",
+            "liveFeed": "Flux TikTok en Direct"
+        },
+        "guide": {
+            "title": "Intégrez Votre Compte TikTok en Direct",
+            "desc": "Pour afficher dynamiquement vos publications TikTok sans ralentir votre site, nous utilisons Curator.io - un constructeur de flux social gratuit et réactif.",
+            "step1Title": "Créer un Compte Gratuit",
+            "step1Desc": "Allez sur curator.io et inscrivez-vous pour obtenir un compte gratuit.",
+            "step2Title": "Connectez Votre Compte TikTok",
+            "step2Desc": "Sélectionnez la source TikTok, authentifiez-vous ou recherchez @amamazanonaha.ltd, et créez un flux.",
+            "step3Title": "Ajoutez Votre ID de Widget aux Variables d'Environnement",
+            "step3Desc": "Copiez l'identifiant unique de votre flux publié (une longue chaîne de lettres et de chiffres)."
+        },
+        "items": {
+            "fashion": {
+                "title": "Connecter les Designers de Mode Rwandais aux Acheteurs Globaux",
+                "cat": "Croissance E-Commerce"
+            },
+            "tech": {
+                "title": "Autonomiser les Jeunes Locaux avec des Compétences Numériques Professionnelles",
+                "cat": "Apprentissage Numérique"
+            },
+            "wellness": {
+                "title": "Découvrir des Marques Locales Vérifiées de Bien-être et de Santé",
+                "cat": "Marché Local"
+            },
+            "growth": {
+                "title": "Propulser l'Impact Commercial à travers le Rwanda et l'Afrique de l'Est",
+                "cat": "Accélération de Marque"
+            },
+            "visibility": {
+                "title": "Pourquoi la Découvrabilité est la Clé Ultime du Succès Commercial",
+                "cat": "Message Central"
+            },
+            "artisans": {
+                "title": "Ouvrir des Voies d'Exportation pour les Artisans Communautaires",
+                "cat": "Connectivité Commerciale"
+            }
+        }
     },
     "testimonials": {
         "badge": "TÉMOIGNAGES",

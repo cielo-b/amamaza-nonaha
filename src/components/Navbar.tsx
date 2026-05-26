@@ -109,14 +109,39 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Actions */}
-          <div className="md:hidden flex items-center gap-3">
+          <div className="md:hidden flex items-center gap-1">
             {mounted && (
-              <button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="rounded-full p-2 hover:bg-muted/60 transition-colors"
-              >
-                {theme === "dark" ? <Sun className="w-5 h-5 text-yellow-400" /> : <Moon className="w-5 h-5 text-slate-700" />}
-              </button>
+              <>
+                {/* Language Switcher — visible on mobile */}
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <button className="rounded-full p-2 hover:bg-muted/60 transition-colors flex items-center gap-1 text-foreground/70">
+                      <Languages className="w-4 h-4" />
+                      <span className="text-xs font-bold uppercase">{i18n.language.slice(0, 2)}</span>
+                    </button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end" className="w-[150px] rounded-xl">
+                    {languages.map((lang) => (
+                      <DropdownMenuItem
+                        key={lang.code}
+                        onClick={() => i18n.changeLanguage(lang.code)}
+                        className={`cursor-pointer font-medium ${i18n.language === lang.code ? "text-primary bg-primary/5" : ""}`}
+                      >
+                        {lang.label}
+                      </DropdownMenuItem>
+                    ))}
+                  </DropdownMenuContent>
+                </DropdownMenu>
+
+                {/* Theme toggle */}
+                <button
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                  className="rounded-full p-2 hover:bg-muted/60 transition-colors"
+                  aria-label="Toggle theme"
+                >
+                  {theme === "dark" ? <Sun className="w-5 h-5 text-yellow-400" /> : <Moon className="w-5 h-5 text-slate-700" />}
+                </button>
+              </>
             )}
             <button
               className="p-2 z-[60] relative"

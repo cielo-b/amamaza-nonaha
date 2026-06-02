@@ -17,13 +17,7 @@ import {
 import { useTranslation } from "react-i18next";
 import VideoModal from "./VideoModal";
 
-// Import local premium fallback graphics
-import fashionAd from "@/assets/fashion-ad.png";
-import techAd from "@/assets/tech-ad.png";
-import wellnessAd from "@/assets/wellness-ad.png";
-import hero1 from "@/assets/hero-1.jpg";
-import hero2 from "@/assets/hero-2.jpg";
-import aboutImg from "@/assets/about.jpg";
+// Image imports removed because we fetch dynamically from TikTok.
 
 interface CampaignVideo {
   id: string;
@@ -48,82 +42,15 @@ const CampaignShowcase = () => {
   const curatorWidgetId = "81a5e7a6-65ac-4a9b-83a7-ebc293bd371e";
   const isWidgetConfigured = true;
 
-  // 1. Static fallback campaigns with clean details
-  const fallbackCampaigns = [
-    {
-      id: "fallback-1",
-      title: "Connecting Rwandan Fashion Designers to Global Buyers",
-      category: "E-Commerce Growth",
-      thumbnail: fashionAd,
-      videoUrl: "https://www.tiktok.com/@amamazanonaha.ltd/video/7350000000000000001",
-      views: "42.8K",
-      likes: "3.5K",
-      comments: "245"
-    },
-    {
-      id: "fallback-2",
-      title: "Empowering Local Youth with Professional Digital Skills",
-      category: "Digital Learning",
-      thumbnail: techAd,
-      videoUrl: "https://www.tiktok.com/@amamazanonaha.ltd/video/7350000000000000002",
-      views: "38.2K",
-      likes: "2.9K",
-      comments: "189"
-    },
-    {
-      id: "fallback-3",
-      title: "Discovering Verified Local Wellness and Health Brands",
-      category: "Local Marketplace",
-      thumbnail: wellnessAd,
-      videoUrl: "https://www.tiktok.com/@amamazanonaha.ltd/video/7350000000000000003",
-      views: "29.4K",
-      likes: "2.1K",
-      comments: "154"
-    },
-    {
-      id: "fallback-4",
-      title: "Scaling Commercial Impact Across Rwanda & East Africa",
-      category: "Brand Acceleration",
-      thumbnail: hero1,
-      videoUrl: "https://www.tiktok.com/@amamazanonaha.ltd/video/7350000000000000004",
-      views: "51.6K",
-      likes: "4.8K",
-      comments: "312"
-    },
-    {
-      id: "fallback-5",
-      title: "Why Brand Discoverability is the Ultimate Key to Success",
-      category: "Core Message",
-      thumbnail: hero2,
-      videoUrl: "https://www.tiktok.com/@amamazanonaha.ltd/video/7350000000000000005",
-      views: "64.3K",
-      likes: "5.2K",
-      comments: "428"
-    },
-    {
-      id: "fallback-6",
-      title: "Unlocking Export and Trade Paths for Community Craftspeople",
-      category: "Trade Connectivity",
-      thumbnail: aboutImg,
-      videoUrl: "https://www.tiktok.com/@amamazanonaha.ltd/video/7350000000000000006",
-      views: "33.5K",
-      likes: "2.7K",
-      comments: "167"
-    }
-  ];
+const defaultVideos = "https://vt.tiktok.com/ZSxrYdVXp/,https://vt.tiktok.com/ZSxrYLFvy/,https://vt.tiktok.com/ZSxrYXmSx/,https://vt.tiktok.com/ZSxrYqqME/,https://vt.tiktok.com/ZSxrYmTGG/,https://vt.tiktok.com/ZSxrYvSy4/";
 
   // Load and fetch dynamic real TikTok oEmbed details if configured in environment
   useEffect(() => {
     const fetchRealTikTokVideos = async () => {
       // User can specify real TikTok URLs in .env as comma-separated links:
-      // VITE_TIKTOK_VIDEOS=https://www.tiktok.com/@username/video/123,https://www.tiktok.com/@username/video/456
-      const envVideos = import.meta.env.VITE_TIKTOK_VIDEOS;
+      // VITE_TIKTOK_VIDEOS=...
+      const envVideos = import.meta.env.VITE_TIKTOK_VIDEOS || defaultVideos;
       
-      if (!envVideos) {
-        setDisplayCampaigns(fallbackCampaigns);
-        return;
-      }
-
       setLoadingRealVideos(true);
       const urls = envVideos.split(",").map((url: string) => url.trim()).filter(Boolean);
       
@@ -140,8 +67,8 @@ const CampaignShowcase = () => {
                 id: `real-${index}`,
                 title: data.title || `TikTok Campaign #${index + 1}`,
                 category: "Live Campaign",
-                thumbnail: data.thumbnail_url || fashionAd,
-                videoUrl: url,
+                thumbnail: data.thumbnail_url || "https://placehold.co/600x800/1e293b/ffffff?text=TikTok+Video",
+                videoUrl: data.embed_product_id ? `https://www.tiktok.com/embed/v2/${data.embed_product_id}` : url,
                 // Display realistic metrics based on average engagements
                 views: `${Math.floor(10 + Math.random() * 90)}.${Math.floor(1 + Math.random() * 9)}K`,
                 likes: `${Math.floor(1 + Math.random() * 9)}.${Math.floor(1 + Math.random() * 9)}K`,
@@ -153,7 +80,7 @@ const CampaignShowcase = () => {
                 id: `fallback-real-${index}`,
                 title: `TikTok Campaign Video #${index + 1}`,
                 category: "Live Campaign",
-                thumbnail: index % 3 === 0 ? fashionAd : index % 3 === 1 ? techAd : wellnessAd,
+                thumbnail: "https://placehold.co/600x800/1e293b/ffffff?text=Video+Unavailable",
                 videoUrl: url,
                 views: "24.5K",
                 likes: "1.8K",
@@ -164,7 +91,7 @@ const CampaignShowcase = () => {
         );
         setDisplayCampaigns(fetchedVideos);
       } catch (e) {
-        setDisplayCampaigns(fallbackCampaigns);
+        setDisplayCampaigns([]);
       } finally {
         setLoadingRealVideos(false);
       }

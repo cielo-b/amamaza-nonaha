@@ -43,6 +43,11 @@ const companies = [
         style: "font-sans italic font-bold",
         color: "hover:text-purple-500 hover:scale-110 transition-all duration-300"
     },
+    {
+        name: "Axiom Fold",
+        style: "font-mono font-black tracking-[0.2em] uppercase bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(6,182,212,0.5)] scale-110 mx-4",
+        color: "hover:scale-125 hover:drop-shadow-[0_0_20px_rgba(6,182,212,0.8)] transition-all duration-500"
+    }
 ];
 
 const PartnerCarousel = () => {

@@ -83,14 +83,14 @@ const HowItWorksSection = () => {
               >
                 <button
                   onClick={() => setActive(active === i ? -1 : i)}
-                  className="w-full text-left flex items-center justify-between py-2 group"
+                  className="w-full text-left flex items-start justify-between py-2 group gap-3"
                   aria-expanded={active === i}
                 >
                   <div className="flex items-center gap-4">
                     <span className="w-8 h-8 rounded-full border border-primary flex items-center justify-center text-sm font-bold text-primary shrink-0 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                       {i + 1}
                     </span>
-                    <span className={`text-lg md:text-xl font-semibold transition-colors ${active === i ? "text-primary" : "text-foreground group-hover:text-primary"}`}>
+                    <span className={`text-base md:text-xl font-semibold transition-colors leading-snug ${active === i ? "text-primary" : "text-foreground group-hover:text-primary"}`}>
                       {step.title}
                     </span>
                   </div>

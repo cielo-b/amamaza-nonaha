@@ -45,8 +45,8 @@ const HeroSection = () => {
       {/* Parallax blob in background */}
       <motion.div style={{ y: yBlob }} className="absolute -top-[20%] right-[-10%] w-[60%] h-[60%] rounded-full bg-primary/5 blur-[120px] -z-10 pointer-events-none" />
 
-      <div className="container py-12 md:py-20 relative z-10">
-        <div className="grid md:grid-cols-2 gap-10 items-center">
+      <div className="container px-4 sm:px-6 py-10 md:py-20 relative z-10">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-10 items-center">
           {/* Left: Image carousel + overlay controls */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -99,23 +99,23 @@ const HeroSection = () => {
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
-            className="relative z-30 -mt-8 md:mt-0"
+            className="relative z-30 mt-0"
           >
-            <div className="bg-transparent p-4 md:p-8">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground font-display flex flex-wrap items-center gap-x-4">
+            <div className="bg-transparent p-2 sm:p-4 md:p-8">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground font-display">
                 {t("hero.title")}
-                <span className="w-16 h-1.5 bg-primary mt-2" aria-hidden="true" />
               </h1>
+              <span className="block w-16 h-1.5 bg-primary mt-3" aria-hidden="true" />
               <div className="flex flex-col gap-2 mt-4">
-                <span className="text-xl md:text-2xl font-bold text-primary tracking-tight uppercase">{t("hero.subtitle")}</span>
-                <span className="text-lg font-medium text-muted-foreground/80 italic">{t("hero.tagline")}</span>
+                <span className="text-base sm:text-xl md:text-2xl font-bold text-primary tracking-tight uppercase leading-snug">{t("hero.subtitle")}</span>
+                <span className="text-sm sm:text-base md:text-lg font-medium text-muted-foreground/80 italic leading-relaxed">{t("hero.tagline")}</span>
               </div>
 
-              <p className="text-muted-foreground text-lg max-w-md leading-relaxed mt-6">
+              <p className="text-muted-foreground text-sm sm:text-base md:text-lg max-w-md leading-relaxed mt-4 md:mt-6">
                 {t("hero.description")}
               </p>
 
-              <div className="flex flex-wrap gap-5 items-center mt-10">
+              <div className="flex flex-wrap gap-3 sm:gap-5 items-center mt-6 md:mt-10">
                 <MagneticWrapper>
                   <Button size="lg" className="rounded-md px-8 py-6 text-base font-semibold bg-primary hover:bg-primary/90 text-primary-foreground">
                     {t("hero.cta")}

@@ -14,7 +14,7 @@ const BrandVideoSection = () => {
         <section className="py-24 bg-gradient-to-b from-background to-slate-50 dark:to-slate-900/20 overflow-hidden">
             <VideoModal isOpen={isOpen} onClose={() => setIsOpen(false)} videoUrl={brandVideo} />
             <div className="container mx-auto px-4">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
                     {/* Left: Text Content */}
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
@@ -27,11 +27,11 @@ const BrandVideoSection = () => {
                             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-bold tracking-wider uppercase">
                                 {t("brandVideo.badge")}
                             </span>
-                            <h2 className="text-4xl md:text-6xl font-black tracking-tight leading-[1.1]">
-                                {t("brandVideo.title1")}<span className="text-primary italic">{t("brandVideo.title2")}</span> <br />
+                            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1]">
+                                {t("brandVideo.title1")}<span className="text-primary italic">{t("brandVideo.title2")}</span>{" "}
                                 {t("brandVideo.title3")}
                             </h2>
-                            <p className="text-muted-foreground text-xl leading-relaxed max-w-xl">
+                            <p className="text-muted-foreground text-base sm:text-lg md:text-xl leading-relaxed max-w-xl">
                                 {t("brandVideo.description")}
                             </p>
                         </div>
@@ -92,8 +92,8 @@ const BrandVideoSection = () => {
                                     <Volume2 className="w-6 h-6" />
                                 </div>
                                 <div>
-                                    <div className="text-white font-bold text-sm">{t("brandVideo.founderTitle")}</div>
-                                    <div className="text-white/60 text-xs">{t("brandVideo.founderSub")}</div>
+                                    <div className="text-white font-bold text-xs sm:text-sm leading-snug">{t("brandVideo.founderTitle")}</div>
+                                    <div className="text-white/60 text-xs leading-snug">{t("brandVideo.founderSub")}</div>
                                 </div>
                             </div>
                         </div>

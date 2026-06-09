@@ -94,22 +94,22 @@ const ServicesSection = () => {
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 mt-16 px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6 lg:gap-8 mt-16 px-2 sm:px-4">
           {services.map((s, i) => (
             <motion.div
               key={i}
               variants={itemVariants}
               whileHover={{ y: -10 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
-              className="bg-white dark:bg-[#111111] rounded-[2rem] p-10 py-16 px-12 border border-[#E5E7EB] dark:border-white/5 hover:border-[#00AEEF]/50 shadow-xl dark:shadow-2xl transition-all duration-300 text-center flex flex-col items-center justify-center group"
+              className="bg-white dark:bg-[#111111] rounded-[2rem] p-6 sm:p-8 md:p-10 md:py-16 md:px-12 border border-[#E5E7EB] dark:border-white/5 hover:border-[#00AEEF]/50 shadow-xl dark:shadow-2xl transition-all duration-300 text-center flex flex-col items-center justify-center group"
             >
               <div className="w-16 h-16 rounded-2xl bg-[#00AEEF]/10 dark:bg-[#00AEEF]/20 flex items-center justify-center mb-10 group-hover:bg-[#00AEEF]/20 dark:group-hover:bg-[#00AEEF]/30 transition-colors">
                 <s.icon className="w-8 h-8 text-[#00AEEF]" />
               </div>
-              <h3 className="text-2xl font-display font-bold text-foreground dark:text-white mb-6 leading-tight">
+              <h3 className="text-xl sm:text-2xl font-display font-bold text-foreground dark:text-white mb-4 md:mb-6 leading-tight">
                 {t(`services.items.${s.key}.title`)}
               </h3>
-              <p className="text-muted-foreground dark:text-white/60 text-[16px] leading-relaxed max-w-[280px] font-medium">
+              <p className="text-muted-foreground dark:text-white/60 text-[15px] md:text-[16px] leading-relaxed max-w-full md:max-w-[280px] font-medium">
                 {t(`services.items.${s.key}.desc`)}
               </p>
             </motion.div>

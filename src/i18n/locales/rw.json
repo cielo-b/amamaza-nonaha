@@ -10,7 +10,7 @@
         "title": "Urubuga rw’Ubucuruzi n’Imenyekanishabikorwa hifashishijwe Ikoranabuhanga",
         "subtitle": "Mu Rwanda n'Afurika no kw'Isi hose",
         "tagline": "Urubuga ruhuza abantu, ubucuruzi n'iterambere rirambye",
-        "description": "Gushoboza ubucuruzi bukorwa hifashishijwe ikoranabuhanga, kugaragara, n'iterambere binyuze mu rubuga rugezweho.",
+        "description": "Dutezimbere Ubucuruzi bwo kuri interineti / bukoresha ikoranabuhanga.",
         "cta": "Reba serivisi"
     },
     "about": {
@@ -42,19 +42,19 @@
                 "desc": "Ahantu habugenewe aho abakiriya bavumbura ibicuruzwa na serivisi mu buryo bworoshye."
             },
             "ecommerce": {
-                "title": "Ibisubizo by'Ubucuruzi bwakorerwa kuri Interineti",
-                "desc": "Gufasha ubucuruzi bwifashishije ibikoresho by'ikoranabuhanga kugurisha, kumenyekanisha, no kwagura ubucuruzi kuri interineti."
+                "title": "Ibisubizo by’Ubucuruzi bwo kuri Interineti",
+                "desc": "Gufasha abantu kugiti cyabo, ibigo n'ubucuruzi gukoresha ibikoresho by'ikoranabuhanga mu kugurisha, kwamamaza, no kwagura ibikorwa byabyo kuri interineti."
             },
             "marketing": {
-                "title": "Iyamamazabucuruzi n'Izina ry'Ikigo",
-                "desc": "Ingamba zo kumenyekanisha zifasha ibigo gukurura abakiriya bakwiriye no kubaka izina."
+                "title": "Kwamamaza no guteza imbere ikirango cyawe ku isoko / ni ukugaragara no kumenyekana ku isoko.",
+                "desc": "Ingamba zo kongera kumenyekanisha ikirango zifasha gukurura abaguzi nyabo no kongera kugaragara ku isoko."
             },
             "promotion": {
                 "title": "Kumenyekanisha Ubucuruzi",
                 "desc": "Iyamamazabucuruzi ryibanze ku bakiriya n'ingamba zo kugaragara kugira ngo wagure abakiriya bawe."
             },
             "discovery": {
-                "title": "Guvumbura Amahirwe",
+                "title": "Kuvumbura no Kumenya Amahirwe",
                 "desc": "Inzira yo kubona akazi gashya, imishinga, n'ubufatanye mu bucuruzi."
             },
             "trade": {
@@ -117,8 +117,8 @@
         "description": "Abakiriya benshi bagorwa no kubona amahirwe yizerwa ahantu hamwe, mugihe ubucuruzi bwinshi buhura no kutamenyekana bihagije. Amamazanonaha Ltd ikemura ibi binyuze mu gushyiraho urubuga rw'ikoranabuhanga ruhuriza hamwe kumenyekana n'amahirwe y'ubucuruzi.",
         "steps": {
             "step1": {
-                "title": "Abacuruzi n'Ibigo Binjiramo",
-                "desc": "Ubucuruzi n'ibigo byo mu gihugu bishyira ku rubuga ibicuruzwa na serivisi bitanga. Imyirondoro yemejwe ifasha abakiriya gusobanukirwa ibyo ugurisha, aho ukorera, n'icyenza serivisi zawe zizerwa."
+                "title": "Urubuga Ruhuza Ibigo n'Ibirango by'Ubucuruzi",
+                "desc": "Amamazanonaha Ltd ifasha ibigo n'ibirango by'ubucuruzi gukora imyirondoro yemejwe kandi y'umwuga, igaragaza neza ibicuruzwa na serivisi bitanga. Ibi bituma abakiliya basobanukirwa ibyo mutanga, aho mukorera, ndetse n'icyo ibikorwa byanyu bihagazeho, bikarushaho kubaka icyizere no kongera amahirwe y'ubucuruzi."
             },
             "step2": {
                 "title": "Kwamamaza n'Iyamamazabucuruzi",

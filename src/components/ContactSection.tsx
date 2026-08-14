@@ -23,10 +23,17 @@ const ContactSection = () => {
     setLoading(true);
 
     try {
+      // The +250 dial code is rendered as static UI next to the input, so it is not
+      // part of the stored value. Add it here, or the recipient gets a local number
+      // they cannot dial. The field is optional, so send an empty string when unset
+      // rather than a bare dial code.
+      const phone = formData.phone.trim();
+
       // Synchronized with your EmailJS Template screenshot
       const templateParams = {
         name: formData.name,       // matches {{name}}
         email: formData.email,     // matches {{email}}
+        phone: phone ? `+250 ${phone}` : "", // matches {{phone}}
         message: formData.message, // matches {{message}}
         title: "New Website Inquiry" // matches {{title}} in subject
       };

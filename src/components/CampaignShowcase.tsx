@@ -21,9 +21,10 @@ import VideoModal from "./VideoModal";
 
 interface CampaignVideo {
   id: string;
-  title: string;
-  category: string;
-  thumbnail: string;
+  /** Caption from TikTok. Absent when the fetch failed, so the card falls back to a translated label. */
+  title?: string;
+  /** Preview image from TikTok. Absent when none was returned. */
+  thumbnail?: string;
   videoUrl: string;
   views: string;
   likes: string;
@@ -65,9 +66,8 @@ const defaultVideos = "https://vt.tiktok.com/ZSxrYdVXp/,https://vt.tiktok.com/ZS
               
               return {
                 id: `real-${index}`,
-                title: data.title || `TikTok Campaign #${index + 1}`,
-                category: "Live Campaign",
-                thumbnail: data.thumbnail_url || "https://placehold.co/600x800/1e293b/ffffff?text=TikTok+Video",
+                title: data.title,
+                thumbnail: data.thumbnail_url,
                 videoUrl: data.embed_product_id ? `https://www.tiktok.com/embed/v2/${data.embed_product_id}` : url,
                 // Display realistic metrics based on average engagements
                 views: `${Math.floor(10 + Math.random() * 90)}.${Math.floor(1 + Math.random() * 9)}K`,
@@ -78,9 +78,6 @@ const defaultVideos = "https://vt.tiktok.com/ZSxrYdVXp/,https://vt.tiktok.com/ZS
               // Fallback block if a single video fetch fails
               return {
                 id: `fallback-real-${index}`,
-                title: `TikTok Campaign Video #${index + 1}`,
-                category: "Live Campaign",
-                thumbnail: "https://placehold.co/600x800/1e293b/ffffff?text=Video+Unavailable",
                 videoUrl: url,
                 views: "24.5K",
                 likes: "1.8K",
@@ -120,10 +117,12 @@ const defaultVideos = "https://vt.tiktok.com/ZSxrYdVXp/,https://vt.tiktok.com/ZS
     setTimeout(() => setCopiedEnv(false), 2000);
   };
 
-  const getTranslation = (key: string, defaultValue: string) => {
-    const translation = t(key);
-    return translation === key ? defaultValue : translation;
-  };
+  const campaignTitle = (camp: CampaignVideo, index: number) =>
+    camp.title || t("campaigns.fallbackTitle", { number: index + 1 });
+
+  const campaignThumbnail = (camp: CampaignVideo) =>
+    camp.thumbnail ||
+    `https://placehold.co/600x800/1e293b/ffffff?text=${encodeURIComponent(t("campaigns.noPreview"))}`;
 
   return (
     <section className="py-24 bg-gradient-to-b from-slate-50 to-white dark:from-slate-900/40 dark:to-background border-t border-slate-100 dark:border-slate-800/60 overflow-hidden relative">
@@ -142,7 +141,7 @@ const defaultVideos = "https://vt.tiktok.com/ZSxrYdVXp/,https://vt.tiktok.com/ZS
             >
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 text-rose-600 dark:text-rose-400 text-xs font-bold uppercase tracking-wider">
                 <Music2 className="w-3.5 h-3.5 animate-spin" style={{ animationDuration: '4s' }} />
-                {getTranslation("socialFeed.badge", "Tiktok Feed")}
+                {t("socialFeed.badge")}
               </span>
               <h2 className="text-4xl md:text-5xl font-black tracking-tight text-slate-900 dark:text-white leading-tight">
                 {t("campaigns.title")}
@@ -185,7 +184,7 @@ const defaultVideos = "https://vt.tiktok.com/ZSxrYdVXp/,https://vt.tiktok.com/ZS
               }`}
             >
               <Sparkles className="w-4 h-4" />
-              {getTranslation("campaigns.tabs.showcase", "Featured Campaigns")}
+              {t("campaigns.tabs.showcase")}
             </button>
             <button
               onClick={() => setActiveTab("live")}
@@ -196,7 +195,7 @@ const defaultVideos = "https://vt.tiktok.com/ZSxrYdVXp/,https://vt.tiktok.com/ZS
               }`}
             >
               <Tv className="w-4 h-4" />
-              {getTranslation("campaigns.tabs.liveFeed", "Live Account Feed")}
+              {t("campaigns.tabs.liveFeed")}
             </button>
           </div>
         </div>
@@ -233,8 +232,8 @@ const defaultVideos = "https://vt.tiktok.com/ZSxrYdVXp/,https://vt.tiktok.com/ZS
                       {/* Aspect ratio video cover */}
                       <div className="relative aspect-[9/12] w-full overflow-hidden bg-slate-900">
                         <img
-                          src={camp.thumbnail}
-                          alt={camp.title}
+                          src={campaignThumbnail(camp)}
+                          alt={campaignTitle(camp, index)}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                           loading="lazy"
                         />
@@ -256,7 +255,7 @@ const defaultVideos = "https://vt.tiktok.com/ZSxrYdVXp/,https://vt.tiktok.com/ZS
                         {/* Category tag upper right */}
                         <div className="absolute top-4 right-4 inline-flex items-center gap-1 px-3 py-1 rounded-full bg-rose-500 text-white text-xs font-black shadow-lg shadow-rose-500/30">
                           <Layers className="w-3 h-3" />
-                          <span>{camp.category}</span>
+                          <span>{t("campaigns.liveTag")}</span>
                         </div>
 
                         {/* Play Interactive Button Overlay */}
@@ -278,7 +277,7 @@ const defaultVideos = "https://vt.tiktok.com/ZSxrYdVXp/,https://vt.tiktok.com/ZS
                       {/* Text details section */}
                       <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                         <h3 className="font-bold text-lg leading-snug text-slate-800 dark:text-white line-clamp-3 group-hover:text-rose-500 dark:group-hover:text-rose-400 transition-colors">
-                          {camp.title}
+                          {campaignTitle(camp, index)}
                         </h3>
 
                         {/* Interactive Stats Panel */}
@@ -316,7 +315,7 @@ const defaultVideos = "https://vt.tiktok.com/ZSxrYdVXp/,https://vt.tiktok.com/ZS
                   <div id="curator-feed-default-feed-layout" className="w-full overflow-hidden">
                     <div className="flex justify-center items-center py-20 text-slate-400">
                       <span className="animate-spin h-8 w-8 border-4 border-primary border-t-transparent rounded-full mr-3" />
-                      Loading live TikTok social hub...
+                      {t("campaigns.loading")}
                     </div>
                   </div>
                 </div>
@@ -333,13 +332,11 @@ const defaultVideos = "https://vt.tiktok.com/ZSxrYdVXp/,https://vt.tiktok.com/ZS
 
                     <div className="space-y-2">
                       <h3 className="text-2xl md:text-3xl font-bold tracking-tight">
-                        {getTranslation("campaigns.guide.title", "Integrate Your Live TikTok Account")}
+                        {t("campaigns.guide.title")}
                       </h3>
                       <p className="text-slate-400 max-w-xl">
-                        {getTranslation(
-                          "campaigns.guide.desc", 
-                          "To display your live TikTok posts dynamically without slowing down your site, we use Curator.io - a safe and free responsive social media feed builder."
-                        )}
+                        {t(
+                          "campaigns.guide.desc")}
                       </p>
                     </div>
 
@@ -348,18 +345,18 @@ const defaultVideos = "https://vt.tiktok.com/ZSxrYdVXp/,https://vt.tiktok.com/ZS
                       {[
                         { 
                           step: 1, 
-                          title: getTranslation("campaigns.guide.step1Title", "Create a Free Account"),
-                          desc: getTranslation("campaigns.guide.step1Desc", "Go to curator.io and register for a free account.")
+                          title: t("campaigns.guide.step1Title"),
+                          desc: t("campaigns.guide.step1Desc")
                         },
                         { 
                           step: 2, 
-                          title: getTranslation("campaigns.guide.step2Title", "Connect your TikTok Account"),
-                          desc: getTranslation("campaigns.guide.step2Desc", "Select TikTok source, authenticate or search for @amamazanonaha.ltd, and create a feed.")
+                          title: t("campaigns.guide.step2Title"),
+                          desc: t("campaigns.guide.step2Desc")
                         },
                         { 
                           step: 3, 
-                          title: getTranslation("campaigns.guide.step3Title", "Add your Widget ID to Environment Variables"),
-                          desc: getTranslation("campaigns.guide.step3Desc", "Copy the unique hash identifier of your published feed (looks like a long string of letters and numbers).")
+                          title: t("campaigns.guide.step3Title"),
+                          desc: t("campaigns.guide.step3Desc")
                         }
                       ].map((item) => (
                         <div key={item.step} className="flex gap-4">
@@ -386,19 +383,19 @@ const defaultVideos = "https://vt.tiktok.com/ZSxrYdVXp/,https://vt.tiktok.com/ZS
                         {copiedEnv ? (
                           <>
                             <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                            Copied!
+                            {t("campaigns.guide.copied")}
                           </>
                         ) : (
                           <>
                             <Copy className="w-4 h-4" />
-                            Copy Setup Line
+                            {t("campaigns.guide.copySetupLine")}
                           </>
                         )}
                       </button>
                     </div>
 
                     <div className="text-xs text-slate-500">
-                      💡 Tip: After adding the ID to your .env file, restart your development server to see the live feed loaded in real time!
+                      💡 {t("campaigns.guide.tip")}
                     </div>
                   </div>
                 </div>

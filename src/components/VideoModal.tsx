@@ -1,5 +1,6 @@
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { X } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 interface VideoModalProps {
     isOpen: boolean;
@@ -8,6 +9,8 @@ interface VideoModalProps {
 }
 
 const VideoModal = ({ isOpen, onClose, videoUrl }: VideoModalProps) => {
+    const { t } = useTranslation();
+
     const isDirectVideo = (url: string) => {
         return url.endsWith(".mp4") || url.endsWith(".webm") || url.endsWith(".ogg") || url.startsWith("blob:");
     };
@@ -43,7 +46,7 @@ const VideoModal = ({ isOpen, onClose, videoUrl }: VideoModalProps) => {
                             autoPlay
                             playsInline
                         >
-                            Your browser does not support the video tag.
+                            {t("a11y.videoUnsupported")}
                         </video>
                     ) : (
                         <iframe
@@ -51,14 +54,14 @@ const VideoModal = ({ isOpen, onClose, videoUrl }: VideoModalProps) => {
                             className="absolute top-0 left-0 w-full h-full border-0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
-                            title="Video Player"
+                            title={t("a11y.videoPlayer")}
                         />
                     )}
 
                     <button
                         onClick={onClose}
                         className="absolute -top-12 right-0 p-2 text-white hover:text-primary transition-colors focus:outline-none z-50 bg-black/20 rounded-full backdrop-blur-sm"
-                        aria-label="Close video"
+                        aria-label={t("a11y.closeVideo")}
                     >
                         <X className="w-8 h-8" />
                     </button>

@@ -96,7 +96,7 @@ const TestimonialsSection = () => {
             className="hidden md:block relative w-1/4 h-[300px] rounded-3xl overflow-hidden shrink-0"
             onClick={prevSlide}
           >
-            <img src={testimonials[visibleIndices[0]].image} className="w-full h-full object-cover" alt="" />
+            <img src={testimonials[visibleIndices[0]].image} className="w-full h-full object-cover" alt={testimonials[visibleIndices[0]].name} />
             <div className="absolute inset-0 bg-black/40" />
             <div className="absolute top-6 left-6 w-10 h-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm group-hover/card:bg-white/30">
               <Play className="w-4 h-4 text-white fill-white ml-0.5" />
@@ -117,7 +117,7 @@ const TestimonialsSection = () => {
             animate={{ opacity: 1, scale: 1 }}
             className="relative w-full md:w-[60%] lg:w-1/2 h-[450px] md:h-[550px] rounded-[2rem] overflow-hidden shadow-2xl z-20 shrink-0 select-none group/card"
           >
-            <img src={testimonials[visibleIndices[1]].image} className="w-full h-full object-cover" alt="" />
+            <img src={testimonials[visibleIndices[1]].image} className="w-full h-full object-cover" alt={testimonials[visibleIndices[1]].name} />
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10" />
 
             <div
@@ -147,7 +147,7 @@ const TestimonialsSection = () => {
             className="hidden md:block relative w-1/4 h-[300px] rounded-3xl overflow-hidden shrink-0 cursor-pointer group/card"
             onClick={() => openVideo(testimonials[visibleIndices[2]].videoUrl)}
           >
-            <img src={testimonials[visibleIndices[2]].image} className="w-full h-full object-cover" alt="" />
+            <img src={testimonials[visibleIndices[2]].image} className="w-full h-full object-cover" alt={testimonials[visibleIndices[2]].name} />
             <div className="absolute inset-0 bg-black/40" />
             <div className="absolute top-6 left-6 w-10 h-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm group-hover/card:bg-white/30">
               <Play className="w-4 h-4 text-white fill-white ml-0.5" />
@@ -163,7 +163,7 @@ const TestimonialsSection = () => {
               onClick={() => setActiveIndex(i)}
               className={`transition-all duration-300 rounded-full ${i === activeIndex ? "w-8 h-2.5 bg-primary" : "w-2.5 h-2.5 bg-border hover:bg-border/80"
                 }`}
-              aria-label={`Slide ${i + 1}`}
+              aria-label={t("a11y.slide", { number: i + 1 })}
             />
           ))}
         </div>

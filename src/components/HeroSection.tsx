@@ -61,7 +61,7 @@ const HeroSection = () => {
                   key={i}
                   src={src}
                   style={{ y: yImage, scale: 1.15 }}
-                  alt={`Slide ${i + 1}`}
+                  alt={t("a11y.slide", { number: i + 1 })}
                   className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 origin-bottom ${i === current ? "opacity-100" : "opacity-0"
                     }`}
                 />
@@ -72,7 +72,7 @@ const HeroSection = () => {
             <div className="absolute left-0 bottom-0 z-50 flex items-stretch h-16 shadow-lg">
               <button
                 type="button"
-                aria-label="Previous slide"
+                aria-label={t("a11y.prevSlide")}
                 onClick={() => setCurrent((c) => (c - 1 + slides.length) % slides.length)}
                 className="w-16 h-16 bg-muted hover:bg-muted/80 flex items-center justify-center transition-colors"
               >
@@ -80,7 +80,7 @@ const HeroSection = () => {
               </button>
               <button
                 type="button"
-                aria-label="Next slide"
+                aria-label={t("a11y.nextSlide")}
                 onClick={() => setCurrent((c) => (c + 1) % slides.length)}
                 className="w-16 h-16 bg-primary hover:bg-primary/90 flex items-center justify-center transition-colors"
               >
@@ -131,7 +131,7 @@ const HeroSection = () => {
                     <span className="w-10 h-10 rounded-full border border-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
                       <Play className="w-4 h-4 text-primary group-hover:text-white fill-current" />
                     </span>
-                    <span className="text-foreground">Watch Showreel</span>
+                    <span className="text-foreground">{t("hero.watchShowreel")}</span>
                   </Button>
                 </MagneticWrapper>
               </div>

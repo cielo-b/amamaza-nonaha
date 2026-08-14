@@ -139,7 +139,7 @@ const HowItWorksSection = () => {
 
               <img
                 src={howItWorksImg}
-                alt="How it works video thumbnail"
+                alt={t("a11y.howItWorksThumb")}
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors" />

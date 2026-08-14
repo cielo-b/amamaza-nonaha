@@ -49,7 +49,7 @@ const Navbar = () => {
           <a href="#home" className="flex items-center gap-2">
             <img
               src={logo}
-              alt="Amamazanonaha"
+              alt={t("a11y.logo")}
               className="h-12 md:h-14 w-auto dark:invert transition-all hover:scale-105"
             />
           </a>
@@ -93,7 +93,7 @@ const Navbar = () => {
                   <button
                     onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                     className="rounded-full p-2 hover:bg-muted/60 transition-colors"
-                    aria-label="Toggle theme"
+                    aria-label={t("a11y.toggleTheme")}
                   >
                     {theme === "dark" ? <Sun className="w-5 h-5 text-yellow-400" /> : <Moon className="w-5 h-5 text-slate-700" />}
                   </button>
@@ -137,7 +137,7 @@ const Navbar = () => {
                 <button
                   onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                   className="rounded-full p-2 hover:bg-muted/60 transition-colors"
-                  aria-label="Toggle theme"
+                  aria-label={t("a11y.toggleTheme")}
                 >
                   {theme === "dark" ? <Sun className="w-5 h-5 text-yellow-400" /> : <Moon className="w-5 h-5 text-slate-700" />}
                 </button>
@@ -146,7 +146,7 @@ const Navbar = () => {
             <button
               className="p-2 z-[60] relative"
               onClick={() => setOpen(!open)}
-              aria-label="Toggle menu"
+              aria-label={t("a11y.toggleMenu")}
             >
               {open ? <X className="w-6 h-6 text-foreground" /> : <Menu className="w-6 h-6 text-foreground" />}
             </button>

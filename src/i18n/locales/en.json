@@ -11,7 +11,8 @@
     "subtitle": "Rwanda & Africa to the World",
     "tagline": "Connect • Trade • Prosper",
     "description": "Empowering digital trade, visibility, and growth through one modern platform.",
-    "cta": "Explore services"
+    "cta": "Explore services",
+    "watchShowreel": "Watch showreel"
   },
   "about": {
     "badge": "A BIT",
@@ -65,10 +66,8 @@
   },
   "brandVideo": {
     "badge": "The Core Message",
-    "title1": "No Visibility ",
-    "title2": "Equals",
-    "title3": " No Growth.",
-    "description": "At Amamaza Nonaho, we believe every business deserves to be seen. Our platform is built to amplify your voice and connect you to the opportunities you've been waiting for.",
+    "title": "No visibility equals no <accent>growth</accent>.",
+    "description": "At Amamazanonaha, we believe every business deserves to be seen. Our platform is built to amplify your voice and connect you to the opportunities you've been waiting for.",
     "growthTitle": "Accelerated Growth",
     "growthDesc": "Scale faster by reaching the right audience at the right time.",
     "discoveryTitle": "Maximum Discovery",
@@ -178,34 +177,16 @@
       "step2Title": "Connect your TikTok Account",
       "step2Desc": "Select TikTok source, authenticate or search for @amamazanonaha.ltd, and create a feed.",
       "step3Title": "Add your Widget ID to Environment Variables",
-      "step3Desc": "Copy the unique hash identifier of your published feed (looks like a long string of letters and numbers)."
+      "step3Desc": "Copy the unique hash identifier of your published feed (looks like a long string of letters and numbers).",
+      "copied": "Copied!",
+      "copySetupLine": "Copy setup line",
+      "tip": "Tip: after adding the ID to your .env file, restart the development server to see the live feed."
     },
-    "items": {
-      "fashion": {
-        "title": "Connecting Rwandan Fashion Designers to Global Buyers",
-        "cat": "E-Commerce Growth"
-      },
-      "tech": {
-        "title": "Empowering Local Youth with Professional Digital Skills",
-        "cat": "Digital Learning"
-      },
-      "wellness": {
-        "title": "Discovering Verified Local Wellness and Health Brands",
-        "cat": "Local Marketplace"
-      },
-      "growth": {
-        "title": "Scaling Commercial Impact Across Rwanda & East Africa",
-        "cat": "Brand Acceleration"
-      },
-      "visibility": {
-        "title": "Why Brand Discoverability is the Ultimate Key to Success",
-        "cat": "Core Message"
-      },
-      "artisans": {
-        "title": "Unlocking Export and Trade Paths for Community Craftspeople",
-        "cat": "Trade Connectivity"
-      }
-    }
+    "liveTag": "Live campaign",
+    "loading": "Loading the live TikTok feed...",
+    "fallbackTitle": "TikTok campaign video #{{number}}",
+    "videoUnavailable": "Video unavailable",
+    "noPreview": "No preview available"
   },
   "testimonials": {
     "badge": "TESTIMONIALS",
@@ -245,7 +226,7 @@
     "success": "Thank you! Your message has been sent.",
     "successDesc": "We'll get back to you within 24 hours.",
     "error": "Failed to send message",
-    "errorDesc": "Please check your EmailJS configuration and authentication scopes."
+    "errorDesc": "Something went wrong. Please try again, or reach us directly."
   },
   "footer": {
     "description": "Empowering digital trade, visibility, and growth through one modern platform connecting Rwanda and Africa to the world.",
@@ -270,6 +251,33 @@
   "socialFeed": {
     "badge": "LATEST UPDATES",
     "title": "Follow Our Journey",
-    "description": "Stay connected with Amamaza Ltd on TikTok and Instagram for daily trends and campaign highlights."
+    "description": "Stay connected with Amamazanonaha on TikTok and Instagram for daily trends and campaign highlights."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist or has been moved.",
+    "cta": "Back to home"
+  },
+  "meta": {
+    "title": "Amamazanonaha — Digital Commerce & Marketing Platform",
+    "description": "Connecting people, businesses, products, and opportunities across Rwanda and Africa through one modern digital platform."
+  },
+  "a11y": {
+    "logo": "Amamazanonaha logo",
+    "prevSlide": "Previous image",
+    "nextSlide": "Next image",
+    "toggleTheme": "Switch between light and dark mode",
+    "toggleMenu": "Open or close the menu",
+    "closeVideo": "Close the video",
+    "videoPlayer": "Video player",
+    "videoUnsupported": "Your browser cannot play this video.",
+    "aboutTeam": "The Amamazanonaha team at work",
+    "aboutPlanning": "A strategy planning session",
+    "aboutWorkspace": "A shared workspace",
+    "brandMessage": "Video thumbnail of the brand message",
+    "contactTeam": "A team in discussion",
+    "howItWorksThumb": "Video thumbnail explaining how the platform works",
+    "partnership": "A business partnership",
+    "slide": "Image {{number}}"
   }
 }

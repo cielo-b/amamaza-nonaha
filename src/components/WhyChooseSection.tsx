@@ -42,7 +42,7 @@ const WhyChooseSection = () => {
           className="relative h-[360px] md:h-[600px] flex items-center"
         >
           <div className="absolute top-0 left-0 w-[70%] h-[75%] rounded-2xl overflow-hidden shadow-2xl z-10 border-[8px] border-background transition-colors duration-300">
-            <img src={whyImg} alt="Partnership" className="w-full h-full object-cover" />
+            <img src={whyImg} alt={t("a11y.partnership")} className="w-full h-full object-cover" />
           </div>
           <div className="absolute bottom-0 right-0 w-[65%] h-[65%] rounded-2xl overflow-hidden shadow-2xl z-20 border-[8px] border-background transition-colors duration-300 bg-black">
             <video

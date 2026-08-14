@@ -17,7 +17,7 @@ const Footer = () => {
         {/* Brand Column */}
         <motion.div className="space-y-6">
           <div className="flex items-center gap-2">
-            <img src={logo} alt="Amamazanonaha" className="h-10 w-auto invert brightness-0 invert-[1] opacity-90" />
+            <img src={logo} alt={t("a11y.logo")} className="h-10 w-auto invert brightness-0 invert-[1] opacity-90" />
           </div>
           <p className="text-sm leading-relaxed text-white/60 max-w-xs">
             {t("footer.description")}

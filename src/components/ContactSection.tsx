@@ -83,7 +83,7 @@ const ContactSection = () => {
           <div className="relative h-[300px] md:h-full overflow-hidden">
             <img
               src={contactImg}
-              alt="Team discussing"
+              alt={t("a11y.contactTeam")}
               className="w-full h-full object-cover"
             />
           </div>

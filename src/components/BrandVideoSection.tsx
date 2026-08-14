@@ -4,7 +4,19 @@ import { Play, Volume2, Shield, TrendingUp, Search } from "lucide-react";
 import VideoModal from "./VideoModal";
 import thumbnail from "@/assets/founder-thumbnail.png";
 import brandVideo from "@/assets/videos/1.mp4";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
+
+/**
+ * Emphasised span used inside the translated headline. react-i18next forwards an
+ * internal `i18nIsDynamicList` flag to mapped components, so strip it here rather
+ * than let React warn about an unknown DOM prop.
+ */
+const Accent = ({
+    i18nIsDynamicList: _ignored,
+    ...props
+}: React.ComponentProps<"span"> & { i18nIsDynamicList?: boolean }) => (
+    <span className="text-primary italic" {...props} />
+);
 
 const BrandVideoSection = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -28,8 +40,15 @@ const BrandVideoSection = () => {
                                 {t("brandVideo.badge")}
                             </span>
                             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1]">
-                                {t("brandVideo.title1")}<span className="text-primary italic">{t("brandVideo.title2")}</span>{" "}
-                                {t("brandVideo.title3")}
+                                {/* One key per sentence, so each language places the emphasis where its
+                                    own grammar puts it instead of inheriting English word order.
+                                    `t` is passed explicitly because Trans alone does not subscribe to
+                                    language changes — without it the headline freezes on first render. */}
+                                <Trans
+                                    t={t}
+                                    i18nKey="brandVideo.title"
+                                    components={{ accent: <Accent /> }}
+                                />
                             </h2>
                             <p className="text-muted-foreground text-base sm:text-lg md:text-xl leading-relaxed max-w-xl">
                                 {t("brandVideo.description")}
@@ -77,7 +96,7 @@ const BrandVideoSection = () => {
                         <div className="relative z-10 aspect-video rounded-3xl overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.3)] group cursor-pointer" onClick={() => setIsOpen(true)}>
                             <img
                                 src={thumbnail}
-                                alt="Brand Message"
+                                alt={t("a11y.brandMessage")}
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             />
                             <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors flex items-center justify-center">

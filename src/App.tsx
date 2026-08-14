@@ -7,10 +7,13 @@ import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import { ThemeProvider } from "next-themes";
 import { motion, useScroll, useSpring } from "framer-motion";
+import { useDocumentLanguage } from "@/hooks/useDocumentLanguage";
 
 const queryClient = new QueryClient();
 
 const App = () => {
+  useDocumentLanguage();
+
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,

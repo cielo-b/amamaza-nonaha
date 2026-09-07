@@ -111,31 +111,8 @@
     }
   },
   "howItWorks": {
-    "badge": "IKIBAZO N'IGISUBIZO",
     "title": "Gukemura ibibazo binyuze mu guhuza abantu n'ikoranabuhanga",
-    "description": "Abakiriya benshi bagorwa no kubona amahirwe yizewe ahantu hamwe, naho ubucuruzi bwinshi bukabura uko bumenyekana. Amamazanonaha Ltd ikemura ibyo byombi ishyiraho urubuga rumwe rw'ikoranabuhanga rutuma ubucuruzi bubonwa kandi bugahabwa amahirwe.",
-    "steps": {
-      "step1": {
-        "title": "Urubuga Ruhuza Ibigo n'Ibirango by'Ubucuruzi",
-        "desc": "Ubucuruzi n'ibirango byo mu gihugu bishyira ku rubuga ibicuruzwa na serivisi bitanga. Imyirondoro yemejwe ituma abakiriya basobanukirwa icyo ugurisha, aho ukorera n'icyatuma bakwizera."
-      },
-      "step2": {
-        "title": "Kwamamaza no kumenyekanisha",
-        "desc": "Tumenyekanisha ibyo washyize ku rubuga tunyuze mu bikorwa byo kwamamaza byibanda ku bakiriya bakwiye no ku baturage. Ibyo bituma abakiriya bakwiye babona icyo utanga igihe bashakisha igisubizo."
-      },
-      "step3": {
-        "title": "Abakiriya barashakisha bagatumiza",
-        "desc": "Abakiriya barareba, bakagereranya, bagatumiza bafite icyizere. Kuva ku byo bakenera buri munsi kugeza ku bintu bidasanzwe, byose biboneka ahantu hamwe — bikuraho imbogamizi kandi byubaka icyizere."
-      },
-      "step4": {
-        "title": "Abakora ibirimo n'abafatanyabikorwa barunguka",
-        "desc": "Abakora ibirimo, abageza ibicuruzwa ku bakiriya n'abandi bafatanyabikorwa barunguka binyuze mu bufatanye. Duhuza amahirwe n'abantu bashobora gutanga agaciro, inzira ikaba yoroshye kandi ifitiye buri wese inyungu."
-      },
-      "step5": {
-        "title": "Ikoranabuhanga → Inyungu ku baturage",
-        "desc": "Ikoranabuhanga ryacu rihuza abaturage n'ubucuruzi. Ingaruka nziza ziragaragarira mu baturage: amahirwe menshi, ubucuruzi bukomeye n'ubukungu bwiyongera buterwa n'abantu basanzwe."
-      }
-    }
+    "description": "Abakiriya benshi bagorwa no kubona amahirwe yizewe ahantu hamwe, naho ubucuruzi bwinshi bukabura uko bumenyekana. Amamazanonaha Ltd ikemura ibyo byombi ishyiraho urubuga rumwe rw'ikoranabuhanga rutuma ubucuruzi bubonwa kandi bugahabwa amahirwe."
   },
   "whyChoose": {
     "badge": "IMPAMVU WADUHITAMO",
@@ -185,7 +162,6 @@
     "liveTag": "Igikorwa kiriho",
     "loading": "Turimo gushakisha ibiheruka kuri TikTok...",
     "fallbackTitle": "Videwo yo kwamamaza kuri TikTok #{{number}}",
-    "videoUnavailable": "Videwo ntiboneka",
     "noPreview": "Nta ifoto y'ibanze iboneka"
   },
   "testimonials": {

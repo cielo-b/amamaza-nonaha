@@ -111,31 +111,8 @@
     }
   },
   "howItWorks": {
-    "badge": "LE PROBLÈME ET LA SOLUTION",
     "title": "Résoudre les problèmes en reliant les personnes et la technologie",
-    "description": "De nombreux clients peinent à trouver des opportunités fiables en un seul endroit, tandis que beaucoup d'entreprises manquent de visibilité. Amamazanonaha Ltd y répond en créant une plateforme digitale centrale, pensée pour la découverte et l'opportunité commerciale.",
-    "steps": {
-      "step1": {
-        "title": "Une plateforme qui relie entreprises et marques",
-        "desc": "Les entreprises et marques locales publient les produits et services qu'elles proposent. Des profils vérifiés permettent aux clients de comprendre ce que vous vendez, où vous opérez et ce qui rend votre offre digne de confiance."
-      },
-      "step2": {
-        "title": "Marketing et promotion digitale",
-        "desc": "Nous faisons connaître vos annonces par des campagnes ciblées et un travail de proximité. Les bons clients découvrent ainsi votre offre au moment où ils cherchent une solution."
-      },
-      "step3": {
-        "title": "Les clients découvrent et commandent",
-        "desc": "Les clients parcourent, comparent et commandent en toute confiance. Des besoins du quotidien aux expériences uniques, tout se trouve au même endroit — moins d'obstacles, plus de confiance."
-      },
-      "step4": {
-        "title": "Créateurs et partenaires y gagnent",
-        "desc": "Créateurs de contenu, livreurs et affiliés gagnent grâce aux partenariats. Nous mettons les opportunités en face de celles et ceux qui peuvent créer de la valeur — simplement, et à l'avantage de tous."
-      },
-      "step5": {
-        "title": "La technologie → un impact local",
-        "desc": "Notre technologie relie les communautés au commerce. Le résultat est un impact local mesurable : plus d'opportunités, des entreprises plus solides et une économie portée par les gens ordinaires."
-      }
-    }
+    "description": "De nombreux clients peinent à trouver des opportunités fiables en un seul endroit, tandis que beaucoup d'entreprises manquent de visibilité. Amamazanonaha Ltd y répond en créant une plateforme digitale centrale, pensée pour la découverte et l'opportunité commerciale."
   },
   "whyChoose": {
     "badge": "POURQUOI NOUS CHOISIR",
@@ -185,7 +162,6 @@
     "liveTag": "Campagne en direct",
     "loading": "Chargement du fil TikTok en direct...",
     "fallbackTitle": "Vidéo de campagne TikTok n° {{number}}",
-    "videoUnavailable": "Vidéo indisponible",
     "noPreview": "Aucun aperçu disponible"
   },
   "testimonials": {

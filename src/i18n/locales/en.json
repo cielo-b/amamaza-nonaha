@@ -111,31 +111,8 @@
     }
   },
   "howItWorks": {
-    "badge": "THE PROBLEM & SOLUTION",
     "title": "Solving problems by connecting people and technology",
-    "description": "Many customers struggle to find reliable opportunities in one place, while many businesses face limited visibility. Amamazanonaha Ltd solves this by creating a central digital platform for discoverability and commercial opportunity.",
-    "steps": {
-      "step1": {
-        "title": "A platform connecting businesses and brands",
-        "desc": "Local businesses and brands create listings for the products and services they offer. Verified profiles help customers understand what you sell, where you operate, and what makes your offer trustworthy."
-      },
-      "step2": {
-        "title": "Digital Marketing & Promotion",
-        "desc": "We promote your listings through targeted campaigns and community-focused outreach. This ensures the right customers discover your offer when they’re searching for solutions."
-      },
-      "step3": {
-        "title": "Customers Discover & Order",
-        "desc": "Customers browse, compare, and order with confidence. From local needs to unique experiences, everything is available in one place—reducing friction and improving trust."
-      },
-      "step4": {
-        "title": "Creators & Partners Earn",
-        "desc": "Creators, delivery partners, and affiliates earn through partnerships. We help match opportunities with people who can deliver value—while keeping the process simple and rewarding."
-      },
-      "step5": {
-        "title": "Technology → Local Impact",
-        "desc": "Our technology connects communities to commerce. The result is measurable local impact—more opportunities, stronger businesses, and a growing economy driven by everyday people."
-      }
-    }
+    "description": "Many customers struggle to find reliable opportunities in one place, while many businesses face limited visibility. Amamazanonaha Ltd solves this by creating a central digital platform for discoverability and commercial opportunity."
   },
   "whyChoose": {
     "badge": "WHY CHOOSE US",
@@ -185,7 +162,6 @@
     "liveTag": "Live campaign",
     "loading": "Loading the live TikTok feed...",
     "fallbackTitle": "TikTok campaign video #{{number}}",
-    "videoUnavailable": "Video unavailable",
     "noPreview": "No preview available"
   },
   "testimonials": {

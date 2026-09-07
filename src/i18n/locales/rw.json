@@ -10,7 +10,7 @@
     "title": "Urubuga rw'ubucuruzi no kwamamaza hifashishijwe ikoranabuhanga",
     "subtitle": "Kuva mu Rwanda no muri Afurika kugeza ku isi yose",
     "tagline": "Guhuza • Gucuruza • Gutera imbere",
-    "description": "Duteza imbere ubucuruzi bwifashisha ikoranabuhanga, dutuma umenyekana kandi ugakura, byose ku rubuga rumwe rugezweho.",
+    "description": "Dutezimbere Ubucuruzi bwo kuri interineti / bukoresha ikoranabuhanga.",
     "cta": "Reba serivisi zacu",
     "watchShowreel": "Reba videwo y'ibyo dukora"
   },
@@ -48,14 +48,14 @@
       },
       "marketing": {
         "title": "Kwamamaza no kumenyekanisha ikirango",
-        "desc": "Ingamba zo kumenyekanisha zifasha ibirango gukurura abakiriya bakwiye no kugira ijwi ku isoko."
+        "desc": "Ingamba zo kongera kumenyekanisha ikirango zifasha gukurura abaguzi nyabo no kongera kugaragara ku isoko."
       },
       "promotion": {
         "title": "Kumenyekanisha ubucuruzi",
         "desc": "Kwamamaza kwibanda ku bakiriya bakwiye, kugira ngo wongere umubare w'abaguzi bawe."
       },
       "discovery": {
-        "title": "Kuvumbura amahirwe",
+        "title": "Kuvumbura no Kumenya Amahirwe",
         "desc": "Irembo ryo kubona akazi gashya, imishinga n'ubufatanye mu bucuruzi."
       },
       "trade": {
@@ -112,11 +112,11 @@
   },
   "howItWorks": {
     "badge": "IKIBAZO N'IGISUBIZO",
-    "title": "Guhuza ibyatatanye binyuze mu ikoranabuhanga",
+    "title": "Gukemura ibibazo binyuze mu guhuza abantu n'ikoranabuhanga",
     "description": "Abakiriya benshi bagorwa no kubona amahirwe yizewe ahantu hamwe, naho ubucuruzi bwinshi bukabura uko bumenyekana. Amamazanonaha Ltd ikemura ibyo byombi ishyiraho urubuga rumwe rw'ikoranabuhanga rutuma ubucuruzi bubonwa kandi bugahabwa amahirwe.",
     "steps": {
       "step1": {
-        "title": "Ubucuruzi n'ibirango birinjira ku rubuga",
+        "title": "Urubuga Ruhuza Ibigo n'Ibirango by'Ubucuruzi",
         "desc": "Ubucuruzi n'ibirango byo mu gihugu bishyira ku rubuga ibicuruzwa na serivisi bitanga. Imyirondoro yemejwe ituma abakiriya basobanukirwa icyo ugurisha, aho ukorera n'icyatuma bakwizera."
       },
       "step2": {

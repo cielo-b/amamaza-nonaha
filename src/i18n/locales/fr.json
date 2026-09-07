@@ -10,7 +10,7 @@
     "title": "Plateforme de commerce et de marketing digital",
     "subtitle": "Du Rwanda et de l'Afrique vers le monde",
     "tagline": "Connecter • Commercer • Prospérer",
-    "description": "Nous stimulons le commerce digital, la visibilité et la croissance sur une seule plateforme moderne.",
+    "description": "Faire progresser le commerce en ligne, porté par la technologie.",
     "cta": "Découvrir nos services",
     "watchShowreel": "Voir la vidéo de présentation"
   },
@@ -48,14 +48,14 @@
       },
       "marketing": {
         "title": "Marketing et visibilité de marque",
-        "desc": "Des stratégies de notoriété qui aident les marques à toucher le bon public et à s'imposer."
+        "desc": "Des stratégies de notoriété qui aident à attirer les bons acheteurs et à gagner en visibilité sur le marché."
       },
       "promotion": {
         "title": "Promotion d'entreprise",
         "desc": "Des campagnes publicitaires ciblées pour élargir votre clientèle."
       },
       "discovery": {
-        "title": "Découverte d'opportunités",
+        "title": "Découvrir et identifier les opportunités",
         "desc": "Une porte d'entrée vers de nouveaux emplois, projets et partenariats d'affaires."
       },
       "trade": {
@@ -112,11 +112,11 @@
   },
   "howItWorks": {
     "badge": "LE PROBLÈME ET LA SOLUTION",
-    "title": "Rassembler un marché éclaté grâce au digital",
+    "title": "Résoudre les problèmes en reliant les personnes et la technologie",
     "description": "De nombreux clients peinent à trouver des opportunités fiables en un seul endroit, tandis que beaucoup d'entreprises manquent de visibilité. Amamazanonaha Ltd y répond en créant une plateforme digitale centrale, pensée pour la découverte et l'opportunité commerciale.",
     "steps": {
       "step1": {
-        "title": "Les entreprises et les marques s'inscrivent",
+        "title": "Une plateforme qui relie entreprises et marques",
         "desc": "Les entreprises et marques locales publient les produits et services qu'elles proposent. Des profils vérifiés permettent aux clients de comprendre ce que vous vendez, où vous opérez et ce qui rend votre offre digne de confiance."
       },
       "step2": {

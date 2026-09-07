@@ -10,7 +10,7 @@
     "title": "Digital Commerce & Marketing Platform",
     "subtitle": "Rwanda & Africa to the World",
     "tagline": "Connect • Trade • Prosper",
-    "description": "Empowering digital trade, visibility, and growth through one modern platform.",
+    "description": "Advancing online, technology-driven commerce.",
     "cta": "Explore services",
     "watchShowreel": "Watch showreel"
   },
@@ -48,14 +48,14 @@
       },
       "marketing": {
         "title": "Marketing & Brand Visibility",
-        "desc": "Awareness strategies that help brands attract the right audience and build presence."
+        "desc": "Brand-awareness strategies that help attract the right buyers and increase visibility in the market."
       },
       "promotion": {
         "title": "Business Promotion",
         "desc": "Targeted advertising and visibility campaigns to grow your customer base."
       },
       "discovery": {
-        "title": "Opportunity Discovery",
+        "title": "Discovering and identifying opportunities",
         "desc": "A gateway to find new jobs, projects, and business partnerships."
       },
       "trade": {
@@ -112,11 +112,11 @@
   },
   "howItWorks": {
     "badge": "THE PROBLEM & SOLUTION",
-    "title": "Solving fragmentations through digital connection",
+    "title": "Solving problems by connecting people and technology",
     "description": "Many customers struggle to find reliable opportunities in one place, while many businesses face limited visibility. Amamazanonaha Ltd solves this by creating a central digital platform for discoverability and commercial opportunity.",
     "steps": {
       "step1": {
-        "title": "Businesses & Brands Join",
+        "title": "A platform connecting businesses and brands",
         "desc": "Local businesses and brands create listings for the products and services they offer. Verified profiles help customers understand what you sell, where you operate, and what makes your offer trustworthy."
       },
       "step2": {

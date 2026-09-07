@@ -13,7 +13,22 @@ import {
  * rw.json holds the original wording; en.json and fr.json are translated from
  * it, which is the reverse of the usual direction in this project.
  */
-const FAQ_KEYS = ["problem", "technology", "customers", "businesses"] as const;
+interface FaqEntry {
+  key: string;
+  /** Point keys for answers that are a list rather than a paragraph. */
+  points?: string[];
+}
+
+const FAQ_ENTRIES: FaqEntry[] = [
+  { key: "problem" },
+  { key: "technology" },
+  { key: "customers" },
+  { key: "customerOpportunities" },
+  { key: "businesses" },
+  { key: "businessSupport" },
+  { key: "verifiedProfile" },
+  { key: "businessBenefits", points: ["p1", "p2", "p3", "p4"] },
+];
 
 const FaqSection = () => {
   const { t } = useTranslation();
@@ -53,7 +68,7 @@ const FaqSection = () => {
 
           <motion.div variants={itemVariants}>
             <Accordion type="single" collapsible className="w-full space-y-3">
-              {FAQ_KEYS.map((key) => (
+              {FAQ_ENTRIES.map(({ key, points }) => (
                 <AccordionItem
                   key={key}
                   value={key}
@@ -64,6 +79,13 @@ const FaqSection = () => {
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground text-sm sm:text-base leading-relaxed pb-5">
                     {t(`faq.items.${key}.a`)}
+                    {points && (
+                      <ul className="mt-3 space-y-1.5 list-disc pl-5">
+                        {points.map((point) => (
+                          <li key={point}>{t(`faq.items.${key}.points.${point}`)}</li>
+                        ))}
+                      </ul>
+                    )}
                   </AccordionContent>
                 </AccordionItem>
               ))}

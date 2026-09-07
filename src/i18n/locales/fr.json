@@ -199,9 +199,31 @@
         "q": "Qu'y gagnent les clients ?",
         "a": "Les clients trouvent des informations fiables en un seul endroit et disposent de plus de choix ; ils peuvent comparer et décider en confiance — ce qui leur fait gagner du temps et de l'argent."
       },
+      "customerOpportunities": {
+        "q": "Quelles opportunités les clients trouvent-ils avec Amamazanonaha Ltd ?",
+        "a": "Les clients peuvent commander les produits et équipements qu'ils souhaitent depuis la Chine et partout dans le monde — simplement, en toute confiance et rapidement, ce qui leur fait gagner du temps et de l'argent."
+      },
       "businesses": {
         "q": "Qu'y gagnent les entreprises et les marques ?",
         "a": "Les entreprises gagnent en visibilité sur le marché, bâtissent la confiance, touchent plus de clients et trouvent de nouvelles opportunités de vente et de partenariat."
+      },
+      "businessSupport": {
+        "q": "Comment Amamazanonaha Ltd aide-t-il les entreprises et les marques ?",
+        "a": "Nous aidons les entreprises et les marques à créer un profil professionnel vérifié (Verified Business Profile) qui présente clairement les produits et services qu'elles proposent, leur zone d'activité, leurs informations essentielles et leurs valeurs."
+      },
+      "verifiedProfile": {
+        "q": "Pourquoi un Verified Business Profile est-il important ?",
+        "a": "Un profil vérifié rassure les clients : il montre que l'entreprise est reconnue et digne de confiance. Cela renforce la confiance, améliore la visibilité sur le marché et multiplie les occasions de gagner de nouveaux clients."
+      },
+      "businessBenefits": {
+        "q": "Que gagnent les entreprises en utilisant la plateforme Amamazanonaha Ltd ?",
+        "a": "Les entreprises ont la possibilité de :",
+        "points": {
+          "p1": "Présenter leurs produits et services de façon professionnelle.",
+          "p2": "Toucher davantage de clients au Rwanda et au-delà.",
+          "p3": "Bâtir une réputation solide et la confiance du marché.",
+          "p4": "Multiplier les occasions de vente et de partenariat."
+        }
       }
     }
   },

@@ -199,9 +199,31 @@
         "q": "Ni izihe nyungu abakiriya babona?",
         "a": "Abakiriya babona amakuru yizewe ahantu hamwe, bagahabwa amahitamo menshi, bakabasha kugereranya no gufata ibyemezo byiza, bityo bakazigama igihe n'amafaranga."
       },
+      "customerOpportunities": {
+        "q": "Ni ayahe mahirwe abakiriya babona bakoresheje Amamazanonaha Ltd?",
+        "a": "Abakiriya babona amahirwe akomeye yo gutumiza ibicuruzwa n'ibikoresho bifuza biva mu Bushinwa no ku isi hose, mu buryo bworoshye, bwizewe kandi bwihuse bubafasha kuzigama igihe n'amafaranga."
+      },
       "businesses": {
         "q": "Ni izihe nyungu ibigo n'ibirango by'ubucuruzi bibona?",
         "a": "Ibigo byongera kugaragara ku isoko, bikubaka icyizere, bikagera ku bakiriya benshi, kandi bikabona amahirwe mashya yo kugurisha no gukorana n'abafatanyabikorwa."
+      },
+      "businessSupport": {
+        "q": "Amamazanonaha Ltd ifasha ite ibigo n'ibirango by'ubucuruzi?",
+        "a": "Amamazanonaha Ltd ifasha ibigo n'ibirango by'ubucuruzi gukora imyirondoro yemejwe (Verified Business Profile) kandi y'umwuga, igaragaza neza ibicuruzwa na serivisi bitanga, aho bikorera, amakuru y'ingenzi ndetse n'indangagaciro zabyo."
+      },
+      "verifiedProfile": {
+        "q": "Kuki gukora Verified Business Profile ari ingenzi?",
+        "a": "Imyirondoro yemejwe ituma abakiriya bagira icyizere, bakamenya ko ikigo cyemewe kandi cyizewe. Ibi bifasha kongera icyizere, kugaragara ku isoko no kongera amahirwe yo kubona abakiriya bashya."
+      },
+      "businessBenefits": {
+        "q": "Ni izihe nyungu ibigo bibona iyo bikoresheje urubuga rwa Amamazanonaha Ltd?",
+        "a": "Ibigo bibona amahirwe yo:",
+        "points": {
+          "p1": "Kugaragaza ibicuruzwa na serivisi ku buryo bw'umwuga.",
+          "p2": "Kugerwaho n'abakiriya benshi mu Rwanda no hanze yarwo.",
+          "p3": "Kubaka izina ryiza n'icyizere ku isoko.",
+          "p4": "Kongera amahirwe yo kugurisha no gukorana n'abafatanyabikorwa."
+        }
       }
     }
   },

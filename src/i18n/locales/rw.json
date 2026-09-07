@@ -206,6 +206,29 @@
       }
     }
   },
+  "faq": {
+    "badge": "IBIBAZO N'IBISUBIZO",
+    "title": "Ibibazo bikunze kubazwa",
+    "description": "Ibyo abantu batubaza kenshi ku rubuga rwacu, n'icyo rumarira abakiriya n'ubucuruzi.",
+    "items": {
+      "problem": {
+        "q": "Ni ikihe kibazo Amamazanonaha Ltd ikemura?",
+        "a": "Dukemura ikibazo cyo kubura urubuga rumwe rwizewe ruhuriza hamwe amakuru y'ubucuruzi, ibicuruzwa na serivisi. Dufasha abakiriya kubona ibyo bakeneye byoroshye kandi byihuse, dufasha ibigo kongera kumenyekana no kubona amahirwe mashya y'ubucuruzi."
+      },
+      "technology": {
+        "q": "Amamazanonaha Ltd ikoresha ite ikoranabuhanga mu gukemura ibyo bibazo?",
+        "a": "Twubatse urubuga rw'ikoranabuhanga rigezweho ruhuza abantu, ibigo n'amasoko. Abakiriya bashobora gushakisha, kugereranya no guhitamo ibicuruzwa na serivisi bifitiwe icyizere batavuye aho bari."
+      },
+      "customers": {
+        "q": "Ni izihe nyungu abakiriya babona?",
+        "a": "Abakiriya babona amakuru yizewe ahantu hamwe, bagahabwa amahitamo menshi, bakabasha kugereranya no gufata ibyemezo byiza, bityo bakazigama igihe n'amafaranga."
+      },
+      "businesses": {
+        "q": "Ni izihe nyungu ibigo n'ibirango by'ubucuruzi bibona?",
+        "a": "Ibigo byongera kugaragara ku isoko, bikubaka icyizere, bikagera ku bakiriya benshi, kandi bikabona amahirwe mashya yo kugurisha no gukorana n'abafatanyabikorwa."
+      }
+    }
+  },
   "contact": {
     "badge": "Twandikire",
     "title": "Twoherereze ubutumwa",

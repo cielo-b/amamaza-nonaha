@@ -206,6 +206,29 @@
       }
     }
   },
+  "faq": {
+    "badge": "QUESTIONS & RÉPONSES",
+    "title": "Questions fréquentes",
+    "description": "Ce que l'on nous demande le plus souvent au sujet de la plateforme, et ce qu'elle apporte aux clients comme aux entreprises.",
+    "items": {
+      "problem": {
+        "q": "Quel problème Amamazanonaha Ltd résout-il ?",
+        "a": "Nous répondons à l'absence d'une plateforme unique et fiable réunissant les informations commerciales, les produits et les services. Nous aidons les clients à trouver facilement et rapidement ce dont ils ont besoin, et nous aidons les entreprises à se faire connaître et à saisir de nouvelles opportunités d'affaires."
+      },
+      "technology": {
+        "q": "Comment Amamazanonaha Ltd utilise-t-il la technologie pour y répondre ?",
+        "a": "Nous avons bâti une plateforme digitale moderne qui relie les personnes, les entreprises et les marchés. Les clients peuvent rechercher, comparer et choisir des produits et services de confiance sans se déplacer."
+      },
+      "customers": {
+        "q": "Qu'y gagnent les clients ?",
+        "a": "Les clients trouvent des informations fiables en un seul endroit et disposent de plus de choix ; ils peuvent comparer et décider en confiance — ce qui leur fait gagner du temps et de l'argent."
+      },
+      "businesses": {
+        "q": "Qu'y gagnent les entreprises et les marques ?",
+        "a": "Les entreprises gagnent en visibilité sur le marché, bâtissent la confiance, touchent plus de clients et trouvent de nouvelles opportunités de vente et de partenariat."
+      }
+    }
+  },
   "contact": {
     "badge": "Contactez-nous",
     "title": "Envoyez-nous un message",

@@ -206,6 +206,29 @@
       }
     }
   },
+  "faq": {
+    "badge": "QUESTIONS & ANSWERS",
+    "title": "Frequently asked questions",
+    "description": "What people ask us most about the platform, and what it does for customers and businesses.",
+    "items": {
+      "problem": {
+        "q": "What problem does Amamazanonaha Ltd solve?",
+        "a": "We solve the absence of a single trusted platform bringing together business information, products and services. We help customers find what they need easily and quickly, and we help companies become better known and reach new business opportunities."
+      },
+      "technology": {
+        "q": "How does Amamazanonaha Ltd use technology to solve it?",
+        "a": "We have built a modern digital platform that connects people, companies and markets. Customers can search, compare and choose trusted products and services without leaving where they are."
+      },
+      "customers": {
+        "q": "What do customers gain?",
+        "a": "Customers get reliable information in one place and more options to choose from, and they can compare and decide with confidence — saving both time and money."
+      },
+      "businesses": {
+        "q": "What do businesses and brands gain?",
+        "a": "Businesses become more visible in the market, build trust, reach more customers, and find new opportunities to sell and to work with partners."
+      }
+    }
+  },
   "contact": {
     "badge": "Contact Us",
     "title": "Send us a message",

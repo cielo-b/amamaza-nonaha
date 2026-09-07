@@ -49,7 +49,7 @@ const Footer = () => {
               { label: t("footer.helpCenter"), link: "#" },
               { label: t("footer.privacy"), link: "#" },
               { label: t("footer.terms"), link: "#" },
-              { label: t("footer.faq"), link: "#" },
+              { label: t("footer.faq"), link: "#faq" },
             ].map((l) => (
               <li key={l.label}>
                 <a href={l.link} className="text-sm text-white/50 hover:text-primary transition-colors duration-200">{l.label}</a>

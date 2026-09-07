@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Play, Volume2, Shield, TrendingUp, Search } from "lucide-react";
 import VideoModal from "./VideoModal";
 import thumbnail from "@/assets/founder-thumbnail.png";
-import brandVideo from "@/assets/videos/1.mp4";
+import brandVideo from "@/assets/videos/global-reach.mp4";
 import { Trans, useTranslation } from "react-i18next";
 
 /**
@@ -24,7 +24,6 @@ const BrandVideoSection = () => {
 
     return (
         <section className="py-24 bg-gradient-to-b from-background to-slate-50 dark:to-slate-900/20 overflow-hidden">
-            <VideoModal isOpen={isOpen} onClose={() => setIsOpen(false)} videoUrl={brandVideo} />
             <div className="container mx-auto px-4">
                 <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
                     {/* Left: Text Content */}
@@ -135,7 +134,7 @@ const BrandVideoSection = () => {
             <VideoModal
                 isOpen={isOpen}
                 onClose={() => setIsOpen(false)}
-                videoUrl="/showcase-video.mp4"
+                videoUrl={brandVideo}
             />
         </section>
     );

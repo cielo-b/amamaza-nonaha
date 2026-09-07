@@ -6,7 +6,7 @@ import { MagneticWrapper } from "@/components/MagneticWrapper";
 import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import { useTranslation } from "react-i18next";
-import video1 from "@/assets/videos/1.mp4";
+import heroShowreel from "@/assets/videos/brand-promo.mp4";
 import VideoModal from "./VideoModal";
 
 const slides = [hero1, hero2];
@@ -139,7 +139,7 @@ const HeroSection = () => {
           </motion.div>
         </div>
       </div>
-      <VideoModal isOpen={videoOpen} onClose={() => setVideoOpen(false)} videoUrl={video1} />
+      <VideoModal isOpen={videoOpen} onClose={() => setVideoOpen(false)} videoUrl={heroShowreel} />
     </section>
   );
 };

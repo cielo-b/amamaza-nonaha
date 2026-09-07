@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import howItWorksImg from "@/assets/howit-works.jpg";
 import VideoModal from "./VideoModal";
 import { useTranslation } from "react-i18next";
-import video4 from "@/assets/videos/4.mp4";
+import howItWorksVideo from "@/assets/videos/services-overview.mp4";
 
 /**
  * The five-step accordion that used to sit here was removed: the FAQ section
@@ -67,7 +67,7 @@ const HowItWorksSection = () => {
       <VideoModal
         isOpen={videoOpen}
         onClose={() => setVideoOpen(false)}
-        videoUrl={video4}
+        videoUrl={howItWorksVideo}
       />
     </section>
   );

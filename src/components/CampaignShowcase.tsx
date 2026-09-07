@@ -59,16 +59,19 @@ const defaultVideos = "https://vt.tiktok.com/ZSxrYdVXp/,https://vt.tiktok.com/ZS
         const fetchedVideos = await Promise.all(
           urls.map(async (url: string, index: number) => {
             try {
-              // Call TikTok's official open oEmbed JSON API
-              const res = await fetch(`https://www.tiktok.com/oembed?url=${encodeURIComponent(url)}`);
-              if (!res.ok) throw new Error("Fetch failed");
+              // Our own endpoint, not tiktok.com directly: oEmbed sends no CORS
+              // headers and rejects vt.tiktok.com short links, so the lookup and
+              // the short-link resolution both have to happen server-side.
+              // Netlify function in production, Vite middleware in dev.
+              const res = await fetch(`/api/tiktok-oembed?url=${encodeURIComponent(url)}`);
+              if (!res.ok) throw new Error(`oembed proxy responded ${res.status}`);
               const data = await res.json();
-              
+
               return {
                 id: `real-${index}`,
                 title: data.title,
-                thumbnail: data.thumbnail_url,
-                videoUrl: data.embed_product_id ? `https://www.tiktok.com/embed/v2/${data.embed_product_id}` : url,
+                thumbnail: data.thumbnailUrl,
+                videoUrl: data.embedProductId ? `https://www.tiktok.com/embed/v2/${data.embedProductId}` : url,
                 // Display realistic metrics based on average engagements
                 views: `${Math.floor(10 + Math.random() * 90)}.${Math.floor(1 + Math.random() * 9)}K`,
                 likes: `${Math.floor(1 + Math.random() * 9)}.${Math.floor(1 + Math.random() * 9)}K`,

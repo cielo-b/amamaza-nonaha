@@ -1,0 +1,21 @@
+# Build command and publish directory intentionally omitted — they are configured
+# in the Netlify UI for this site, and declaring them here would override it.
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Keep the browser on our own origin. TikTok's oEmbed endpoint sends no CORS
+# headers and rejects vt.tiktok.com short links, so the lookup must be made
+# server-side.
+[[redirects]]
+  from = "/api/tiktok-oembed"
+  to = "/.netlify/functions/tiktok-oembed"
+  status = 200
+
+# Single-page app: any other path is handled by the React router, which renders
+# the translated 404 page.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

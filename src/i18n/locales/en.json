@@ -204,18 +204,6 @@
         "a": "Customers gain real opportunities to order the products and equipment they want from China and from anywhere in the world — simply, reliably and quickly, saving them both time and money."
       },
       "businesses": {
-        "q": "What do businesses and brands gain?",
-        "a": "Businesses become more visible in the market, build trust, reach more customers, and find new opportunities to sell and to work with partners."
-      },
-      "businessSupport": {
-        "q": "How does Amamazanonaha Ltd help businesses and brands?",
-        "a": "We help businesses and brands build a verified, professional Business Profile that clearly presents the products and services they offer, where they operate, their key information and what they stand for."
-      },
-      "verifiedProfile": {
-        "q": "Why does a Verified Business Profile matter?",
-        "a": "A verified profile gives customers confidence, showing them the business is recognised and trustworthy. That builds trust, raises visibility in the market and opens up more chances to win new customers."
-      },
-      "businessBenefits": {
         "q": "What do businesses gain by using the Amamazanonaha Ltd platform?",
         "a": "Businesses get the opportunity to:",
         "points": {
@@ -224,6 +212,14 @@
           "p3": "Build a strong name and trust in the market.",
           "p4": "Open up more sales and partnership opportunities."
         }
+      },
+      "businessSupport": {
+        "q": "How does Amamazanonaha Ltd help businesses and brands?",
+        "a": "We help businesses and brands build a verified, professional Business Profile that clearly presents the products and services they offer, where they operate, their key information and what they stand for."
+      },
+      "verifiedProfile": {
+        "q": "Why does a Verified Business Profile matter?",
+        "a": "A verified profile gives customers confidence, showing them the business is recognised and trustworthy. That builds trust, raises visibility in the market and opens up more chances to win new customers."
       }
     }
   },

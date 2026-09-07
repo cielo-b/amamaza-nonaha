@@ -24,10 +24,9 @@ const FAQ_ENTRIES: FaqEntry[] = [
   { key: "technology" },
   { key: "customers" },
   { key: "customerOpportunities" },
-  { key: "businesses" },
+  { key: "businesses", points: ["p1", "p2", "p3", "p4"] },
   { key: "businessSupport" },
   { key: "verifiedProfile" },
-  { key: "businessBenefits", points: ["p1", "p2", "p3", "p4"] },
 ];
 
 const FaqSection = () => {

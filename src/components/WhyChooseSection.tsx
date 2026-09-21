@@ -8,7 +8,7 @@ import video2 from "@/assets/videos/2.mp4";
 const WhyChooseSection = () => {
   const { t } = useTranslation();
 
-  const beliefs = ["b1", "b2", "b3", "b4"].map((key) => t(`whyChoose.beliefs.${key}`));
+  const beliefs = ["b1", "b2", "b3", "b4"].map((key) => ({ key, text: t(`whyChoose.beliefs.${key}`) }));
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -74,12 +74,12 @@ const WhyChooseSection = () => {
             {t("whyChoose.beliefsIntro")}
           </motion.div>
           <motion.ul variants={containerVariants} className="space-y-6">
-            {beliefs.map((belief) => (
-              <motion.li variants={itemVariants} key={belief} className="flex gap-4">
+            {beliefs.map(({ key, text }) => (
+              <motion.li variants={itemVariants} key={key} className="flex gap-4">
                 <div className="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center shrink-0 mt-1">
                   <Check className="w-3.5 h-3.5 font-bold" />
                 </div>
-                <div className="text-[15px] text-muted-foreground leading-relaxed">{belief}</div>
+                <div className="text-[15px] text-muted-foreground leading-relaxed">{text}</div>
               </motion.li>
             ))}
           </motion.ul>

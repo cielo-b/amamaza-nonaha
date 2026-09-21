@@ -118,23 +118,12 @@
     "badge": "WHY CHOOSE US",
     "title": "Why Choose Amamazanonaha?",
     "description": "We bring together cutting-edge technology, deep local knowledge, and a passion for community growth.",
-    "items": {
-      "multiCategory": {
-        "title": "Multi-category access",
-        "desc": "Serving different needs through one connected ecosystem."
-      },
-      "digitalFirst": {
-        "title": "Digital-first approach",
-        "desc": "Built for the modern market where visibility and accessibility matter."
-      },
-      "localRelevance": {
-        "title": "Local relevance, Global mindset",
-        "desc": "Focusing on Rwanda while positioning for broader global opportunity."
-      },
-      "growthSupport": {
-        "title": "Business growth support",
-        "desc": "Moving brands from being unseen to being discoverable and competitive."
-      }
+    "beliefsIntro": "AMAMAZANONAHA, we believe that:",
+    "beliefs": {
+      "b1": "Technology should be a solution, not a barrier.",
+      "b2": "For example, Rwandan trade, agriculture, livestock and fishing deserve the opportunity to be discovered and to grow.",
+      "b3": "Opportunities in the global market should be within Rwandans' reach.",
+      "b4": "The growth of trade, agriculture, livestock and fishing must contribute to community development."
     },
     "cta": "Contact Us"
   },

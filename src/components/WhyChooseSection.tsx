@@ -8,12 +8,7 @@ import video2 from "@/assets/videos/2.mp4";
 const WhyChooseSection = () => {
   const { t } = useTranslation();
 
-  const reasons = [
-    { title: t("whyChoose.items.multiCategory.title"), desc: t("whyChoose.items.multiCategory.desc") },
-    { title: t("whyChoose.items.digitalFirst.title"), desc: t("whyChoose.items.digitalFirst.desc") },
-    { title: t("whyChoose.items.localRelevance.title"), desc: t("whyChoose.items.localRelevance.desc") },
-    { title: t("whyChoose.items.growthSupport.title"), desc: t("whyChoose.items.growthSupport.desc") },
-  ];
+  const beliefs = ["b1", "b2", "b3", "b4"].map((key) => t(`whyChoose.beliefs.${key}`));
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -75,16 +70,16 @@ const WhyChooseSection = () => {
           <motion.p variants={itemVariants} className="text-muted-foreground text-lg leading-relaxed max-w-lg pb-4">
             {t("whyChoose.description")}
           </motion.p>
+          <motion.div variants={itemVariants} className="font-bold text-lg text-foreground">
+            {t("whyChoose.beliefsIntro")}
+          </motion.div>
           <motion.ul variants={containerVariants} className="space-y-6">
-            {reasons.map((r) => (
-              <motion.li variants={itemVariants} key={r.title} className="flex gap-4">
+            {beliefs.map((belief) => (
+              <motion.li variants={itemVariants} key={belief} className="flex gap-4">
                 <div className="w-6 h-6 rounded-full bg-primary/20 text-primary flex items-center justify-center shrink-0 mt-1">
                   <Check className="w-3.5 h-3.5 font-bold" />
                 </div>
-                <div>
-                  <div className="font-bold text-lg text-foreground">{r.title}</div>
-                  <div className="text-[15px] text-muted-foreground mt-1 leading-relaxed">{r.desc}</div>
-                </div>
+                <div className="text-[15px] text-muted-foreground leading-relaxed">{belief}</div>
               </motion.li>
             ))}
           </motion.ul>

@@ -98,7 +98,7 @@
       },
       "accessibility": {
         "title": "Kugerwaho na bose",
-        "desc": "Gutuma amahirwe aboneka, akagerwaho kandi agakoreshwa n'umuntu wese ku buryo bworoshye."
+        "desc": "Twashyizeho amahirwe n'ibisubizo by'ikoranabuhanga ku buryo buri muntu wese ashobora kubigeraho, kubyumva no kubikoresha mu buryo bworoshye, hatitawe ku rwego ariho cyangwa aho aherereye."
       },
       "growth": {
         "title": "Iterambere",
@@ -112,29 +112,18 @@
   },
   "howItWorks": {
     "title": "Gukemura ibibazo binyuze mu guhuza abantu n'ikoranabuhanga",
-    "description": "Abakiriya benshi bagorwa no kubona amahirwe yizewe ahantu hamwe, naho ubucuruzi bwinshi bukabura uko bumenyekana. Amamazanonaha Ltd ikemura ibyo byombi ishyiraho urubuga rumwe rw'ikoranabuhanga rutuma ubucuruzi bubonwa kandi bugahabwa amahirwe."
+    "description": "Abakiriya benshi bahura n'imbogamizi zo kubona ibyo bakeneye byose, ibicuruzwa na serivisi byizewe ahantu hamwe, mu gihe ubucuruzi bwinshi bugorwa no kugera ku bakiriya bashya, kumenyekanisha ibyo batanga no kwagura isoko ryabo. AMAMAZANONAHA LTD igamije guhuza ibyo byombi binyuze mu bisubizo by'ikoranabuhanga bifasha guhuza abakiriya n'ubucuruzi, guteza imbere ubucuruzi kuri interineti, no gutuma amahirwe y'ubucuruzi aboneka kandi akagerwaho mu buryo bworoshye."
   },
   "whyChoose": {
     "badge": "IMPAMVU WADUHITAMO",
     "title": "Kuki wahitamo Amamazanonaha?",
-    "description": "Duhuriza hamwe ikoranabuhanga rigezweho, ubumenyi bwimbitse bw'iwacu n'urukundo rwo guteza imbere abaturage.",
-    "items": {
-      "multiCategory": {
-        "title": "Ibyiciro byinshi ahantu hamwe",
-        "desc": "Twita ku byo abantu batandukanye bakeneye, byose ku rubuga rumwe ruhuza."
-      },
-      "digitalFirst": {
-        "title": "Ikoranabuhanga mbere na mbere",
-        "desc": "Rwubakiwe isoko rigezweho, aho kumenyekana no kugerwaho ari byo by'ingenzi."
-      },
-      "localRelevance": {
-        "title": "Dukorera iwacu, twitegereza isi",
-        "desc": "Twibanda ku Rwanda mu gihe twitegura amahirwe agera hanze y'imipaka."
-      },
-      "growthSupport": {
-        "title": "Gufasha ubucuruzi gukura",
-        "desc": "Tuvana ibirango mu kutamenyekana, tukabigeza aho bibonwa kandi bihanganira abandi ku isoko."
-      }
+    "description": "AMAMAZANONAHA LTD n'igisubizo cy'Abanyarwanda, cyubakiye ku ikoranabuhanga. Duhuriza hamwe ikoranabuhanga rigezweho, ubumenyi bwimbitse ku isoko ry'u Rwanda n'ubushake bwo guteza imbere abaturage n'ubucuruzi bw'iwacu.",
+    "beliefsIntro": "AMAMAZANONAHA, twemera ko:",
+    "beliefs": {
+      "b1": "Ikoranabuhanga rikwiye kuba igisubizo aho kuba inzitizi.",
+      "b2": "Urugero: Ubucuruzi, Ubuhinzi, Ubworozi, Uburobyi bw’Abanyarwanda bukwiye kugira amahirwe yo kumenyekana no gukura.",
+      "b3": "Amahirwe y’isoko ry’isi akwiye kugerwaho n’Abanyarwanda.",
+      "b4": "Gukura k’ubucuruzi, ubuhinzi, ubworozi, uburobyi bigomba kugira uruhare mu iterambere ry’abaturage."
     },
     "cta": "Twandikire"
   },

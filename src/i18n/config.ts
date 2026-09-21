@@ -6,6 +6,7 @@ import enTranslations from './locales/en.json';
 import rwTranslations from './locales/rw.json';
 import frTranslations from './locales/fr.json';
 
+
 i18n
     .use(LanguageDetector)
     .use(initReactI18next)

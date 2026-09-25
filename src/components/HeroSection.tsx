@@ -7,9 +7,13 @@ import hero1 from "@/assets/hero-1.jpg";
 import hero2 from "@/assets/hero-2.jpg";
 import { useTranslation } from "react-i18next";
 import heroShowreel from "@/assets/videos/brand-promo.mp4";
+import heroSlideVideo from "@/assets/videos/hero-1.mp4";
 import VideoModal from "./VideoModal";
 
-const slides = [hero1, hero2];
+const slides: { type: "image" | "video"; src: string }[] = [
+  { type: "video", src: heroSlideVideo },
+  { type: "image", src: hero2 },
+];
 
 const HeroSection = () => {
   const { t } = useTranslation();
@@ -56,16 +60,31 @@ const HeroSection = () => {
           >
             {/* Keep images clipped to the rounded photo card */}
             <div className="absolute inset-0 overflow-hidden rounded-3xl">
-              {slides.map((src, i) => (
-                <motion.img
-                  key={i}
-                  src={src}
-                  style={{ y: yImage, scale: 1.15 }}
-                  alt={t("a11y.slide", { number: i + 1 })}
-                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 origin-bottom ${i === current ? "opacity-100" : "opacity-0"
-                    }`}
-                />
-              ))}
+              {slides.map((slide, i) =>
+                slide.type === "video" ? (
+                  <motion.video
+                    key={i}
+                    src={slide.src}
+                    style={{ y: yImage, scale: 1.15 }}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    aria-label={t("a11y.slide", { number: i + 1 })}
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 origin-bottom ${i === current ? "opacity-100" : "opacity-0"
+                      }`}
+                  />
+                ) : (
+                  <motion.img
+                    key={i}
+                    src={slide.src}
+                    style={{ y: yImage, scale: 1.15 }}
+                    alt={t("a11y.slide", { number: i + 1 })}
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 origin-bottom ${i === current ? "opacity-100" : "opacity-0"
+                      }`}
+                  />
+                )
+              )}
             </div>
 
             {/* Carousel overlay controls */}

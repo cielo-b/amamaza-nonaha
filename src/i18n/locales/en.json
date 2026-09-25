@@ -270,6 +270,7 @@
   },
   "a11y": {
     "logo": "Amamazanonaha logo",
+    "heroVideo": "Amamazanonaha brand video",
     "prevSlide": "Previous image",
     "nextSlide": "Next image",
     "toggleTheme": "Switch between light and dark mode",

@@ -3,6 +3,8 @@ import { motion, Variants } from "framer-motion";
 import { Building2, Users, LifeBuoy } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import video3 from "@/assets/videos/3.mp4";
+import aboutInnovationVideo from "@/assets/videos/about-innovation.mp4";
+import aboutGrowthVideo from "@/assets/videos/about-growth.mp4";
 
 const AboutSection = () => {
   const { t } = useTranslation();
@@ -58,16 +60,28 @@ const AboutSection = () => {
           </div>
           {/* Collage Column 2 */}
           <div className="space-y-4 pt-12">
-            <img
-              src="https://images.unsplash.com/photo-15731647133988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              alt={t("a11y.aboutPlanning")}
-              className="rounded-2xl object-cover w-full h-60 shadow-md"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              alt={t("a11y.aboutWorkspace")}
-              className="rounded-2xl object-cover w-full h-40 shadow-md"
-            />
+            <div className="rounded-2xl overflow-hidden w-full h-60 shadow-md bg-black relative">
+              <video
+                src={aboutInnovationVideo}
+                autoPlay
+                muted
+                loop
+                playsInline
+                aria-label={t("a11y.aboutInnovation")}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden w-full h-40 shadow-md bg-black relative">
+              <video
+                src={aboutGrowthVideo}
+                autoPlay
+                muted
+                loop
+                playsInline
+                aria-label={t("a11y.aboutGrowth")}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </div>
           </div>
         </motion.div>
 

@@ -88,6 +88,17 @@ const Footer = () => {
           <div className="text-xs text-white/30">
             {t("footer.copyright")}
           </div>
+          <div className="text-xs text-white/30">
+            {t("footer.poweredBy")}{" "}
+            <a
+              href="https://axiomfold.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-white/50 hover:text-primary transition-colors"
+            >
+              Axiom Fold LTD
+            </a>
+          </div>
           <div className="flex items-center gap-6">
             <a href="https://www.facebook.com/share/1CESE9RUev/" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-primary transition-colors"><Facebook className="w-5 h-5" /></a>
             <a href="https://www.instagram.com/amamazanonaha.ltd?igsh=MW1hbXM1Y3kyYW93cQ==" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-primary transition-colors"><Instagram className="w-5 h-5" /></a>

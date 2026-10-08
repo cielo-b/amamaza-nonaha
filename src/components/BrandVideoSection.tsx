@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Play, Volume2, Shield, TrendingUp, Search } from "lucide-react";
 import VideoModal from "./VideoModal";
-import brandVideo from "@/assets/videos/global-reach.mp4";
+import brandVideo from "@/assets/videos/no-visibility.mp4";
 import { Trans, useTranslation } from "react-i18next";
 
 /**

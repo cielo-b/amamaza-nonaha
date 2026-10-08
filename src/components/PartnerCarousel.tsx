@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import globalReachVideo from "@/assets/videos/global-reach.mp4";
 
 const companies = [
     {
@@ -42,7 +43,24 @@ const PartnerCarousel = () => {
 
     return (
         <section className="py-24 overflow-hidden bg-background relative border-y border-foreground/5">
-            <div className="container mx-auto px-4 mb-16 text-center">
+            {/* Slowly looping globe behind the names: this is where the brand's global reach belongs */}
+            <div
+                aria-hidden="true"
+                className="absolute inset-0 pointer-events-none"
+                style={{ maskImage: "linear-gradient(to bottom, transparent 30%, black 75%)", WebkitMaskImage: "linear-gradient(to bottom, transparent 30%, black 75%)" }}
+            >
+                <video
+                    src={globalReachVideo}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover opacity-[0.2] dark:opacity-[0.35]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-background via-background/60 to-background" />
+            </div>
+
+            <div className="container mx-auto px-4 mb-16 text-center relative">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}

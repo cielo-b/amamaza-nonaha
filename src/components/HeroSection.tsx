@@ -19,7 +19,6 @@ const HeroSection = () => {
     offset: ["start start", "end start"],
   });
 
-  const yImage = useTransform(scrollYProgress, [0, 1], [0, 120]);
   const yBlob = useTransform(scrollYProgress, [0, 1], [0, 200]);
 
   return (
@@ -34,21 +33,21 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="relative"
+            className="relative w-full max-w-sm sm:max-w-md mx-auto"
           >
             {/* Decorative glow behind the frame */}
             <div className="absolute -inset-4 md:-inset-6 rounded-[2rem] bg-primary/10 blur-2xl -z-10" />
 
-            <div className="relative rounded-3xl overflow-hidden shadow-[0_20px_60px_-12px_rgba(0,0,0,0.35)] ring-1 ring-border/60 border-[6px] md:border-8 border-background bg-black min-h-[320px] md:min-h-[520px]">
-              <motion.video
+            <div className="relative rounded-3xl overflow-hidden shadow-[0_20px_60px_-12px_rgba(0,0,0,0.35)] ring-1 ring-border/60 border-[6px] md:border-8 border-background bg-black aspect-[3/4]">
+              {/* The clip is portrait, so the card is portrait too: nothing important gets cropped. */}
+              <video
                 src={heroSlideVideo}
-                style={{ y: yImage, scale: 1.1 }}
                 autoPlay
                 muted
                 loop
                 playsInline
                 aria-label={t("a11y.heroVideo")}
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover object-top"
               />
               {/* Subtle bottom gradient for depth and contrast */}
               <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />

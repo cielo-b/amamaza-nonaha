@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import VideoModal from "./VideoModal";
+import SoundVideo from "./SoundVideo";
 import { useTranslation } from "react-i18next";
 import howItWorksVideo from "@/assets/videos/services-overview.mp4";
 
@@ -49,13 +50,9 @@ const HowItWorksSection = () => {
               <div className="absolute top-0 right-[40%] md:right-32 w-2 h-12 bg-primary z-20 rounded-b-md transform -translate-y-2 group-hover:translate-y-0 transition-transform" />
               <div className="absolute bottom-0 left-[40%] md:left-12 w-2 h-12 bg-primary z-20 rounded-t-md transform translate-y-2 group-hover:translate-y-0 transition-transform" />
 
-              <video
+              <SoundVideo
                 src={howItWorksVideo}
-                autoPlay
-                muted
-                loop
-                playsInline
-                aria-hidden="true"
+                toggleClassName="bottom-4 right-4"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors" />

@@ -262,6 +262,8 @@
   "a11y": {
     "logo": "Amamazanonaha logo",
     "heroVideo": "Amamazanonaha brand video",
+    "unmute": "Turn sound on",
+    "mute": "Turn sound off",
     "prevSlide": "Previous image",
     "nextSlide": "Next image",
     "toggleTheme": "Switch between light and dark mode",

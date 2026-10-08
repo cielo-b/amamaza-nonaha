@@ -262,6 +262,8 @@
   "a11y": {
     "logo": "Logo d'Amamazanonaha",
     "heroVideo": "Vidéo de marque Amamazanonaha",
+    "unmute": "Activer le son",
+    "mute": "Couper le son",
     "prevSlide": "Image précédente",
     "nextSlide": "Image suivante",
     "toggleTheme": "Basculer entre le mode clair et le mode sombre",

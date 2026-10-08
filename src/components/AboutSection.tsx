@@ -1,4 +1,5 @@
 import BrandPanel from "./BrandPanel";
+import SoundVideo from "./SoundVideo";
 import { motion, Variants } from "framer-motion";
 import { Building2, Users, LifeBuoy } from "lucide-react";
 import { useTranslation } from "react-i18next";
@@ -44,12 +45,8 @@ const AboutSection = () => {
           <div className="space-y-4 flex flex-col justify-end pb-8">
             <BrandPanel className="rounded-2xl w-full h-48 shadow-md" />
             <div className="rounded-2xl overflow-hidden w-full h-64 shadow-md bg-black relative">
-              <video
+              <SoundVideo
                 src={video3}
-                autoPlay
-                muted
-                loop
-                playsInline
                 className="absolute inset-0 w-full h-full object-cover"
               />
             </div>
@@ -57,23 +54,15 @@ const AboutSection = () => {
           {/* Collage Column 2 */}
           <div className="space-y-4 pt-12">
             <div className="rounded-2xl overflow-hidden w-full h-60 shadow-md bg-black relative">
-              <video
+              <SoundVideo
                 src={aboutInnovationVideo}
-                autoPlay
-                muted
-                loop
-                playsInline
                 aria-label={t("a11y.aboutInnovation")}
                 className="absolute inset-0 w-full h-full object-cover"
               />
             </div>
             <div className="rounded-2xl overflow-hidden w-full h-40 shadow-md bg-black relative">
-              <video
+              <SoundVideo
                 src={aboutGrowthVideo}
-                autoPlay
-                muted
-                loop
-                playsInline
                 aria-label={t("a11y.aboutGrowth")}
                 className="absolute inset-0 w-full h-full object-cover"
               />

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Play, Volume2, Shield, TrendingUp, Search } from "lucide-react";
 import VideoModal from "./VideoModal";
+import SoundVideo from "./SoundVideo";
 import brandVideo from "@/assets/videos/no-visibility.mp4";
 import { Trans, useTranslation } from "react-i18next";
 
@@ -92,12 +93,9 @@ const BrandVideoSection = () => {
                         className="relative"
                     >
                         <div className="relative z-10 aspect-video rounded-3xl overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.3)] group cursor-pointer" onClick={() => setIsOpen(true)}>
-                            <video
+                            <SoundVideo
                                 src={brandVideo}
-                                autoPlay
-                                muted
-                                loop
-                                playsInline
+                                toggleClassName="top-4 right-4"
                                 aria-label={t("a11y.brandMessage")}
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             />

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { motion, Variants } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import video2 from "@/assets/videos/2.mp4";
+import SoundVideo from "./SoundVideo";
 
 const WhyChooseSection = () => {
   const { t } = useTranslation();
@@ -37,13 +38,9 @@ const WhyChooseSection = () => {
         >
           <div className="absolute -inset-6 rounded-[2.5rem] bg-primary/10 blur-3xl -z-10" />
           <div className="absolute inset-0 rounded-[2rem] overflow-hidden shadow-2xl border-[8px] border-background ring-1 ring-border/60 bg-black">
-            <video
+            <SoundVideo
               src={video2}
-              autoPlay
-              muted
-              loop
-              playsInline
-              aria-hidden="true"
+              toggleClassName="top-4 right-4"
               className="w-full h-full object-cover opacity-90"
             />
             <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />

@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 import heroShowreel from "@/assets/videos/brand-promo.mp4";
 import heroSlideVideo from "@/assets/videos/hero-1.mp4";
 import VideoModal from "./VideoModal";
+import SoundVideo from "./SoundVideo";
 
 const HeroSection = () => {
   const { t } = useTranslation();
@@ -40,12 +41,8 @@ const HeroSection = () => {
 
             <div className="relative rounded-3xl overflow-hidden shadow-[0_20px_60px_-12px_rgba(0,0,0,0.35)] ring-1 ring-border/60 border-[6px] md:border-8 border-background bg-black aspect-[3/4]">
               {/* The clip is portrait, so the card is portrait too: nothing important gets cropped. */}
-              <video
+              <SoundVideo
                 src={heroSlideVideo}
-                autoPlay
-                muted
-                loop
-                playsInline
                 aria-label={t("a11y.heroVideo")}
                 className="absolute inset-0 w-full h-full object-cover object-top"
               />

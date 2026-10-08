@@ -2,7 +2,13 @@ import { useState, useEffect, useCallback } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { testimonials } from "@/data/testimonials";
+import { testimonials, type Lang, type Testimonial } from "@/data/testimonials";
+
+const quoteFor = (item: Testimonial, lang: string) => {
+  if (typeof item.quote === "string") return item.quote;
+  const base = lang.split("-")[0] as Lang;
+  return item.quote[base] ?? item.quote.en;
+};
 
 const AUTO_ADVANCE_MS = 7000;
 
@@ -89,7 +95,7 @@ const TestimonialsInvite = () => {
 };
 
 const TestimonialsSection = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(1);
   const [isPaused, setIsPaused] = useState(false);
@@ -169,7 +175,7 @@ const TestimonialsSection = () => {
                   className="space-y-8 cursor-grab active:cursor-grabbing select-none"
                 >
                   <blockquote className="text-xl md:text-3xl font-display font-medium leading-snug text-foreground">
-                    &ldquo;{active.quote}&rdquo;
+                    &ldquo;{quoteFor(active, i18n.language)}&rdquo;
                   </blockquote>
                   <figcaption className="flex items-center justify-center gap-4">
                     <span className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary/60 text-primary-foreground flex items-center justify-center font-bold text-sm tracking-wide shadow-lg shadow-primary/20">

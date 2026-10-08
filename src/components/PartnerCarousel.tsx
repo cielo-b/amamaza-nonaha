@@ -24,21 +24,6 @@ const companies = [
         color: "hover:text-primary transition-all duration-300"
     },
     {
-        name: "Magic Furniture",
-        style: "font-serif italic font-medium tracking-wide",
-        color: "hover:text-indigo-400 transition-all duration-300"
-    },
-    {
-        name: "Dolphix Group",
-        style: "font-sans font-semibold border-y border-foreground/10 py-1 px-2",
-        color: "hover:bg-foreground hover:text-background transition-all duration-300"
-    },
-    {
-        name: "Nziza House",
-        style: "font-serif tracking-[0.2em] uppercase font-bold text-lg md:text-xl",
-        color: "hover:text-rose-500 transition-all duration-300"
-    },
-    {
         name: "Rema fashion",
         style: "font-sans italic font-bold",
         color: "hover:text-purple-500 hover:scale-110 transition-all duration-300"

@@ -155,7 +155,11 @@
   },
   "testimonials": {
     "badge": "TESTIMONIALS",
-    "title": "What They Say?"
+    "title": "What They Say?",
+    "emptyTitle": "Your voice belongs here",
+    "emptyDesc": "Have you used Amamazanonaha? Tell us about your experience. With your permission, we will share it here in your own words.",
+    "slot": "Your story",
+    "cta": "Share your experience"
   },
   "faq": {
     "badge": "QUESTIONS & ANSWERS",

@@ -87,7 +87,7 @@ const ContactSection = () => {
       <div className="container max-w-7xl px-4 md:px-0">
         <div className="bg-card rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-500/5 grid md:grid-cols-2">
           {/* Left: Brand side */}
-          <BrandPanel showDescription className="min-h-[260px] md:min-h-full [&>div:last-child]:md:p-12" />
+          <BrandPanel full className="min-h-[340px] md:min-h-full [&>div:last-child]:md:p-12" />
 
           {/* Right: Form Side */}
           <div className="p-8 md:p-16 lg:p-20 space-y-8">

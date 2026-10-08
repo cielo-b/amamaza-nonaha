@@ -155,7 +155,11 @@
   },
   "testimonials": {
     "badge": "UBUHAMYA",
-    "title": "Icyo bavuga"
+    "title": "Icyo bavuga",
+    "emptyTitle": "Ijwi ryawe rikwiye kuba hano",
+    "emptyDesc": "Wakoresheje Amamazanonaha? Tubwire uko byagenze. Nubyemera, tuzabishyira hano mu magambo yawe bwite.",
+    "slot": "Inkuru yawe",
+    "cta": "Dusangize uko byagenze"
   },
   "faq": {
     "badge": "IBIBAZO N'IBISUBIZO",

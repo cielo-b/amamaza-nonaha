@@ -2,7 +2,7 @@ import { Check, Eye, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, Variants } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import video2 from "@/assets/videos/2.mp4";
+import impactVideo from "@/assets/videos/impact.mp4";
 import SoundVideo from "./SoundVideo";
 
 const WhyChooseSection = () => {
@@ -34,12 +34,12 @@ const WhyChooseSection = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="relative h-[420px] md:h-[600px] max-w-md w-full mx-auto md:max-w-none"
+          className="relative aspect-[3/4] w-full max-w-md mx-auto"
         >
           <div className="absolute -inset-6 rounded-[2.5rem] bg-primary/10 blur-3xl -z-10" />
           <div className="absolute inset-0 rounded-[2rem] overflow-hidden shadow-2xl border-[8px] border-background ring-1 ring-border/60 bg-black">
             <SoundVideo
-              src={video2}
+              src={impactVideo}
               toggleClassName="top-4 right-4"
               className="w-full h-full object-cover opacity-90"
             />

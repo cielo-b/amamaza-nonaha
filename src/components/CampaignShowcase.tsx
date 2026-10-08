@@ -16,6 +16,8 @@ import {
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import VideoModal from "./VideoModal";
+import SoundVideo from "./SoundVideo";
+import socialVideo from "@/assets/videos/2.mp4";
 
 // Image imports removed because we fetch dynamically from TikTok.
 
@@ -160,8 +162,17 @@ const defaultVideos = "https://vt.tiktok.com/ZSxrYdVXp/,https://vt.tiktok.com/ZS
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="shrink-0"
+            className="shrink-0 flex flex-col items-start md:items-end gap-5"
           >
+            {/* Social icons loop, at home next to the link to the channel it is about */}
+            <div className="relative w-28 sm:w-32 aspect-[9/16] rounded-2xl overflow-hidden shadow-xl border-4 border-background ring-1 ring-border/60 bg-black">
+              <SoundVideo
+                src={socialVideo}
+                toggleClassName="bottom-2 right-2 !w-8 !h-8 [&_svg]:!w-4 [&_svg]:!h-4"
+                aria-label={t("a11y.socialVideo")}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </div>
             <a
               href="https://www.tiktok.com/@amamazanonaha.ltd?_r=1&_t=ZS-95aGYHcXCTc"
               target="_blank"

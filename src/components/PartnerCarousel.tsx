@@ -25,9 +25,34 @@ const companies = [
         color: "hover:text-primary transition-all duration-300"
     },
     {
-        name: "Rema fashion",
-        style: "font-sans italic font-bold",
-        color: "hover:text-purple-500 hover:scale-110 transition-all duration-300"
+        name: "Isunzu Furniture",
+        style: "font-serif font-bold tracking-wide",
+        color: "hover:text-orange-500 transition-all duration-300"
+    },
+    {
+        name: "Sts company Ltd",
+        style: "font-sans font-black uppercase tracking-widest",
+        color: "hover:text-sky-500 transition-all duration-300"
+    },
+    {
+        name: "Vicky Steel Ltd",
+        style: "font-mono font-bold tracking-tight border-b-2 border-foreground/20 pb-1",
+        color: "hover:text-slate-400 transition-all duration-300"
+    },
+    {
+        name: "Ev imodoka+",
+        style: "font-sans italic font-extrabold tracking-tight",
+        color: "hover:text-green-500 transition-all duration-300"
+    },
+    {
+        name: "MJ Decor and catering",
+        style: "font-serif italic font-medium tracking-wide",
+        color: "hover:text-pink-500 transition-all duration-300"
+    },
+    {
+        name: "Shell infrastructure group",
+        style: "font-sans font-semibold uppercase tracking-[0.15em] border-y border-foreground/10 py-1 px-2",
+        color: "hover:bg-foreground hover:text-background transition-all duration-300"
     },
     {
         name: "Axiom Fold",
@@ -85,7 +110,7 @@ const PartnerCarousel = () => {
                             x: ["0%", "-33.33%"],
                         }}
                         transition={{
-                            duration: 40,
+                            duration: companies.length * 4.5,
                             ease: "linear",
                             repeat: Infinity,
                         }}

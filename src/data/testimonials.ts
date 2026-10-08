@@ -22,7 +22,7 @@ export const testimonials: Testimonial[] = [
     },
   },
   {
-    name: "Leonce Karemera",
+    name: "Leonce Tuyizere",
     quote: {
       en: "Marketing and visibility were our biggest hurdles. Amamazanonaha provided the bridge we needed to connect with a wider audience.",
       rw: "Kwamamaza no kumenyekana byari imbogamizi yacu ikomeye. Amamazanonaha yaduhaye ikiraro twari dukeneye kugira ngo tugere ku bantu benshi.",

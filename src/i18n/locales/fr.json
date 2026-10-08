@@ -155,21 +155,7 @@
   },
   "testimonials": {
     "badge": "TÉMOIGNAGES",
-    "title": "Ce qu'ils en disent",
-    "items": {
-      "claudine": {
-        "quote": "Cette plateforme a transformé mon activité. Je touche des clients dont j'ignorais l'existence. Mes ventes ont triplé en seulement six mois.",
-        "role": "À la tête de Kigali Crafts Co."
-      },
-      "leonce": {
-        "quote": "Le marketing et la visibilité étaient nos plus grands obstacles. Amamazanonaha nous a donné le pont dont nous avions besoin pour toucher un public plus large.",
-        "role": "À la direction d'Innovate Rwanda"
-      },
-      "jeanne": {
-        "quote": "Trouver des services de qualité prenait des jours. Aujourd'hui, je trouve des professionnels fiables en quelques minutes. La confiance et le professionnalisme sont sans égal.",
-        "role": "À son compte"
-      }
-    }
+    "title": "Ce qu'ils en disent"
   },
   "faq": {
     "badge": "QUESTIONS & RÉPONSES",

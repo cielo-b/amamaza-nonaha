@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { motion, Variants } from "framer-motion";
 import { toast } from "sonner";
-import contactImg from "@/assets/about.jpg";
+import BrandPanel from "./BrandPanel";
 import { useTranslation } from "react-i18next";
 
 import { ChevronDown, Send } from "lucide-react";
@@ -86,14 +86,8 @@ const ContactSection = () => {
     <section id="contact" className="py-12 md:py-16 bg-section-alt overflow-hidden">
       <div className="container max-w-7xl px-4 md:px-0">
         <div className="bg-card rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-500/5 grid md:grid-cols-2">
-          {/* Left: Image Side */}
-          <div className="relative h-[300px] md:h-full overflow-hidden">
-            <img
-              src={contactImg}
-              alt={t("a11y.contactTeam")}
-              className="w-full h-full object-cover"
-            />
-          </div>
+          {/* Left: Brand side */}
+          <BrandPanel showDescription className="min-h-[260px] md:min-h-full [&>div:last-child]:md:p-12" />
 
           {/* Right: Form Side */}
           <div className="p-8 md:p-16 lg:p-20 space-y-8">

@@ -1,4 +1,4 @@
-import aboutImg from "@/assets/about.jpg";
+import BrandPanel from "./BrandPanel";
 import { motion, Variants } from "framer-motion";
 import { Building2, Users, LifeBuoy } from "lucide-react";
 import { useTranslation } from "react-i18next";
@@ -42,11 +42,7 @@ const AboutSection = () => {
         >
           {/* Collage Column 1 */}
           <div className="space-y-4 flex flex-col justify-end pb-8">
-            <img
-              src={aboutImg}
-              alt={t("a11y.aboutTeam")}
-              className="rounded-2xl object-cover w-full h-48 shadow-md"
-            />
+            <BrandPanel className="rounded-2xl w-full h-48 shadow-md" />
             <div className="rounded-2xl overflow-hidden w-full h-64 shadow-md bg-black relative">
               <video
                 src={video3}

@@ -155,21 +155,7 @@
   },
   "testimonials": {
     "badge": "UBUHAMYA",
-    "title": "Icyo bavuga",
-    "items": {
-      "claudine": {
-        "quote": "Uru rubuga rwahinduye ubucuruzi bwanjye. Ngeza ibicuruzwa byanjye ku bakiriya ntari nzi ko babaho. Icuruzwa ryanjye ryikubye gatatu mu mezi atandatu gusa.",
-        "role": "Uwashinze Kigali Crafts Co."
-      },
-      "leonce": {
-        "quote": "Kwamamaza no kumenyekana byari imbogamizi yacu ikomeye. Amamazanonaha yaduhaye ikiraro twari dukeneye kugira ngo tugere ku bantu benshi.",
-        "role": "Umuyobozi wa Innovate Rwanda"
-      },
-      "jeanne": {
-        "quote": "Kubona serivisi nziza byajyaga bimara iminsi. Ubu mbona abanyamwuga bizewe mu minota mike. Icyizere n'ubunyamwuga ntibigereranywa.",
-        "role": "Rwiyemezamirimo"
-      }
-    }
+    "title": "Icyo bavuga"
   },
   "faq": {
     "badge": "IBIBAZO N'IBISUBIZO",

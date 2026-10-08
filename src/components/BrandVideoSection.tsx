@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Play, Volume2, Shield, TrendingUp, Search } from "lucide-react";
 import VideoModal from "./VideoModal";
-import thumbnail from "@/assets/founder-thumbnail.png";
 import brandVideo from "@/assets/videos/global-reach.mp4";
 import { Trans, useTranslation } from "react-i18next";
 
@@ -93,9 +92,13 @@ const BrandVideoSection = () => {
                         className="relative"
                     >
                         <div className="relative z-10 aspect-video rounded-3xl overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.3)] group cursor-pointer" onClick={() => setIsOpen(true)}>
-                            <img
-                                src={thumbnail}
-                                alt={t("a11y.brandMessage")}
+                            <video
+                                src={brandVideo}
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                aria-label={t("a11y.brandMessage")}
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                             />
                             <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors flex items-center justify-center">

@@ -1,179 +1,160 @@
-import { useState, useEffect, useCallback, useRef } from "react";
-import { Play } from "lucide-react";
+import { useState, useEffect, useCallback } from "react";
+import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import VideoModal from "./VideoModal";
 import { useTranslation } from "react-i18next";
+import { testimonials } from "@/data/testimonials";
+
+const AUTO_ADVANCE_MS = 7000;
+
+const initials = (name: string) =>
+  name
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0]?.toUpperCase())
+    .join("");
 
 const TestimonialsSection = () => {
   const { t } = useTranslation();
-  const [activeIndex, setActiveIndex] = useState(1);
+  const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
   const [isPaused, setIsPaused] = useState(false);
-  const [videoOpen, setVideoOpen] = useState(false);
-  const [selectedVideo, setSelectedVideo] = useState("");
-  const containerRef = useRef<HTMLDivElement>(null);
 
-  const testimonials = [
-    {
-      id: 1,
-      image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      quote: t("testimonials.items.claudine.quote"),
-      name: "Claudine Uwimana",
-      role: t("testimonials.items.claudine.role"),
-      videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+  const count = testimonials.length;
+
+  const go = useCallback(
+    (next: number, dir: number) => {
+      setDirection(dir);
+      setIndex((next + count) % count);
     },
-    {
-      id: 2,
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      quote: t("testimonials.items.leonce.quote"),
-      name: "Leonce Karemera",
-      role: t("testimonials.items.leonce.role"),
-      videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-    },
-    {
-      id: 3,
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      quote: t("testimonials.items.jeanne.quote"),
-      name: "Jeanne Gasana",
-      role: t("testimonials.items.jeanne.role"),
-      videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-    },
-  ];
-
-  const openVideo = (url: string) => {
-    setSelectedVideo(url || "");
-    setVideoOpen(true);
-    setIsPaused(true);
-  };
-
-  const nextSlide = useCallback(() => {
-    setActiveIndex((prev) => (prev + 1) % testimonials.length);
-  }, [testimonials.length]);
-
-  const prevSlide = useCallback(() => {
-    setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  }, [testimonials.length]);
+    [count],
+  );
 
   useEffect(() => {
-    if (isPaused) return;
-    const interval = setInterval(nextSlide, 5000);
-    return () => clearInterval(interval);
-  }, [isPaused, nextSlide]);
+    if (isPaused || count < 2) return;
+    const timer = setTimeout(() => go(index + 1, 1), AUTO_ADVANCE_MS);
+    return () => clearTimeout(timer);
+  }, [index, isPaused, count, go]);
 
-  const getVisibleItems = () => {
-    const prev = (activeIndex - 1 + testimonials.length) % testimonials.length;
-    const next = (activeIndex + 1) % testimonials.length;
-    return [prev, activeIndex, next];
-  };
+  // Nothing to show until real feedback is added to src/data/testimonials.ts.
+  if (count === 0) return null;
 
-  const visibleIndices = getVisibleItems();
+  const active = testimonials[index];
 
   return (
-    <section className="py-16 md:py-20 overflow-hidden bg-section-alt">
+    <section className="relative py-20 md:py-28 overflow-hidden bg-section-alt">
+      {/* Soft ambient glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] rounded-full bg-primary/5 blur-[120px] pointer-events-none" />
+
       <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
-        className="container space-y-10 text-center"
+        transition={{ duration: 0.7 }}
+        className="container relative space-y-12 text-center"
       >
         <div className="space-y-4">
           <span className="section-badge tracking-widest text-[11px]">{t("testimonials.badge")}</span>
-          <h2 className="text-3xl md:text-5xl font-display font-medium text-foreground">
-            {t("testimonials.title")}
-          </h2>
+          <h2 className="text-3xl md:text-5xl font-display font-medium text-foreground">{t("testimonials.title")}</h2>
         </div>
 
         <div
-          className="relative w-full max-w-[1400px] mx-auto pt-4 pb-8 flex items-center justify-center gap-4 md:gap-12 cursor-grab active:cursor-grabbing"
+          className="relative max-w-3xl mx-auto"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          {/* Left Faded Item */}
-          <motion.div
-            key={`left-${testimonials[visibleIndices[0]].id}`}
-            initial={{ opacity: 0, x: 100, scale: 0.6 }}
-            animate={{ opacity: 0.4, x: 0, scale: 0.75, filter: "blur(2px)" }}
-            exit={{ opacity: 0, x: -100, scale: 0.6 }}
-            className="hidden md:block relative w-1/4 h-[300px] rounded-3xl overflow-hidden shrink-0"
-            onClick={prevSlide}
-          >
-            <img src={testimonials[visibleIndices[0]].image} className="w-full h-full object-cover" alt={testimonials[visibleIndices[0]].name} />
-            <div className="absolute inset-0 bg-black/40" />
-            <div className="absolute top-6 left-6 w-10 h-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm group-hover/card:bg-white/30">
-              <Play className="w-4 h-4 text-white fill-white ml-0.5" />
-            </div>
-          </motion.div>
-
-          {/* Center Active Item */}
-          <motion.div
-            key={`center-${testimonials[visibleIndices[1]].id}`}
-            layoutId="active-testimonial"
-            drag="x"
-            dragConstraints={{ left: 0, right: 0 }}
-            onDragEnd={(_, info) => {
-              if (info.offset.x > 100) prevSlide();
-              else if (info.offset.x < -100) nextSlide();
-            }}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="relative w-full md:w-[60%] lg:w-1/2 h-[450px] md:h-[550px] rounded-[2rem] overflow-hidden shadow-2xl z-20 shrink-0 select-none group/card"
-          >
-            <img src={testimonials[visibleIndices[1]].image} className="w-full h-full object-cover" alt={testimonials[visibleIndices[1]].name} />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10" />
-
-            <div
-              onClick={() => openVideo(testimonials[visibleIndices[1]].videoUrl)}
-              className="absolute top-8 left-8 w-14 h-14 rounded-full bg-primary flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 active:scale-95 transition-all z-30 group-hover/card:bg-primary/90"
-            >
-              <Play className="w-6 h-6 text-white fill-white ml-1" />
-            </div>
-
-            <div className="absolute bottom-0 left-0 w-full p-8 md:p-12 text-left">
-              <p className="text-white text-xl md:text-3xl font-medium leading-snug mb-8 max-w-[90%]">
-                "{testimonials[visibleIndices[1]].quote}"
-              </p>
-              <div>
-                <div className="text-white font-bold text-lg">{testimonials[visibleIndices[1]].name}</div>
-                <div className="text-white/70 text-sm mt-1">{testimonials[visibleIndices[1]].role}</div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Right Faded Item */}
-          <motion.div
-            key={`right-${testimonials[visibleIndices[2]].id}`}
-            initial={{ opacity: 0, x: -100, scale: 0.6 }}
-            animate={{ opacity: 0.4, x: 0, scale: 0.75, filter: "blur(2px)" }}
-            exit={{ opacity: 0, x: 100, scale: 0.6 }}
-            className="hidden md:block relative w-1/4 h-[300px] rounded-3xl overflow-hidden shrink-0 cursor-pointer group/card"
-            onClick={() => openVideo(testimonials[visibleIndices[2]].videoUrl)}
-          >
-            <img src={testimonials[visibleIndices[2]].image} className="w-full h-full object-cover" alt={testimonials[visibleIndices[2]].name} />
-            <div className="absolute inset-0 bg-black/40" />
-            <div className="absolute top-6 left-6 w-10 h-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm group-hover/card:bg-white/30">
-              <Play className="w-4 h-4 text-white fill-white ml-0.5" />
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Pagination Dots */}
-        <div className="flex items-center justify-center gap-3 mt-4">
-          {testimonials.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setActiveIndex(i)}
-              className={`transition-all duration-300 rounded-full ${i === activeIndex ? "w-8 h-2.5 bg-primary" : "w-2.5 h-2.5 bg-border hover:bg-border/80"
-                }`}
-              aria-label={t("a11y.slide", { number: i + 1 })}
+          <div className="relative rounded-[2rem] border border-border bg-card/80 backdrop-blur-sm shadow-2xl shadow-primary/5 px-6 py-12 md:px-16 md:py-16 overflow-hidden">
+            <Quote
+              aria-hidden="true"
+              className="absolute -top-2 left-6 md:left-10 w-24 h-24 md:w-32 md:h-32 text-primary/10 rotate-180"
+              strokeWidth={1.5}
             />
-          ))}
+
+            <div className="relative min-h-[240px] md:min-h-[220px] flex items-center justify-center">
+              <AnimatePresence mode="wait" custom={direction}>
+                <motion.figure
+                  key={index}
+                  custom={direction}
+                  variants={{
+                    enter: (d: number) => ({ opacity: 0, x: d * 60, filter: "blur(6px)" }),
+                    center: { opacity: 1, x: 0, filter: "blur(0px)" },
+                    exit: (d: number) => ({ opacity: 0, x: d * -60, filter: "blur(6px)" }),
+                  }}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{ duration: 0.45, ease: "easeOut" }}
+                  drag="x"
+                  dragConstraints={{ left: 0, right: 0 }}
+                  dragElastic={0.2}
+                  onDragEnd={(_, info) => {
+                    if (info.offset.x > 80) go(index - 1, -1);
+                    else if (info.offset.x < -80) go(index + 1, 1);
+                  }}
+                  className="space-y-8 cursor-grab active:cursor-grabbing select-none"
+                >
+                  <blockquote className="text-xl md:text-3xl font-display font-medium leading-snug text-foreground">
+                    &ldquo;{active.quote}&rdquo;
+                  </blockquote>
+                  <figcaption className="flex items-center justify-center gap-4">
+                    <span className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-primary/60 text-primary-foreground flex items-center justify-center font-bold text-sm tracking-wide shadow-lg shadow-primary/20">
+                      {initials(active.name)}
+                    </span>
+                    <span className="text-left font-bold text-lg text-foreground">{active.name}</span>
+                  </figcaption>
+                </motion.figure>
+              </AnimatePresence>
+            </div>
+
+            {/* Auto-advance progress */}
+            {count > 1 && (
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-border/60">
+                <motion.div
+                  key={`${index}-${isPaused}`}
+                  initial={{ width: "0%" }}
+                  animate={{ width: isPaused ? "0%" : "100%" }}
+                  transition={{ duration: isPaused ? 0 : AUTO_ADVANCE_MS / 1000, ease: "linear" }}
+                  className="h-full bg-primary"
+                />
+              </div>
+            )}
+          </div>
+
+          {count > 1 && (
+            <div className="mt-8 flex items-center justify-center gap-5">
+              <button
+                type="button"
+                aria-label={t("a11y.prevSlide")}
+                onClick={() => go(index - 1, -1)}
+                className="w-11 h-11 rounded-full border border-border bg-card hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors flex items-center justify-center"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <div className="flex items-center gap-2.5">
+                {testimonials.map((item, i) => (
+                  <button
+                    key={item.name}
+                    type="button"
+                    onClick={() => go(i, i > index ? 1 : -1)}
+                    aria-label={t("a11y.slide", { number: i + 1 })}
+                    className={`h-2.5 rounded-full transition-all duration-300 ${
+                      i === index ? "w-8 bg-primary" : "w-2.5 bg-border hover:bg-muted-foreground/40"
+                    }`}
+                  />
+                ))}
+              </div>
+              <button
+                type="button"
+                aria-label={t("a11y.nextSlide")}
+                onClick={() => go(index + 1, 1)}
+                className="w-11 h-11 rounded-full border border-border bg-card hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors flex items-center justify-center"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+          )}
         </div>
       </motion.div>
-
-      <VideoModal
-        isOpen={videoOpen}
-        onClose={() => setVideoOpen(false)}
-        videoUrl={selectedVideo}
-      />
     </section>
   );
 };

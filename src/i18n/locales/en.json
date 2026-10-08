@@ -155,21 +155,7 @@
   },
   "testimonials": {
     "badge": "TESTIMONIALS",
-    "title": "What They Say?",
-    "items": {
-      "claudine": {
-        "quote": "This platform has transformed my business. I'm reaching customers I never knew existed. My sales grew by 3x in just 6 months.",
-        "role": "Founder, Kigali Crafts Co."
-      },
-      "leonce": {
-        "quote": "Marketing and visibility were our biggest hurdles. Amamazanonaha provided the bridge we needed to connect with a wider audience.",
-        "role": "Director, Innovate Rwanda"
-      },
-      "jeanne": {
-        "quote": "Finding high-quality services used to take days. Now I find trusted pros in minutes. The trust and professionalism are unmatched.",
-        "role": "Entrepreneur"
-      }
-    }
+    "title": "What They Say?"
   },
   "faq": {
     "badge": "QUESTIONS & ANSWERS",

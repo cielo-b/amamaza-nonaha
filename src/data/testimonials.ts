@@ -33,7 +33,7 @@ export const testimonials: Testimonial[] = [
     name: "Jeanne Gasana",
     quote: {
       en: "Finding high-quality services used to take days. Now I find trusted pros in minutes. The trust and professionalism are unmatched.",
-      rw: "Kubona serivisi nziza byajyaga bimara iminsi. Ubu mbona abanyamwuga bizewe mu minota mike. Icyizere n'ubunyamwuga ntibigereranywa.",
+      rw: "Kubona serivisi nziza byajyaga bimara iminsi. Ubu mbona abanyamwuga bizewe mu minota mike. Icyizere n'ubunyamwuga byo ntibigereranywa.",
       fr: "Trouver des services de qualité prenait des jours. Aujourd'hui, je trouve des professionnels fiables en quelques minutes. La confiance et le professionnalisme sont sans égal.",
     },
   },

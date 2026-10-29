@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { X } from "lucide-react";
+import { X, ExternalLink } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 interface VideoModalProps {
@@ -86,11 +86,25 @@ const VideoModal = ({ isOpen, onClose, videoUrl }: VideoModalProps) => {
 
                     <button
                         onClick={onClose}
-                        className="absolute -top-12 right-0 p-2 text-white hover:text-primary transition-colors focus:outline-none z-50 bg-black/20 rounded-full backdrop-blur-sm"
+                        className="absolute top-3 right-3 p-2.5 text-white hover:text-rose-400 transition-colors focus:outline-none z-50 bg-black/80 hover:bg-black rounded-full backdrop-blur-md shadow-2xl border border-white/20 cursor-pointer"
                         aria-label={t("a11y.closeVideo")}
                     >
-                        <X className="w-8 h-8" />
+                        <X className="w-6 h-6" />
                     </button>
+
+                    {!isDirectVideo(videoUrl) && (
+                        <div className="absolute bottom-4 left-4 right-4 z-40 flex items-center justify-between pointer-events-none">
+                            <a
+                                href={videoUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="pointer-events-auto inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-black/80 hover:bg-black text-white text-xs font-bold backdrop-blur-md border border-white/20 transition-all shadow-xl hover:scale-105"
+                            >
+                                <ExternalLink className="w-3.5 h-3.5 text-cyan-400" />
+                                <span>Watch Directly on Source</span>
+                            </a>
+                        </div>
+                    )}
                 </div>
             </DialogContent>
         </Dialog>

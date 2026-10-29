@@ -240,8 +240,13 @@ const defaultVideos = "https://vt.tiktok.com/ZSxrYdVXp/,https://vt.tiktok.com/ZS
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       whileHover={{ y: -8 }}
-                      className="group relative bg-white dark:bg-slate-900/90 rounded-3xl overflow-hidden border border-slate-100 dark:border-slate-800/80 shadow-md hover:shadow-2xl hover:shadow-rose-500/10 hover:border-rose-500/25 dark:hover:border-rose-500/25 transition-all duration-300 flex flex-col h-[540px] cursor-pointer"
-                      onClick={() => setSelectedVideo(camp.videoUrl)}
+                      onClick={() => {
+                        if (camp.videoUrl.includes("tiktok.com")) {
+                          window.open(camp.videoUrl, "_blank", "noopener,noreferrer");
+                        } else {
+                          setSelectedVideo(camp.videoUrl);
+                        }
+                      }}
                     >
                       {/* Aspect ratio video cover */}
                       <div className="relative aspect-[9/12] w-full overflow-hidden bg-slate-900">

@@ -17,7 +17,10 @@ import {
   TrendingUp, 
   Globe2,
   Loader2,
-  MessageCircle
+  MessageCircle,
+  Clock,
+  Instagram,
+  AlertCircle
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -36,11 +39,22 @@ const RWANDA_DISTRICTS = [
   { group: "Other", items: ["Diaspora / Outside Rwanda"] }
 ];
 
+const WHATSAPP_NUMBER = "250784807389";
+const WHATSAPP_DISPLAY = "+250 784 807 389";
+
 export const YouthProgramSection: React.FC = () => {
   const { t } = useTranslation();
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [copiedLink, setCopiedLink] = useState(false);
+
+  // Visibility flag: Set VITE_SHOW_YOUTH_PROGRAM=false in Netlify/.env to completely remove the section
+  const isVisible = import.meta.env.VITE_SHOW_YOUTH_PROGRAM !== "false";
+
+  // Deadline logic: Configurable via env var (e.g. 2026-11-15T23:59:59), defaults to Nov 15, 2026
+  const deadlineStr = import.meta.env.VITE_YOUTH_PROGRAM_DEADLINE || "2026-11-15T23:59:59+02:00";
+  const deadlineDate = new Date(deadlineStr);
+  const isClosed = !isNaN(deadlineDate.getTime()) && new Date() > deadlineDate;
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -54,6 +68,11 @@ export const YouthProgramSection: React.FC = () => {
   const webhookUrl =
     import.meta.env.VITE_YOUTH_PROGRAM_SHEET_URL ||
     "https://script.google.com/macros/s/AKfycbyojtulGUYw5jsSNLdmYs0duhxwg_9PFQsb9WJY2lAu1DFVezAzhBwqag-7lqJxPb07/exec";
+
+  // If completely hidden via feature flag, do not render
+  if (!isVisible) {
+    return null;
+  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData((prev) => ({
@@ -80,6 +99,11 @@ export const YouthProgramSection: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (isClosed) {
+      toast.error(t("youthProgram.closedTitle"));
+      return;
+    }
 
     if (!formData.fullName.trim()) {
       toast.error(t("youthProgram.form.fullName"));
@@ -115,7 +139,6 @@ export const YouthProgramSection: React.FC = () => {
     };
 
     try {
-      // Send as text/plain with no-cors to reliably post across all browsers to Google Apps Script
       await fetch(webhookUrl, {
         method: "POST",
         mode: "no-cors",
@@ -159,7 +182,7 @@ export const YouthProgramSection: React.FC = () => {
       <div className="container max-w-7xl px-4 mx-auto relative z-10">
         
         {/* Top Centered Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
           <motion.div 
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -189,6 +212,23 @@ export const YouthProgramSection: React.FC = () => {
           >
             "{t("youthProgram.tagline")}"
           </motion.p>
+
+          {/* Deadline / Availability Pill */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="pt-2 flex flex-wrap items-center justify-center gap-3"
+          >
+            <div className="inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
+              <Clock className="w-3.5 h-3.5" />
+              <span>{isClosed ? t("youthProgram.closedTitle") : t("youthProgram.deadlineNotice")}</span>
+            </div>
+            <div className="inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+              <CheckCircle2 className="w-3.5 h-3.5" />
+              <span>{t("youthProgram.deadlineBadge")}</span>
+            </div>
+          </motion.div>
         </div>
 
         {/* 2-Column Main Content Card */}
@@ -264,22 +304,78 @@ export const YouthProgramSection: React.FC = () => {
               </button>
 
               <a
-                href="https://wa.me/250788000000?text=Hello%20Amamazanonaha!%20I%20want%20more%20information%20about%20the%20100%20Youth%20Program"
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20Amamazanonaha!%20I%20want%20more%20information%20about%20the%20100%20Youth%20Program`}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-1.5 text-xs text-emerald-300 hover:text-emerald-200 font-medium transition-colors"
               >
                 <MessageCircle className="w-3.5 h-3.5" />
-                <span>WhatsApp Inquiry</span>
+                <span>WhatsApp: {WHATSAPP_DISPLAY}</span>
               </a>
             </div>
           </div>
 
-          {/* Right Column: Registration Form (7 cols) */}
+          {/* Right Column: Form or Closed State (7 cols) */}
           <div className="lg:col-span-7 p-8 md:p-12 lg:p-14 bg-card flex flex-col justify-center">
             
             <AnimatePresence mode="wait">
-              {submitted ? (
+              {isClosed ? (
+                /* Program Closed View */
+                <motion.div
+                  key="closed"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  className="text-center py-10 px-4 space-y-6 max-w-lg mx-auto"
+                >
+                  <div className="w-20 h-20 rounded-full bg-amber-500/10 border-2 border-amber-500/30 text-amber-600 dark:text-amber-400 flex items-center justify-center mx-auto shadow-xl">
+                    <Clock className="w-10 h-10" />
+                  </div>
+
+                  <div className="space-y-2">
+                    <div className="inline-block px-3 py-1 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-bold uppercase tracking-wider">
+                      {t("youthProgram.closedSubtitle")}
+                    </div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-foreground font-display">
+                      {t("youthProgram.closedTitle")}
+                    </h3>
+                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+                      {t("youthProgram.closedDesc")}
+                    </p>
+                  </div>
+
+                  <div className="p-4 rounded-2xl bg-muted/50 border border-border text-center text-xs text-muted-foreground">
+                    <p className="font-semibold text-foreground mb-1">
+                      {t("youthProgram.closedNotice")}
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-3 pt-2 justify-center">
+                    <a
+                      href="https://www.instagram.com/amamazanonaha.ltd"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="w-full"
+                    >
+                      <Button variant="outline" className="w-full rounded-xl gap-2 cursor-pointer">
+                        <Instagram className="w-4 h-4 text-pink-500" />
+                        <span>Instagram Updates</span>
+                      </Button>
+                    </a>
+                    <a
+                      href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20Amamazanonaha!%20I%20have%20an%20inquiry%20regarding%20the%20100%20Youth%20Program`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="w-full"
+                    >
+                      <Button className="w-full rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white gap-2 cursor-pointer">
+                        <MessageCircle className="w-4 h-4" />
+                        <span>WhatsApp Team</span>
+                      </Button>
+                    </a>
+                  </div>
+                </motion.div>
+              ) : submitted ? (
                 /* Success View */
                 <motion.div
                   key="success"

@@ -19,12 +19,14 @@ const Navbar = () => {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
+  const showYouthProgram = import.meta.env.VITE_SHOW_YOUTH_PROGRAM !== "false";
+
   const navLinks = [
     { label: t("nav.home"), href: "#home" },
     { label: t("nav.about"), href: "#about" },
     { label: t("nav.services"), href: "#services" },
     { label: t("nav.howItWorks"), href: "#how-it-works" },
-    { label: t("nav.youthProgram"), href: "#youth-program", isSpecial: true },
+    ...(showYouthProgram ? [{ label: t("nav.youthProgram"), href: "#youth-program", isSpecial: true }] : []),
   ];
 
   const languages = [

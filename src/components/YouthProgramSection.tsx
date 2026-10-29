@@ -182,12 +182,12 @@ export const YouthProgramSection: React.FC = () => {
       <div className="container max-w-7xl px-4 mx-auto relative z-10">
         
         {/* Top Centered Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14 space-y-4">
           <motion.div 
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs md:text-sm font-bold tracking-wider uppercase"
+            className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs md:text-sm font-bold tracking-wider uppercase"
           >
             <Sparkles className="w-4 h-4 text-primary animate-pulse" />
             <span>{t("youthProgram.badge")}</span>
@@ -198,7 +198,7 @@ export const YouthProgramSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground font-display"
+            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground font-display break-words"
           >
             {t("youthProgram.highlight")}
           </motion.h2>
@@ -208,7 +208,7 @@ export const YouthProgramSection: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-lg md:text-xl font-medium text-primary italic"
+            className="text-base sm:text-lg md:text-xl font-medium text-primary italic"
           >
             "{t("youthProgram.tagline")}"
           </motion.p>
@@ -218,24 +218,24 @@ export const YouthProgramSection: React.FC = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="pt-2 flex flex-wrap items-center justify-center gap-3"
+            className="pt-2 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3"
           >
-            <div className="inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
-              <Clock className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 text-center">
+              <Clock className="w-3.5 h-3.5 shrink-0" />
               <span>{isClosed ? t("youthProgram.closedTitle") : t("youthProgram.deadlineNotice")}</span>
             </div>
-            <div className="inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
-              <CheckCircle2 className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 text-center">
+              <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
               <span>{t("youthProgram.deadlineBadge")}</span>
             </div>
           </motion.div>
         </div>
 
         {/* 2-Column Main Content Card */}
-        <div className="bg-card border border-border/70 rounded-3xl md:rounded-[2.5rem] shadow-2xl shadow-primary/5 overflow-hidden grid lg:grid-cols-12 gap-0">
+        <div className="bg-card border border-border/70 rounded-2xl sm:rounded-3xl md:rounded-[2.5rem] shadow-2xl shadow-primary/5 overflow-hidden grid lg:grid-cols-12 gap-0">
           
           {/* Left Column: Story, Value Prop & Pillars (5 cols) */}
-          <div className="lg:col-span-5 p-8 md:p-12 lg:p-14 bg-gradient-to-br from-slate-900 via-primary/95 to-slate-950 text-white flex flex-col justify-between relative overflow-hidden">
+          <div className="lg:col-span-5 p-5 sm:p-8 md:p-10 lg:p-12 xl:p-14 bg-gradient-to-br from-slate-900 via-primary/95 to-slate-950 text-white flex flex-col justify-between relative overflow-hidden">
             {/* Subtle tech grid background */}
             <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
@@ -293,11 +293,11 @@ export const YouthProgramSection: React.FC = () => {
             </div>
 
             {/* Bottom Actions on Left */}
-            <div className="pt-8 mt-8 border-t border-white/10 relative z-10 flex flex-wrap items-center justify-between gap-4">
+            <div className="pt-6 sm:pt-8 mt-6 sm:mt-8 border-t border-white/10 relative z-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
               <button
                 type="button"
                 onClick={handleShare}
-                className="inline-flex items-center gap-2 text-xs font-semibold text-white/90 hover:text-white bg-white/10 hover:bg-white/20 transition-colors px-3.5 py-2 rounded-xl cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 text-xs font-semibold text-white/90 hover:text-white bg-white/10 hover:bg-white/20 transition-colors px-4 py-2.5 rounded-xl cursor-pointer"
               >
                 <Share2 className="w-3.5 h-3.5" />
                 <span>{copiedLink ? "Link Copied!" : "Share Link"}</span>
@@ -307,16 +307,16 @@ export const YouthProgramSection: React.FC = () => {
                 href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%20Amamazanonaha!%20I%20want%20more%20information%20about%20the%20100%20Youth%20Program`}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs text-emerald-300 hover:text-emerald-200 font-medium transition-colors"
+                className="w-full sm:w-auto inline-flex items-center justify-center sm:justify-start gap-1.5 text-xs text-emerald-300 hover:text-emerald-200 font-medium transition-colors py-1 sm:py-0"
               >
-                <MessageCircle className="w-3.5 h-3.5" />
-                <span>WhatsApp: {WHATSAPP_DISPLAY}</span>
+                <MessageCircle className="w-3.5 h-3.5 shrink-0" />
+                <span className="break-all sm:break-normal">WhatsApp: {WHATSAPP_DISPLAY}</span>
               </a>
             </div>
           </div>
 
           {/* Right Column: Form or Closed State (7 cols) */}
-          <div className="lg:col-span-7 p-8 md:p-12 lg:p-14 bg-card flex flex-col justify-center">
+          <div className="lg:col-span-7 p-5 sm:p-8 md:p-10 lg:p-12 xl:p-14 bg-card flex flex-col justify-center">
             
             <AnimatePresence mode="wait">
               {isClosed ? (
@@ -468,7 +468,7 @@ export const YouthProgramSection: React.FC = () => {
                           <span>{t("youthProgram.form.phone")} <span className="text-destructive">*</span></span>
                         </label>
                         <div className="flex items-center rounded-xl border border-input bg-background focus-within:ring-2 focus-within:ring-primary/40 focus-within:border-primary transition-all overflow-hidden shadow-sm">
-                          <span className="px-3 py-3 bg-muted text-muted-foreground text-xs font-bold border-r border-input select-none">
+                          <span className="px-3 py-3 bg-muted text-muted-foreground text-xs font-bold border-r border-input select-none shrink-0">
                             +250
                           </span>
                           <input
@@ -478,7 +478,7 @@ export const YouthProgramSection: React.FC = () => {
                             value={formData.phone}
                             onChange={handleChange}
                             placeholder={t("youthProgram.form.phonePlaceholder")}
-                            className="w-full px-3 py-3 bg-transparent text-foreground text-sm focus:outline-none"
+                            className="w-full min-w-0 px-3 py-3 bg-transparent text-foreground text-sm focus:outline-none"
                           />
                         </div>
                       </div>
@@ -495,7 +495,7 @@ export const YouthProgramSection: React.FC = () => {
                           value={formData.email}
                           onChange={handleChange}
                           placeholder={t("youthProgram.form.emailPlaceholder")}
-                          className="w-full px-4 py-3 rounded-xl border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all shadow-sm"
+                          className="w-full min-w-0 px-4 py-3 rounded-xl border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all shadow-sm"
                         />
                       </div>
                     </div>
@@ -503,7 +503,7 @@ export const YouthProgramSection: React.FC = () => {
                     {/* District & Talent Dropdowns Grid */}
                     <div className="grid sm:grid-cols-2 gap-4">
                       {/* District Selection */}
-                      <div className="space-y-1.5">
+                      <div className="space-y-1.5 min-w-0">
                         <label className="text-xs font-bold text-foreground uppercase tracking-wider flex items-center gap-1.5">
                           <MapPin className="w-3.5 h-3.5 text-primary" />
                           <span>{t("youthProgram.form.district")} <span className="text-destructive">*</span></span>
@@ -513,7 +513,7 @@ export const YouthProgramSection: React.FC = () => {
                           required
                           value={formData.district}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-xl border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all shadow-sm cursor-pointer"
+                          className="w-full max-w-full truncate px-4 py-3 rounded-xl border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all shadow-sm cursor-pointer"
                         >
                           <option value="">{t("youthProgram.form.districtPlaceholder")}</option>
                           {RWANDA_DISTRICTS.map((prov) => (
@@ -529,7 +529,7 @@ export const YouthProgramSection: React.FC = () => {
                       </div>
 
                       {/* Talent Category */}
-                      <div className="space-y-1.5">
+                      <div className="space-y-1.5 min-w-0">
                         <label className="text-xs font-bold text-foreground uppercase tracking-wider flex items-center gap-1.5">
                           <Palette className="w-3.5 h-3.5 text-primary" />
                           <span>{t("youthProgram.form.talent")} <span className="text-destructive">*</span></span>
@@ -539,7 +539,7 @@ export const YouthProgramSection: React.FC = () => {
                           required
                           value={formData.talent}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 rounded-xl border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all shadow-sm cursor-pointer"
+                          className="w-full max-w-full truncate px-4 py-3 rounded-xl border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all shadow-sm cursor-pointer"
                         >
                           <option value="">{t("youthProgram.form.talentPlaceholder")}</option>
                           <option value="Content Creation & Video">{t("youthProgram.categories.content")}</option>

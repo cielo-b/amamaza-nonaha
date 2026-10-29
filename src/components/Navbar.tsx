@@ -58,15 +58,15 @@ const Navbar = () => {
           </a>
 
           {/* Desktop */}
-          <div className="hidden md:flex items-center gap-6 lg:gap-8">
+          <div className="hidden md:flex items-center gap-3 lg:gap-6 xl:gap-8">
             {navLinks.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 className={
                   l.isSpecial
-                    ? "text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/25 hover:bg-primary hover:text-white transition-all shadow-sm flex items-center gap-1.5"
-                    : "text-sm font-semibold text-foreground/80 hover:text-primary transition-colors duration-200"
+                    ? "text-[11px] lg:text-xs font-bold uppercase tracking-wider px-2.5 lg:px-3.5 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/25 hover:bg-primary hover:text-white transition-all shadow-sm flex items-center gap-1.5 shrink-0"
+                    : "text-xs lg:text-sm font-semibold text-foreground/80 hover:text-primary transition-colors duration-200 shrink-0"
                 }
               >
                 {l.isSpecial && <span className="w-1.5 h-1.5 rounded-full bg-primary animate-ping" />}
@@ -74,14 +74,14 @@ const Navbar = () => {
               </a>
             ))}
 
-            <div className="flex items-center gap-4 border-l border-border/50 pl-6 ml-2">
+            <div className="flex items-center gap-2 lg:gap-4 border-l border-border/50 pl-3 lg:pl-6 ml-1 lg:ml-2">
               {mounted && (
-                <div className="flex items-center gap-2 mr-2">
+                <div className="flex items-center gap-1.5 lg:gap-2 mr-1">
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <button className="rounded-full p-2 hover:bg-muted/60 transition-colors flex items-center gap-1.5 text-foreground/70">
-                        <Languages className="w-4 h-4" />
-                        <span className="text-xs font-bold uppercase">{i18n.language.slice(0, 2)}</span>
+                      <button className="rounded-full p-1.5 lg:p-2 hover:bg-muted/60 transition-colors flex items-center gap-1 text-foreground/70">
+                        <Languages className="w-3.5 lg:w-4 h-3.5 lg:h-4" />
+                        <span className="text-[11px] lg:text-xs font-bold uppercase">{i18n.language.slice(0, 2)}</span>
                       </button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end" className="w-[150px] rounded-xl">
@@ -100,15 +100,15 @@ const Navbar = () => {
 
                   <button
                     onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                    className="rounded-full p-2 hover:bg-muted/60 transition-colors"
+                    className="rounded-full p-1.5 lg:p-2 hover:bg-muted/60 transition-colors"
                     aria-label={t("a11y.toggleTheme")}
                   >
-                    {theme === "dark" ? <Sun className="w-5 h-5 text-yellow-400" /> : <Moon className="w-5 h-5 text-slate-700" />}
+                    {theme === "dark" ? <Sun className="w-4 lg:w-5 h-4 lg:h-5 text-yellow-400" /> : <Moon className="w-4 lg:w-5 h-4 lg:h-5 text-slate-700" />}
                   </button>
                 </div>
               )}
               <a href="#contact">
-                <Button size="sm" className="rounded-md px-10 py-5 shadow-sm bg-primary hover:bg-primary/90 text-white border-0">
+                <Button size="sm" className="rounded-md px-5 lg:px-8 py-2 md:py-2.5 shadow-sm bg-primary hover:bg-primary/90 text-white border-0 text-xs lg:text-sm shrink-0">
                   {t("nav.contact")}
                 </Button>
               </a>

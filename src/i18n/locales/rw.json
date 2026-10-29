@@ -4,6 +4,7 @@
     "about": "Abo turi bo",
     "services": "Serivisi",
     "howItWorks": "Uko bikora",
+    "youthProgram": "Urubyiruko 100",
     "contact": "Twandikire"
   },
   "hero": {
@@ -244,6 +245,62 @@
     "privacyPolicy": "Politiki y'ibanga ry'amakuru",
     "termsOfService": "Amabwiriza y'imikoreshereze",
     "cookiesSettings": "Igenamiterere rya cookies"
+  },
+  "youthProgram": {
+    "navLink": "Urubyiruko 100",
+    "badge": "GAHUNDA Y'URUBYIRUKO 100",
+    "title": "Fatanya na Amamazanonaha Kubaka Ejo Hazaza",
+    "highlight": "Waba uri umwe mu rubyiruko 100?",
+    "tagline": "Impano yawe ifite agaciro. Inzozi zawe zifite agaciro. Ejo hawe hazaza hafite agaciro.",
+    "description": "Iyi ni gahunda y'urubyiruko 100 ruzakorana na Amamazanonaha Ltd mu gihe twitegura kumurika icyiciro cya mbere (portfolio) mbere y'impera z'ukwezi k'Ukwakira 2026. Si irushanwa, ahubwo ni amahirwe yo kuvumbura no guteza imbere impano yawe.",
+    "openToAll": "Ifunguye ku rubyiruko rwose ruri mu Rwanda hose — i Kigali no mu ntara zose.",
+    "benefits": {
+      "visibility": {
+        "title": "Kumenyekana mu Gihugu",
+        "desc": "Garagaza impano yawe n'ibyo ukora ku mbuga zigezweho za Amamazanonaha."
+      },
+      "mentorship": {
+        "title": "Guhugurwa & Kunganirwa",
+        "desc": "Bana n'abahanga, ba rwiyemezamirimo n'abafite uburambe mu guteza imbere impano."
+      },
+      "opportunities": {
+        "title": "Amahirwe Afatika",
+        "desc": "Bona amasoko, ubufatanye, n'amahirwe yo kwiteza imbere binyuze mu bikorwa byacu."
+      }
+    },
+    "form": {
+      "title": "Iyandikishe muri iyi Gahunda",
+      "subtitle": "Uzuza imyirondoro yawe hasi aha kugira ngo winjire muri gahunda y'urubyiruko 100.",
+      "fullName": "Amazina yawe yose",
+      "fullNamePlaceholder": "Urugero: Jean Damascene",
+      "phone": "Nimero ya Telefone / WhatsApp",
+      "phonePlaceholder": "788 123 456",
+      "phoneHelp": "Izagufasha guhamagarwa no kumenyeshwa ibikurikira.",
+      "email": "Imeyili yawe",
+      "emailPlaceholder": "izina@urugero.com (niba uyifite)",
+      "district": "Aho uherereye / Akarere",
+      "districtPlaceholder": "Hitamo akarere kawe",
+      "talent": "Impano yawe cyangwa icyo ukora",
+      "talentPlaceholder": "Hitamo icyiciro cy'impano yawe",
+      "dream": "Inzozi zawe n'icyo wifuza kugeraho",
+      "dreamPlaceholder": "Tubwire mu magambo make iby'impano yawe, ibyo ukora, n'icyo wifuza kugeraho ufatanyije na Amamazanonaha...",
+      "submit": "Ohereza Kwiyandikisha",
+      "submitting": "Kwohereza...",
+      "successTitle": "Kwiyandikisha Byakozwe Neza!",
+      "successDesc": "Murakoze! Twakiriye amakuru yawe. Ikipe ya Amamazanonaha izagusura cyangwa ikuvugishe kuri WhatsApp / Telefone.",
+      "submitAnother": "Iyandikishe undi muntu",
+      "errorTitle": "Ntibyakunze",
+      "errorDesc": "Kwohereza amakuru ntibyakunze. Reba niba interineti ikora neza cyangwa wongere ugerageze."
+    },
+    "categories": {
+      "content": "Gukora amavideyo & Content (TikTok, Instagram, n'ibindi)",
+      "marketing": "Kwamamaza mu ikoranabuhanga & kumenyekanisha ibikorwa",
+      "tech": "Ikoranabuhanga, Web design & Graphics",
+      "music": "Umuziki, Amakinamico, Gukina filime & Ubuhanzi",
+      "business": "Ubucuruzi, E-commerce & Kwihangira imirimo",
+      "photography": "Gufotora & Itangazamakuru",
+      "other": "Iyindi mpano yihariye"
+    }
   },
   "socialFeed": {
     "badge": "AMAKURU MASHYA",

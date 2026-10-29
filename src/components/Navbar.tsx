@@ -24,6 +24,7 @@ const Navbar = () => {
     { label: t("nav.about"), href: "#about" },
     { label: t("nav.services"), href: "#services" },
     { label: t("nav.howItWorks"), href: "#how-it-works" },
+    { label: t("nav.youthProgram"), href: "#youth-program", isSpecial: true },
   ];
 
   const languages = [
@@ -55,13 +56,18 @@ const Navbar = () => {
           </a>
 
           {/* Desktop */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
             {navLinks.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
-                className="text-sm font-semibold text-foreground/80 hover:text-primary transition-colors duration-200"
+                className={
+                  l.isSpecial
+                    ? "text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full bg-primary/10 text-primary border border-primary/25 hover:bg-primary hover:text-white transition-all shadow-sm flex items-center gap-1.5"
+                    : "text-sm font-semibold text-foreground/80 hover:text-primary transition-colors duration-200"
+                }
               >
+                {l.isSpecial && <span className="w-1.5 h-1.5 rounded-full bg-primary animate-ping" />}
                 {l.label}
               </a>
             ))}
@@ -185,7 +191,11 @@ const Navbar = () => {
                   }}
                   key={l.href}
                   href={l.href}
-                  className="text-3xl font-display font-bold text-foreground hover:text-primary transition-colors"
+                  className={
+                    l.isSpecial
+                      ? "text-2xl font-display font-bold text-primary px-6 py-2 rounded-full bg-primary/10 border border-primary/20 shadow-sm"
+                      : "text-3xl font-display font-bold text-foreground hover:text-primary transition-colors"
+                  }
                   onClick={() => setOpen(false)}
                 >
                   {l.label}

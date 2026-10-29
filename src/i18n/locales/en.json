@@ -4,6 +4,7 @@
     "about": "About Us",
     "services": "Services",
     "howItWorks": "How It Works",
+    "youthProgram": "100 Youth",
     "contact": "Contact Us"
   },
   "hero": {
@@ -244,6 +245,62 @@
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
     "cookiesSettings": "Cookies Settings"
+  },
+  "youthProgram": {
+    "navLink": "100 Youth",
+    "badge": "100 YOUNG PEOPLE PROGRAM",
+    "title": "Shape the Future with Amamazanonaha",
+    "highlight": "Are you one of the 100 young people?",
+    "tagline": "Your talent matters. Your dream matters. Your future matters.",
+    "description": "This is our flagship 100 young people program with Amamazanonaha Ltd — we're getting ready to launch our first Portfolio before the end of October 2026. It's not a competition, it's an opportunity to discover, nurture, and grow your talent across Rwanda.",
+    "openToAll": "Open to ambitious youth across Rwanda — whether you live in Kigali or any district.",
+    "benefits": {
+      "visibility": {
+        "title": "National Visibility",
+        "desc": "Showcase your talent and brand on Amamazanonaha's growing platforms."
+      },
+      "mentorship": {
+        "title": "Mentorship & Growth",
+        "desc": "Connect with experienced mentors, creators, and business leaders."
+      },
+      "opportunities": {
+        "title": "Real Opportunities",
+        "desc": "Get connected to partnerships, brand campaigns, and monetization."
+      }
+    },
+    "form": {
+      "title": "Register for the Program",
+      "subtitle": "Fill in your details below to join the 100 young people movement.",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "e.g. Jean Damascene",
+      "phone": "Phone / WhatsApp",
+      "phonePlaceholder": "788 123 456",
+      "phoneHelp": "Used to reach you for confirmation and next steps.",
+      "email": "Email Address",
+      "emailPlaceholder": "name@example.com (optional)",
+      "district": "Location / District in Rwanda",
+      "districtPlaceholder": "Select your district",
+      "talent": "Your Talent or Area of Focus",
+      "talentPlaceholder": "Select your talent category",
+      "dream": "Your Dream & Motivation",
+      "dreamPlaceholder": "Tell us briefly about your talent, what you do, and what you hope to achieve with Amamazanonaha...",
+      "submit": "Submit Application",
+      "submitting": "Submitting Registration...",
+      "successTitle": "Application Received!",
+      "successDesc": "Murakoze! We have received your application. Our team will review your profile and reach out via WhatsApp / Phone.",
+      "submitAnother": "Submit another registration",
+      "errorTitle": "Submission Failed",
+      "errorDesc": "Could not submit your application. Please check your internet connection and try again."
+    },
+    "categories": {
+      "content": "Content Creation & Video (TikTok, Reels, Media)",
+      "marketing": "Digital Marketing & Social Media Promotion",
+      "tech": "Tech, Coding, Web & Graphic Design",
+      "music": "Music, Film, Acting & Performing Arts",
+      "business": "Business, E-commerce & Entrepreneurship",
+      "photography": "Photography & Creative Media",
+      "other": "Other Talent"
+    }
   },
   "socialFeed": {
     "badge": "LATEST UPDATES",

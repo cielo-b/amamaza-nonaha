@@ -4,6 +4,7 @@
     "about": "À propos",
     "services": "Services",
     "howItWorks": "Comment ça marche",
+    "youthProgram": "100 Jeunes",
     "contact": "Contactez-nous"
   },
   "hero": {
@@ -244,6 +245,62 @@
     "privacyPolicy": "Politique de confidentialité",
     "termsOfService": "Conditions d'utilisation",
     "cookiesSettings": "Paramètres des cookies"
+  },
+  "youthProgram": {
+    "navLink": "100 Jeunes",
+    "badge": "PROGRAMME DES 100 JEUNES",
+    "title": "Façonnez l'Avenir avec Amamazanonaha",
+    "highlight": "Faites-vous partie des 100 jeunes ?",
+    "tagline": "Votre talent compte. Vos rêves comptent. Votre avenir compte.",
+    "description": "Notre programme des 100 jeunes avec Amamazanonaha Ltd. Nous préparons le lancement de notre premier portfolio avant fin octobre 2026. Ce n'est pas une compétition, c'est une opportunité de révéler et développer votre talent à travers le Rwanda.",
+    "openToAll": "Ouvert à tous les jeunes créateurs et entrepreneurs partout au Rwanda — à Kigali et dans tous les districts.",
+    "benefits": {
+      "visibility": {
+        "title": "Visibilité Nationale",
+        "desc": "Mettez en valeur votre talent et votre marque sur nos plateformes en expansion."
+      },
+      "mentorship": {
+        "title": "Mentorat & Croissance",
+        "desc": "Bénéficiez de l'accompagnement d'experts et de créateurs confirmés."
+      },
+      "opportunities": {
+        "title": "Opportunités Concrètes",
+        "desc": "Accédez à des partenariats, des marchés et des projets concrets."
+      }
+    },
+    "form": {
+      "title": "Inscrivez-vous au Programme",
+      "subtitle": "Remplissez vos coordonnées ci-dessous pour rejoindre le mouvement des 100 jeunes.",
+      "fullName": "Nom et Prénom",
+      "fullNamePlaceholder": "ex. Jean Damascène",
+      "phone": "Téléphone / WhatsApp",
+      "phonePlaceholder": "788 123 456",
+      "phoneHelp": "Utilisé pour vous contacter pour les prochaines étapes.",
+      "email": "Adresse Email",
+      "emailPlaceholder": "nom@exemple.com (facultatif)",
+      "district": "Localisation / District au Rwanda",
+      "districtPlaceholder": "Sélectionnez votre district",
+      "talent": "Votre Talent ou Domaine d'Activité",
+      "talentPlaceholder": "Sélectionnez votre catégorie de talent",
+      "dream": "Vos Rêves & Motivations",
+      "dreamPlaceholder": "Parlez-nous brièvement de votre talent et de vos objectifs avec Amamazanonaha...",
+      "submit": "Soumettre ma candidature",
+      "submitting": "Envoi en cours...",
+      "successTitle": "Inscription Reçue !",
+      "successDesc": "Merci ! Votre inscription a bien été enregistrée. Notre équipe vous contactera sous peu via WhatsApp / Téléphone.",
+      "submitAnother": "Inscrire une autre personne",
+      "errorTitle": "Échec de l'envoi",
+      "errorDesc": "Impossible d'envoyer l'inscription. Vérifiez votre connexion internet et réessayez."
+    },
+    "categories": {
+      "content": "Création de contenu & Vidéo (TikTok, Réseaux, Médias)",
+      "marketing": "Marketing digital & Promotion de marque",
+      "tech": "Tech, Programmation, Web & Design Graphique",
+      "music": "Musique, Cinéma, Théâtre & Arts du spectacle",
+      "business": "Commerce, E-commerce & Entrepreneuriat",
+      "photography": "Photographie & Médias créatifs",
+      "other": "Autre talent créatif"
+    }
   },
   "socialFeed": {
     "badge": "DERNIÈRES ACTUALITÉS",

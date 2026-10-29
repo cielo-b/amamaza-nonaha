@@ -1,0 +1,517 @@
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import { toast } from "sonner";
+import { 
+  Sparkles, 
+  Rocket, 
+  Send, 
+  CheckCircle2, 
+  User, 
+  Phone, 
+  Mail, 
+  MapPin, 
+  Palette, 
+  Share2, 
+  HeartHandshake, 
+  TrendingUp, 
+  Globe2,
+  Loader2,
+  MessageCircle
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const RWANDA_DISTRICTS = [
+  // City of Kigali
+  { group: "City of Kigali", items: ["Gasabo", "Kicukiro", "Nyarugenge"] },
+  // Northern Province
+  { group: "Northern Province", items: ["Burera", "Gakenke", "Gicumbi", "Musanze", "Rulindo"] },
+  // Southern Province
+  { group: "Southern Province", items: ["Gisagara", "Huye", "Kamonyi", "Muhanga", "Nyamagabe", "Nyanza", "Nyaruguru", "Ruhango"] },
+  // Eastern Province
+  { group: "Eastern Province", items: ["Bugesera", "Gatsibo", "Kayonza", "Kirehe", "Ngoma", "Nyagatare", "Rwamagana"] },
+  // Western Province
+  { group: "Western Province", items: ["Karongi", "Ngororero", "Nyabihu", "Nyamasheke", "Rubavu", "Rusizi", "Rutsiro"] },
+  // Other
+  { group: "Other", items: ["Diaspora / Outside Rwanda"] }
+];
+
+export const YouthProgramSection: React.FC = () => {
+  const { t } = useTranslation();
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [copiedLink, setCopiedLink] = useState(false);
+
+  const [formData, setFormData] = useState({
+    fullName: "",
+    phone: "",
+    email: "",
+    district: "",
+    talent: "",
+    message: ""
+  });
+
+  const webhookUrl =
+    import.meta.env.VITE_YOUTH_PROGRAM_SHEET_URL ||
+    "https://script.google.com/macros/s/AKfycbyojtulGUYw5jsSNLdmYs0duhxwg_9PFQsb9WJY2lAu1DFVezAzhBwqag-7lqJxPb07/exec";
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+
+  const handleShare = () => {
+    const url = `${window.location.origin}/#youth-program`;
+    if (navigator.share) {
+      navigator.share({
+        title: "100 Young People Program — Amamazanonaha Ltd",
+        text: "Are you one of the 100 young people who will shape the future with Amamazanonaha Ltd? Register now!",
+        url
+      }).catch(() => {});
+    } else {
+      navigator.clipboard.writeText(url);
+      setCopiedLink(true);
+      toast.success("Link copied to clipboard!");
+      setTimeout(() => setCopiedLink(false), 2500);
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!formData.fullName.trim()) {
+      toast.error(t("youthProgram.form.fullName"));
+      return;
+    }
+    if (!formData.phone.trim()) {
+      toast.error(t("youthProgram.form.phone"));
+      return;
+    }
+    if (!formData.district) {
+      toast.error(t("youthProgram.form.districtPlaceholder"));
+      return;
+    }
+    if (!formData.talent) {
+      toast.error(t("youthProgram.form.talentPlaceholder"));
+      return;
+    }
+
+    setLoading(true);
+
+    const cleanPhone = formData.phone.trim();
+    const formattedPhone = cleanPhone.startsWith("+")
+      ? cleanPhone
+      : `+250 ${cleanPhone.replace(/^0+/, "")}`;
+
+    const payload = {
+      fullName: formData.fullName.trim(),
+      phone: formattedPhone,
+      email: formData.email.trim(),
+      district: formData.district,
+      talent: formData.talent,
+      message: formData.message.trim()
+    };
+
+    try {
+      // Send as text/plain with no-cors to reliably post across all browsers to Google Apps Script
+      await fetch(webhookUrl, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      setSubmitted(true);
+      toast.success(t("youthProgram.form.successTitle"), {
+        description: t("youthProgram.form.successDesc")
+      });
+      setFormData({
+        fullName: "",
+        phone: "",
+        email: "",
+        district: "",
+        talent: "",
+        message: ""
+      });
+    } catch (err) {
+      console.error("Submission error:", err);
+      toast.error(t("youthProgram.form.errorTitle"), {
+        description: t("youthProgram.form.errorDesc")
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <section 
+      id="youth-program" 
+      className="relative py-20 md:py-28 bg-gradient-to-b from-background via-muted/30 to-background overflow-hidden scroll-mt-20"
+    >
+      {/* Decorative ambient glowing orbs */}
+      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 -right-32 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="container max-w-7xl px-4 mx-auto relative z-10">
+        
+        {/* Top Centered Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <motion.div 
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs md:text-sm font-bold tracking-wider uppercase"
+          >
+            <Sparkles className="w-4 h-4 text-primary animate-pulse" />
+            <span>{t("youthProgram.badge")}</span>
+          </motion.div>
+
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground font-display"
+          >
+            {t("youthProgram.highlight")}
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-lg md:text-xl font-medium text-primary italic"
+          >
+            "{t("youthProgram.tagline")}"
+          </motion.p>
+        </div>
+
+        {/* 2-Column Main Content Card */}
+        <div className="bg-card border border-border/70 rounded-3xl md:rounded-[2.5rem] shadow-2xl shadow-primary/5 overflow-hidden grid lg:grid-cols-12 gap-0">
+          
+          {/* Left Column: Story, Value Prop & Pillars (5 cols) */}
+          <div className="lg:col-span-5 p-8 md:p-12 lg:p-14 bg-gradient-to-br from-slate-900 via-primary/95 to-slate-950 text-white flex flex-col justify-between relative overflow-hidden">
+            {/* Subtle tech grid background */}
+            <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#fff_1px,transparent_1px),linear-gradient(to_bottom,#fff_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+
+            <div className="space-y-8 relative z-10">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-white/10 backdrop-blur-md text-emerald-300 text-xs font-semibold">
+                <Rocket className="w-3.5 h-3.5" />
+                <span>Launching October 2026</span>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="text-2xl md:text-3xl font-bold font-display text-white leading-tight">
+                  {t("youthProgram.title")}
+                </h3>
+                <p className="text-white/80 text-sm md:text-base leading-relaxed">
+                  {t("youthProgram.description")}
+                </p>
+                <p className="text-white/90 font-semibold text-xs md:text-sm bg-white/10 p-3 rounded-xl border border-white/10 flex items-center gap-2">
+                  <Globe2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <span>{t("youthProgram.openToAll")}</span>
+                </p>
+              </div>
+
+              {/* 3 Pillars */}
+              <div className="space-y-4 pt-4 border-t border-white/10">
+                <div className="flex items-start gap-3.5">
+                  <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 border border-white/15">
+                    <TrendingUp className="w-5 h-5 text-emerald-300" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm text-white">{t("youthProgram.benefits.visibility.title")}</h4>
+                    <p className="text-white/70 text-xs mt-0.5">{t("youthProgram.benefits.visibility.desc")}</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3.5">
+                  <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 border border-white/15">
+                    <HeartHandshake className="w-5 h-5 text-sky-300" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm text-white">{t("youthProgram.benefits.mentorship.title")}</h4>
+                    <p className="text-white/70 text-xs mt-0.5">{t("youthProgram.benefits.mentorship.desc")}</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3.5">
+                  <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0 border border-white/15">
+                    <Sparkles className="w-5 h-5 text-amber-300" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-sm text-white">{t("youthProgram.benefits.opportunities.title")}</h4>
+                    <p className="text-white/70 text-xs mt-0.5">{t("youthProgram.benefits.opportunities.desc")}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Actions on Left */}
+            <div className="pt-8 mt-8 border-t border-white/10 relative z-10 flex flex-wrap items-center justify-between gap-4">
+              <button
+                type="button"
+                onClick={handleShare}
+                className="inline-flex items-center gap-2 text-xs font-semibold text-white/90 hover:text-white bg-white/10 hover:bg-white/20 transition-colors px-3.5 py-2 rounded-xl cursor-pointer"
+              >
+                <Share2 className="w-3.5 h-3.5" />
+                <span>{copiedLink ? "Link Copied!" : "Share Link"}</span>
+              </button>
+
+              <a
+                href="https://wa.me/250788000000?text=Hello%20Amamazanonaha!%20I%20want%20more%20information%20about%20the%20100%20Youth%20Program"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs text-emerald-300 hover:text-emerald-200 font-medium transition-colors"
+              >
+                <MessageCircle className="w-3.5 h-3.5" />
+                <span>WhatsApp Inquiry</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Right Column: Registration Form (7 cols) */}
+          <div className="lg:col-span-7 p-8 md:p-12 lg:p-14 bg-card flex flex-col justify-center">
+            
+            <AnimatePresence mode="wait">
+              {submitted ? (
+                /* Success View */
+                <motion.div
+                  key="success"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  className="text-center py-12 px-4 space-y-6 max-w-md mx-auto"
+                >
+                  <div className="w-20 h-20 rounded-full bg-emerald-500/10 border-2 border-emerald-500/30 text-emerald-600 flex items-center justify-center mx-auto shadow-xl">
+                    <CheckCircle2 className="w-10 h-10 animate-bounce" />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <h3 className="text-2xl md:text-3xl font-bold text-foreground font-display">
+                      {t("youthProgram.form.successTitle")}
+                    </h3>
+                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+                      {t("youthProgram.form.successDesc")}
+                    </p>
+                  </div>
+
+                  <div className="p-4 rounded-2xl bg-muted/50 border border-border text-left text-xs text-muted-foreground space-y-1.5">
+                    <p className="font-semibold text-foreground flex items-center gap-1.5">
+                      <Sparkles className="w-3.5 h-3.5 text-primary" />
+                      Next Step:
+                    </p>
+                    <p>Our team will review your submission and reach out directly to the WhatsApp / phone number you provided.</p>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                    <Button
+                      variant="outline"
+                      className="w-full rounded-xl cursor-pointer"
+                      onClick={() => setSubmitted(false)}
+                    >
+                      {t("youthProgram.form.submitAnother")}
+                    </Button>
+                    <Button
+                      className="w-full rounded-xl bg-primary hover:bg-primary/90 text-white cursor-pointer"
+                      onClick={handleShare}
+                    >
+                      <Share2 className="w-4 h-4 mr-2" />
+                      Share With Friends
+                    </Button>
+                  </div>
+                </motion.div>
+              ) : (
+                /* Registration Form */
+                <motion.div
+                  key="form"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="space-y-6"
+                >
+                  <div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-foreground font-display">
+                      {t("youthProgram.form.title")}
+                    </h3>
+                    <p className="text-muted-foreground text-sm mt-1">
+                      {t("youthProgram.form.subtitle")}
+                    </p>
+                  </div>
+
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    
+                    {/* Full Name */}
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-bold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+                        <User className="w-3.5 h-3.5 text-primary" />
+                        <span>{t("youthProgram.form.fullName")} <span className="text-destructive">*</span></span>
+                      </label>
+                      <input
+                        type="text"
+                        name="fullName"
+                        required
+                        value={formData.fullName}
+                        onChange={handleChange}
+                        placeholder={t("youthProgram.form.fullNamePlaceholder")}
+                        className="w-full px-4 py-3 rounded-xl border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all shadow-sm"
+                      />
+                    </div>
+
+                    {/* Phone & Email Grid */}
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      {/* Phone */}
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+                          <Phone className="w-3.5 h-3.5 text-primary" />
+                          <span>{t("youthProgram.form.phone")} <span className="text-destructive">*</span></span>
+                        </label>
+                        <div className="flex items-center rounded-xl border border-input bg-background focus-within:ring-2 focus-within:ring-primary/40 focus-within:border-primary transition-all overflow-hidden shadow-sm">
+                          <span className="px-3 py-3 bg-muted text-muted-foreground text-xs font-bold border-r border-input select-none">
+                            +250
+                          </span>
+                          <input
+                            type="tel"
+                            name="phone"
+                            required
+                            value={formData.phone}
+                            onChange={handleChange}
+                            placeholder={t("youthProgram.form.phonePlaceholder")}
+                            className="w-full px-3 py-3 bg-transparent text-foreground text-sm focus:outline-none"
+                          />
+                        </div>
+                      </div>
+
+                      {/* Email */}
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+                          <Mail className="w-3.5 h-3.5 text-muted-foreground" />
+                          <span>{t("youthProgram.form.email")}</span>
+                        </label>
+                        <input
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          placeholder={t("youthProgram.form.emailPlaceholder")}
+                          className="w-full px-4 py-3 rounded-xl border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all shadow-sm"
+                        />
+                      </div>
+                    </div>
+
+                    {/* District & Talent Dropdowns Grid */}
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      {/* District Selection */}
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+                          <MapPin className="w-3.5 h-3.5 text-primary" />
+                          <span>{t("youthProgram.form.district")} <span className="text-destructive">*</span></span>
+                        </label>
+                        <select
+                          name="district"
+                          required
+                          value={formData.district}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 rounded-xl border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all shadow-sm cursor-pointer"
+                        >
+                          <option value="">{t("youthProgram.form.districtPlaceholder")}</option>
+                          {RWANDA_DISTRICTS.map((prov) => (
+                            <optgroup key={prov.group} label={prov.group}>
+                              {prov.items.map((dist) => (
+                                <option key={dist} value={dist}>
+                                  {dist}
+                                </option>
+                              ))}
+                            </optgroup>
+                          ))}
+                        </select>
+                      </div>
+
+                      {/* Talent Category */}
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-bold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+                          <Palette className="w-3.5 h-3.5 text-primary" />
+                          <span>{t("youthProgram.form.talent")} <span className="text-destructive">*</span></span>
+                        </label>
+                        <select
+                          name="talent"
+                          required
+                          value={formData.talent}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 rounded-xl border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all shadow-sm cursor-pointer"
+                        >
+                          <option value="">{t("youthProgram.form.talentPlaceholder")}</option>
+                          <option value="Content Creation & Video">{t("youthProgram.categories.content")}</option>
+                          <option value="Digital Marketing & Promotion">{t("youthProgram.categories.marketing")}</option>
+                          <option value="Tech, Web & Design">{t("youthProgram.categories.tech")}</option>
+                          <option value="Music, Film & Arts">{t("youthProgram.categories.music")}</option>
+                          <option value="Business & Entrepreneurship">{t("youthProgram.categories.business")}</option>
+                          <option value="Photography & Media">{t("youthProgram.categories.photography")}</option>
+                          <option value="Other Talent">{t("youthProgram.categories.other")}</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    {/* Dream & Motivation Textarea */}
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-bold text-foreground uppercase tracking-wider flex items-center justify-between">
+                        <span className="flex items-center gap-1.5">
+                          <Sparkles className="w-3.5 h-3.5 text-primary" />
+                          {t("youthProgram.form.dream")}
+                        </span>
+                        <span className="text-[11px] text-muted-foreground font-normal lowercase">(optional)</span>
+                      </label>
+                      <textarea
+                        name="message"
+                        rows={3}
+                        value={formData.message}
+                        onChange={handleChange}
+                        placeholder={t("youthProgram.form.dreamPlaceholder")}
+                        className="w-full px-4 py-3 rounded-xl border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all shadow-sm resize-none"
+                      />
+                    </div>
+
+                    {/* Submit Button */}
+                    <div className="pt-2">
+                      <Button
+                        type="submit"
+                        disabled={loading}
+                        className="w-full py-6 rounded-xl bg-primary hover:bg-primary/90 text-white font-bold text-base shadow-lg shadow-primary/25 transition-all flex items-center justify-center gap-2 group cursor-pointer"
+                      >
+                        {loading ? (
+                          <>
+                            <Loader2 className="w-5 h-5 animate-spin" />
+                            <span>{t("youthProgram.form.submitting")}</span>
+                          </>
+                        ) : (
+                          <>
+                            <span>{t("youthProgram.form.submit")}</span>
+                            <Send className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                          </>
+                        )}
+                      </Button>
+                    </div>
+
+                    <p className="text-[11px] text-center text-muted-foreground pt-1">
+                      🔒 Your information is saved directly to Amamazanonaha's official program registry.
+                    </p>
+                  </form>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+export default YouthProgramSection;

@@ -8,6 +8,7 @@ import {
   Send, 
   CheckCircle2, 
   User, 
+  Users,
   Phone, 
   Mail, 
   MapPin, 
@@ -58,6 +59,7 @@ export const YouthProgramSection: React.FC = () => {
 
   const [formData, setFormData] = useState({
     fullName: "",
+    gender: "",
     phone: "",
     email: "",
     district: "",
@@ -109,6 +111,10 @@ export const YouthProgramSection: React.FC = () => {
       toast.error(t("youthProgram.form.fullName"));
       return;
     }
+    if (!formData.gender) {
+      toast.error(t("youthProgram.form.genderPlaceholder"));
+      return;
+    }
     if (!formData.phone.trim()) {
       toast.error(t("youthProgram.form.phone"));
       return;
@@ -131,10 +137,11 @@ export const YouthProgramSection: React.FC = () => {
 
     const payload = {
       fullName: formData.fullName.trim(),
+      gender: formData.gender,
       phone: formattedPhone,
       email: formData.email.trim(),
       district: formData.district,
-      talent: formData.talent,
+      talent: formData.gender ? `${formData.talent} (${formData.gender})` : formData.talent,
       message: formData.message.trim()
     };
 
@@ -154,6 +161,7 @@ export const YouthProgramSection: React.FC = () => {
       });
       setFormData({
         fullName: "",
+        gender: "",
         phone: "",
         email: "",
         district: "",
@@ -252,10 +260,12 @@ export const YouthProgramSection: React.FC = () => {
                 <p className="text-white/80 text-sm md:text-base leading-relaxed">
                   {t("youthProgram.description")}
                 </p>
-                <p className="text-white/90 font-semibold text-xs md:text-sm bg-white/10 p-3 rounded-xl border border-white/10 flex items-center gap-2">
-                  <Globe2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>{t("youthProgram.openToAll")}</span>
-                </p>
+                <div className="p-4 rounded-2xl bg-emerald-500/15 border border-emerald-400/30 text-emerald-100 flex items-start gap-3 backdrop-blur-md shadow-sm">
+                  <Sparkles className="w-5 h-5 text-emerald-300 shrink-0 mt-0.5" />
+                  <p className="text-xs md:text-sm italic font-medium leading-relaxed">
+                    {t("youthProgram.openToAll")}
+                  </p>
+                </div>
               </div>
 
               {/* 3 Pillars */}
@@ -442,21 +452,43 @@ export const YouthProgramSection: React.FC = () => {
 
                   <form onSubmit={handleSubmit} className="space-y-4">
                     
-                    {/* Full Name */}
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-bold text-foreground uppercase tracking-wider flex items-center gap-1.5">
-                        <User className="w-3.5 h-3.5 text-primary" />
-                        <span>{t("youthProgram.form.fullName")} <span className="text-destructive">*</span></span>
-                      </label>
-                      <input
-                        type="text"
-                        name="fullName"
-                        required
-                        value={formData.fullName}
-                        onChange={handleChange}
-                        placeholder={t("youthProgram.form.fullNamePlaceholder")}
-                        className="w-full px-4 py-3 rounded-xl border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all shadow-sm"
-                      />
+                    {/* Full Name & Gender Grid */}
+                    <div className="grid sm:grid-cols-12 gap-4">
+                      {/* Full Name */}
+                      <div className="sm:col-span-7 space-y-1.5">
+                        <label className="text-xs font-bold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+                          <User className="w-3.5 h-3.5 text-primary" />
+                          <span>{t("youthProgram.form.fullName")} <span className="text-destructive">*</span></span>
+                        </label>
+                        <input
+                          type="text"
+                          name="fullName"
+                          required
+                          value={formData.fullName}
+                          onChange={handleChange}
+                          placeholder={t("youthProgram.form.fullNamePlaceholder")}
+                          className="w-full px-4 py-3 rounded-xl border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all shadow-sm"
+                        />
+                      </div>
+
+                      {/* Gender */}
+                      <div className="sm:col-span-5 space-y-1.5">
+                        <label className="text-xs font-bold text-foreground uppercase tracking-wider flex items-center gap-1.5">
+                          <Users className="w-3.5 h-3.5 text-primary" />
+                          <span>{t("youthProgram.form.gender")} <span className="text-destructive">*</span></span>
+                        </label>
+                        <select
+                          name="gender"
+                          required
+                          value={formData.gender}
+                          onChange={handleChange}
+                          className="w-full truncate px-4 py-3 rounded-xl border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all shadow-sm cursor-pointer"
+                        >
+                          <option value="">{t("youthProgram.form.genderPlaceholder")}</option>
+                          <option value="Male">{t("youthProgram.form.male")}</option>
+                          <option value="Female">{t("youthProgram.form.female")}</option>
+                        </select>
+                      </div>
                     </div>
 
                     {/* Phone & Email Grid */}
@@ -542,12 +574,21 @@ export const YouthProgramSection: React.FC = () => {
                           className="w-full max-w-full truncate px-4 py-3 rounded-xl border border-input bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all shadow-sm cursor-pointer"
                         >
                           <option value="">{t("youthProgram.form.talentPlaceholder")}</option>
-                          <option value="Content Creation & Video">{t("youthProgram.categories.content")}</option>
-                          <option value="Digital Marketing & Promotion">{t("youthProgram.categories.marketing")}</option>
-                          <option value="Tech, Web & Design">{t("youthProgram.categories.tech")}</option>
-                          <option value="Music, Film & Arts">{t("youthProgram.categories.music")}</option>
-                          <option value="Business & Entrepreneurship">{t("youthProgram.categories.business")}</option>
-                          <option value="Photography & Media">{t("youthProgram.categories.photography")}</option>
+                          <option value="Singer / Vocalist">{t("youthProgram.categories.singer")}</option>
+                          <option value="Pianist">{t("youthProgram.categories.pianist")}</option>
+                          <option value="Guitarist">{t("youthProgram.categories.guitarist")}</option>
+                          <option value="Drummer">{t("youthProgram.categories.drummer")}</option>
+                          <option value="Dancer">{t("youthProgram.categories.dancer")}</option>
+                          <option value="Comedian">{t("youthProgram.categories.comedian")}</option>
+                          <option value="Basketball or Football Player">{t("youthProgram.categories.sports")}</option>
+                          <option value="Fashion Model">{t("youthProgram.categories.model")}</option>
+                          <option value="Content Creator">{t("youthProgram.categories.content")}</option>
+                          <option value="Photographer">{t("youthProgram.categories.photography")}</option>
+                          <option value="Designer">{t("youthProgram.categories.designer")}</option>
+                          <option value="Tailor">{t("youthProgram.categories.tailor")}</option>
+                          <option value="Crafter">{t("youthProgram.categories.crafter")}</option>
+                          <option value="Event Decorator">{t("youthProgram.categories.decor")}</option>
+                          <option value="Entrepreneur">{t("youthProgram.categories.entrepreneur")}</option>
                           <option value="Other Talent">{t("youthProgram.categories.other")}</option>
                         </select>
                       </div>

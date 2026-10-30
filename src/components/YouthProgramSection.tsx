@@ -141,7 +141,7 @@ export const YouthProgramSection: React.FC = () => {
       phone: formattedPhone,
       email: formData.email.trim(),
       district: formData.district,
-      talent: formData.gender ? `${formData.talent} (${formData.gender})` : formData.talent,
+      talent: formData.talent,
       message: formData.message.trim()
     };
 

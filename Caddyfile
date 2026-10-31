@@ -1,4 +1,8 @@
-:{$PORT:80} {
+{
+    admin off
+}
+
+:80, :3000, :8080, :{$PORT:80} {
     root * /usr/share/caddy
     encode gzip zstd
 
